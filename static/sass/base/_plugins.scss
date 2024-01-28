@@ -1,0 +1,240 @@
+// Customize Plugins
+
+// # Contents
+// 1. Swiper Carousel
+// 1.1) Customize Plugin
+// 1.2) Nav Big, Nav Large
+// 1.3) Nav Image Center Pos
+// 1.4) Show Nav Hover
+// 1.5) Nav Inner
+// 1.6) Nav Outer
+// 1.7) Dots Top, Align
+// 1.8) Images Align Center
+// 1.8) Lazy Load - Preview : Home-Slider, Category-Slider
+// 2. noUi Slider
+// 3. Responsive
+
+// # Variables
+
+@include set-default(
+	(
+		swiper-carousel: (
+			nav: (
+				image-center: 35%
+			)
+		)
+	)
+);
+
+// 1. swiper Carousel
+.swiper-carousel {
+	// 1.1) Customize Plugin
+	// Use This: when dots do not take place in center of circle
+	.swiper-nav .swiper-button-disabled {
+		opacity: .5;
+		cursor: default;
+	}
+
+	.swiper-pagination-bullets .swiper-pagination-bullet span:before {
+		width: 7px;
+		height: 7px;
+	}
+
+	&.dots-m-0 .disabled + .swiper-pagination-bullets {
+		margin: 0;
+	}
+
+	&.dots-mt-1 .disabled + .swiper-pagination-bullets {
+		margin-top: 1rem;
+	}
+
+	// 1.2) Nav Big, Nav Large
+	&.nav-big .swiper-nav {
+		font-size: 3.7rem;
+
+		i {
+			padding: 4px 7px;
+		}
+	}
+
+	&.nav-large .swiper-nav {
+		font-size: 4.5rem;
+
+		i {
+			padding: 4px 2px;
+		}
+	}
+
+	// 1.3) Nav Image Center Pos
+	&.nav-image-center .swiper-nav button {
+		@include css( top, swiper-carousel, nav, image-center );
+	}
+
+	// 1.4) Show Nav Hover
+	&.show-nav-hover {
+		.swiper-nav > button {
+			opacity: 0;
+			transition: opacity .2s, color .2s;
+		}
+
+		&:hover .swiper-nav > button {
+			opacity: 1;
+
+			&.swiper-button-disabled {
+				opacity: .5	;
+			}
+		}
+	}
+
+	// 1.5) Nav Inner
+	.swiper-nav {
+		.swiper-prev {
+			left: 1vw;
+		}
+
+		.swiper-next {
+			right: 1vw;
+		}
+	}
+
+	// 1.6) Nav Outer
+	@include mq(lg) {
+		&.nav-outer {
+			.swiper-prev {
+				left: -1.7vw;
+			}
+	
+			.swiper-next {
+				right: -1.7vw;
+			}
+
+			// Large Nav Outer
+			&.nav-large {
+				.swiper-prev {
+					left: -2.3vw;
+				}
+		
+				.swiper-next {
+					right: -2.3vw;
+				}	
+			}
+		}
+	}
+
+	// 1.7) Dots Top, Align, Small
+	&.dots-top .swiper-pagination-bullets {
+		position: absolute;
+		right: 1%;
+		left: auto;
+		top: -.6rem;
+		margin: 0 0 3.4rem;
+	}
+
+	&.dots-small .swiper-pagination-bullets span {
+		width: 14px;
+		height: 14px;
+
+		&:before {
+			width: 4px;
+			height: 4px;
+		}
+	}
+
+	&.dots-simple .swiper-pagination-bullets {
+		.swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+			background-color: $primary-color-dark;
+		}
+		
+		.swiper-pagination-bullet {
+			margin: 1px 1px 2px 0px;
+			border: none;
+			
+			&::before {
+				opacity: 1;
+				visibility: visible;
+			    transform: scale(1.15);
+				background-color: #D6D6D6;
+			}
+		}
+	}
+	
+	// 1.8) Images Align Center
+	&.images-center img {
+		width: auto;
+		margin: auto;
+	}
+}
+
+.swiper-pagination-bullet {
+	opacity: 1;
+}
+
+// -1.7) Dots Align Left
+.dots-left .swiper-pagination-bullets {
+	text-align: left;
+}
+
+
+// 1.9) Lazy Load - Preview : Home-Slider, Category-Slider
+.swiper-carousel-lazy {
+	display: block;
+
+	.home-slide:first-child,
+	.category-slide:first-child,
+	.swiper-item:first-child .home-slide,
+	.swiper-item:first-child .category-slide {
+		display: block;
+	}
+
+	&:not(.swiper-loaded) > *:not(:first-child) {
+		display: none;
+	}
+}
+
+.home-slide,
+.category-slide {
+	width: 100%;
+	// @include lazy-anim;
+}
+
+div.slide-bg {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+img.slide-bg {
+	object-fit: cover;
+	object-position: center top;
+}
+
+.swiper-carousel.dot-inside .swiper-pagination-bullets {
+	position: absolute;
+	right: 3.6rem;
+    left: 3.6rem;
+	bottom: 4.1rem;
+	text-align: center;
+}
+
+
+// 2. noUi Slider
+.noUi-target {
+	background: #eee;
+}
+
+.noUi-handle {
+	background: $primary-color;
+}
+
+.noUi-connect {
+	background: none;
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.38) inset;
+}
+
+// 3. Responsive
+
+@include mq(xs, max) {
+	.swiper-carousel.dots-top .swiper-pagination-bullets {
+		margin: 0 2.5rem 3.4rem;
+	}
+}

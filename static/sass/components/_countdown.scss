@@ -1,0 +1,109 @@
+.product-countdown-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    flex-wrap: wrap;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+	z-index: 6;
+	padding: 1rem .7rem .9rem;
+	letter-spacing: -.01em;
+	transition: opacity .3s ease;
+	visibility: visible;
+    text-transform: uppercase;
+    background: $primary-color;
+    opacity: 0.7;
+    font-family: $third-font-family;
+
+	.product-countdown-title {
+        display: inline-block;
+        color: #fff;
+        font-size: 11px;
+        font-weight: 400;
+        margin-bottom: 0;
+        margin-right: 3px;
+	}
+
+	.product-countdown {
+		position: relative;
+		left: auto;
+		right: auto;
+		bottom: auto;
+		z-index: 6;
+		line-height: 1;
+        opacity: 1;
+        color: #fff;
+
+		.countdown-amount {
+            display: block;
+            padding-bottom: 2px;
+			font-weight: 400;
+			font-size: 1.3rem;
+			line-height: 1;
+			margin-bottom: 0;
+			text-transform: uppercase;
+		}
+	}
+}
+
+.product-default:not(.count-down):hover {
+	.product-countdown,
+	.product-countdown-container {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+.product-countdown-container-two {
+	position: relative;
+
+	h5 {
+		text-transform: uppercase;
+		font-family: 'Oswald','Open Sans','sans-serif';
+	}
+
+	.product-countdown {
+		width: 100%;
+		height: auto;
+		display: block;
+		line-height: 1;
+		margin-bottom: 15px;
+		font-family: 'Oswald','Open Sans','sans-serif';
+	}
+
+	.countdown-section {
+		background-color: #01abec;
+		color: #fff;
+		margin-left: 1px;
+		margin-right: 1px;
+		display: block;
+		float: left;
+		max-width: calc(25% - 2px);
+		min-width: 64px;
+		text-align: center;
+		padding: 12px 10px;
+	}
+
+	.countdown-row {
+		display: inline-block;
+	}
+
+	.countdown-amount {
+		display: block;
+		font-size: 18px;
+		font-weight: 700;
+		min-width: 1em;
+		max-width: 100%;
+		min-height: 1em;
+		line-height: 1em;
+		padding: 0;
+		margin: 0 auto;
+		box-sizing: content-box;
+	}
+
+	.countdown-period {
+		font-size: 1rem;
+		text-transform: uppercase;
+	}
+}
