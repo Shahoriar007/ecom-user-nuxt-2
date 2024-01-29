@@ -78,7 +78,7 @@
 				<div class="header-right w-lg-max">
 					<pv-header-search></pv-header-search>
 
-					<a
+					<!-- <a
 						href="javascript:;"
 						@click="openLoginModal"
 						class="d-lg-block d-none"
@@ -91,15 +91,15 @@
 								<h4 class="mb-0">My Account</h4>
 							</div>
 						</div>
-					</a>
+					</a> -->
 
-					<nuxt-link
+					<!-- <nuxt-link
 						to="/pages/wishlist"
 						class="header-icon position-relative"
 						title="wishlist"
 					>
 						<i class="icon-wishlist-2"></i><span class="wishlist-count badge-circle">{{ wishList.length }}</span>
-					</nuxt-link>
+					</nuxt-link> -->
 
 					<pv-cart-menu></pv-cart-menu>
 				</div>

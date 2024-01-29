@@ -207,7 +207,7 @@
 					</li>
 					</ul>
 
-					<ul class="mobile-menu mt-2 mb-2">
+					<!-- <ul class="mobile-menu mt-2 mb-2">
 						<li class="border-0">
 							<a href="javascript:;">Special Offer!</a>
 						</li>
@@ -217,7 +217,7 @@
 								target="_blank"
 							>Buy Porto!<span class="tip tip-hot">Hot</span></a>
 						</li>
-					</ul>
+					</ul> -->
 
 					<ul class="mobile-menu">
 						<li>

@@ -125,24 +125,24 @@ export default {
 			})
 			.catch(error => ({ error: JSON.stringify(error) }));
 
-		this.timerId = setTimeout(() => {
-			if (
-				this.$route.path === '/' &&
-				getCookie('newsletter') !== 'false'
-			) {
-				this.$modal.show(
-					() =>
-						import('~/components/features/modal/PvNewsletterModal'),
-					{},
-					{
-						width: '740',
-						height: 'auto',
-						adaptive: true,
-						class: 'newsletter-modal'
-					}
-				);
-			}
-		}, 10000);
+		// this.timerId = setTimeout(() => {
+		// 	if (
+		// 		this.$route.path === '/' &&
+		// 		getCookie('newsletter') !== 'false'
+		// 	) {
+		// 		this.$modal.show(
+		// 			() =>
+		// 				import('~/components/features/modal/PvNewsletterModal'),
+		// 			{},
+		// 			{
+		// 				width: '740',
+		// 				height: 'auto',
+		// 				adaptive: true,
+		// 				class: 'newsletter-modal'
+		// 			}
+		// 		);
+		// 	}
+		// }, 10000);
 	},
 	destroyed: function() {
 		clearTimeout(this.timerId);

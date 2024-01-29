@@ -935,12 +935,12 @@
 				</ul>
 			</li>
 
-			<li>
+			<!-- <li>
 				<a
 					href="/https://1.envato.market/DdLk5"
 					target="_blank"
 				>Buy Porto</a>
-			</li>
+			</li> -->
 
 			<li class="float-right phone"><a
 					href="javascript:;"

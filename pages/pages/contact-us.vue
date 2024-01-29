@@ -1,5 +1,21 @@
 <template>
     <main class="main">
+        <div
+			class="page-header page-header-bg text-left"
+			style="background: 50%/cover #D4E1EA"
+			v-lazy:background-image="'./images/page-header-bg.jpg'"
+		>
+			<div class="container">
+				<h1>
+					<span>CONTACT US</span>OUR COMPANY
+				</h1>
+				<nuxt-link
+					to="/"
+					class="btn btn-dark"
+				>Home</nuxt-link>
+			</div>
+		</div>
+
         <nav aria-label="breadcrumb" class="breadcrumb-nav">
             <div class="container">
                 <ol class="breadcrumb">
@@ -13,14 +29,7 @@
             </div>
         </nav>
 
-                <div id="map">
-                <gmap-map
-                :center="{lat:10, lng:10}"
-                :zoom="7"
-                map-type-id="terrain"
-                style="width: 500px; height: 300px"
-                ></gmap-map>
-            </div>
+              
 
         <div class="container contact-us-container">
             <div class="contact-info">
