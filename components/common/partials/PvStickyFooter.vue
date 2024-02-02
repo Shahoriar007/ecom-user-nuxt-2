@@ -7,17 +7,7 @@
         </div>
         <div class="sticky-info">
             <nuxt-link to="/shop">
-                <i class="icon-bars"></i>Categories
-            </nuxt-link>
-        </div>
-        <div class="sticky-info">
-            <nuxt-link to="/pages/wishlist">
-                <i class="icon-wishlist-2"></i>Wishlist
-            </nuxt-link>
-        </div>
-        <div class="sticky-info">
-            <nuxt-link to="/pages/login">
-                <i class="icon-user-2"></i>Account
+                <i class="icon-bars"></i>Shop
             </nuxt-link>
         </div>
         <div class="sticky-info">
@@ -25,6 +15,16 @@
                 <i class="icon-shopping-cart position-relative">
                     <span class="cart-count badge-circle">{{ totalCount }}</span>
                 </i>Cart
+            </nuxt-link>
+        </div>
+        <div class="sticky-info">
+            <nuxt-link to="/pages/login">
+                <i class="icon-user-2"></i>Track Order
+            </nuxt-link>
+        </div>
+        <div class="sticky-info">
+            <nuxt-link to="/pages/login">
+                <i class="icon-user-2"></i>Whatsapp
             </nuxt-link>
         </div>
     </div>

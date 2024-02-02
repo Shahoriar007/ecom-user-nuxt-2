@@ -8,26 +8,6 @@
 			:next-product="nextProduct"
 		></pv-product-nav>
 
-		<div class="ratings-container">
-			<div class="product-ratings">
-				<span
-					class="ratings"
-					:style="'width:' + product.ratings * 20 + '%'"
-				></span>
-				<span class="tooltiptext tooltip-top">{{ product.ratings | priceFormat }}</span>
-			</div>
-			<a
-				href="javascript:;"
-				class="rating-link"
-				v-if="product.reviews > 0"
-			>( {{ product.reviews }} Reviews )</a>
-			<a
-				href="javascript:;"
-				class="rating-link"
-				v-else
-			>( There is no review yet. )</a>
-		</div>
-
 		<hr class="short-divider" />
 
 		<div
@@ -276,6 +256,27 @@
 				:class="{ disabled: !isCartActive }"
 			>Add to Cart</a>
 
+			<v-row>
+				<a
+				href="javascript:;"
+				class="btn btn-dark mr-2"
+				title="Buy Now"
+				@click="addCart"
+				:class="{ disabled: !isCartActive }"
+			>Buy Now (Whatsapp)</a>
+			</v-row>
+
+			
+			<b-row>
+			<a
+				href="javascript:;"
+				class="btn btn-dark mr-2"
+				title="Buy Now"
+				@click="addCart"
+				:class="{ disabled: !isCartActive }"
+			>Buy Now (Messenger)</a>
+			</b-row>
+
 			<nuxt-link
 				to="/pages/cart"
 				class="btn btn-gray view-cart d-none"
@@ -356,6 +357,7 @@ import PvCountDown from '~/components/features/PvCountDown';
 
 export default {
 	components: {
+		
 		VueSlideToggle,
 		PvProductNav,
 		PvCountDown
