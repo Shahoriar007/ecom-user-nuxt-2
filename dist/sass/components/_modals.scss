@@ -1,0 +1,143 @@
+// Modals
+.modal {
+	form {
+		margin: 0;
+
+		.form-group {
+			max-width: 480px;
+		}
+
+		.form-control {
+			max-width: 100%;
+		}
+	}
+}
+
+.modal-body {
+	padding: 1.5rem;
+}
+
+.modal-content {
+	border-radius: 0;
+	box-shadow: 0 0 12px 2px rgba(0, 0, 0, .35);
+}
+
+.modal-header,
+.modal-footer {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 80px;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+}
+
+.modal-title {
+	font-weight: 400;
+}
+
+.close {
+	font-size: 2.2rem;
+}
+
+.video-modal {
+	height: calc(100% - 20px);
+
+	iframe {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+@include mq(sm) {
+	.modal-content {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	.modal-body {
+		max-height: calc(100vh - 210px);
+		padding-top: 2rem;
+		overflow-y: auto;
+	}
+
+	.modal-header,
+	.modal-footer,
+	.modal-body {
+		padding-right: 2em;
+		padding-left: 2rem;
+	}
+}
+
+@include mq(lg) {
+	.modal-dialog {
+		max-width: 800px;
+	}
+
+	.modal-header,
+	.modal-footer,
+	.modal-body {
+		padding-right: 3rem;
+		padding-left: 3rem;
+	}
+}
+
+@include mq(xs, max) {
+	.modal-open,
+	.modal-open .modal {
+		padding-right: 0 !important;
+	}
+}
+
+// vue
+
+@include mq(lg, max) {
+	.vm--container:not(.newsletter-modal):not(.quickview-modal):not(.video-modal-container) .vm--modal {
+		position: absolute;
+		left: calc(50% - 262px) !important;
+		right: calc(50% - 262px) !important;
+		width: 525px !important;
+		max-width: 932px !important;
+	}
+
+	.newsletter-modal .vm--modal {
+		max-width: 100%;
+		margin: 0 auto;
+		left: auto !important;
+	}
+}
+
+@include mq(sm, max) {
+	.vm--container:not(.newsletter-modal):not(.quickview-modal):not(.video-modal-container) .vm--modal {
+		position: absolute;
+		left: 3% !important;
+		right: 3% !important;
+		width: 94% !important;
+		max-width: 932px !important;
+		margin-top: 3%;
+		margin-bottom: 3%;
+	}
+}
+
+@include mq(lg, max) {
+	.vm--container.quickview-modal .vm--modal {
+		position: absolute;
+		top: 3% !important;
+		right: 3% !important;
+		bottom: 3% !important;
+		left: 3% !important;
+		width: 94% !important;
+		max-width: 932px !important;
+		overflow-y: auto;
+	}
+}
+
+
+.vm--container .vm--overlay {
+	background: rgba(119, 119, 119, 0.4);
+}
+
+.vm--container.quickview-modal .vm--overlay {
+	background: rgba(68,70,69,0.65);
+}
