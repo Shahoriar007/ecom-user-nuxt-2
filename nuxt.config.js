@@ -6,25 +6,24 @@ export default {
             { charset: 'utf-8' },
             {
                 name: 'viewport',
-                content: 'width=device-width, initial-scale=1'
+                content: 'width=device-width, initial-scale=1',
             },
             {
                 hid: 'description',
                 name: 'description',
-                content:
-                    'Porto - Multi-purpose eCommerce Vue Template'
+                content: 'Porto - Multi-purpose eCommerce Vue Template',
             },
             {
                 name: 'author',
-                content: 'd-themes'
+                content: 'd-themes',
             },
             {
                 name: 'keywords',
-                content: 'Porto Vue eCommerce Template'
+                content: 'Porto Vue eCommerce Template',
             },
             {
                 name: 'app-mobile-web-app-title',
-                content: 'Porto'
+                content: 'Porto',
             },
             {
                 name: 'application-name',
@@ -32,55 +31,49 @@ export default {
             },
             {
                 name: 'msapplication-TileColor',
-                content: '#cc9966'
+                content: '#cc9966',
             },
             {
                 name: 'msapplication-config',
-                content: '/images/icons/browserconfig.xml'
-            }
+                content: '/images/icons/browserconfig.xml',
+            },
         ],
         link: [
             {
                 rel: 'dns-prefetch',
-                href: "//fonts.googleapis.com"
+                href: '//fonts.googleapis.com',
             },
             {
                 rel: 'icon',
                 type: 'image/png',
                 sizes: '32x32',
-                href:
-                    './images/icons/favicon-32x32.png'
+                href: './images/icons/favicon-32x32.png',
             },
             {
                 rel: 'icon',
                 type: 'image/png',
                 sizes: '16x16',
-                href:
-                    './images/icons/favicon.ico'
+                href: './images/icons/favicon.ico',
             },
             {
                 rel: 'shortcut icon',
-                href:
-                    './images/icons/favicon.ico'
+                href: './images/icons/favicon.ico',
             },
             {
                 rel: 'apple-touch-icon',
                 sizes: '180x180',
-                href:
-                    './images/icons/apple-touch-icon.png'
+                href: './images/icons/apple-touch-icon.png',
             },
             {
                 rel: 'mask-icon',
                 color: '#666666',
-                href:
-                    './images/icons/safari-pinned-tab.svg'
+                href: './images/icons/safari-pinned-tab.svg',
             },
             {
                 rel: 'stylesheet',
-                href:
-                    'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,800italic%7CPoppins:300,400,500,600,700,800%7COswald:400,700'
-            }
-        ]
+                href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,800italic%7CPoppins:300,400,500,600,700,800%7COswald:400,700',
+            },
+        ],
     },
 
     css: [
@@ -90,7 +83,7 @@ export default {
         '~/static/css/porto-icons.min.css',
         '~/static/vendor/fontawesome-free/css/all.min.css',
         '~/static/vendor/simple-line-icons/css/simple-line-icons.min.css',
-        '~/static/sass/style.scss'
+        '~/static/sass/style.scss',
     ],
 
     plugins: [
@@ -99,29 +92,26 @@ export default {
         { src: '~/plugins/filters.js', ssr: false },
         { src: '~/plugins/directives/animate.js', ssr: false },
         { src: '~/plugins/directives/parallax.js', ssr: false },
-        { src: '~/plugins/directives/sticky.js', ssr: false }
+        { src: '~/plugins/directives/sticky.js', ssr: false },
     ],
 
-    buildModules: [
-        '@nuxtjs/style-resources',
-        'cookie-universal-nuxt'
-    ],
+    buildModules: ['@nuxtjs/style-resources', 'cookie-universal-nuxt'],
 
-    modules: [ '@nuxtjs/axios' ],
+    modules: ['@nuxtjs/axios'],
 
     router: {
-        base: '/vue/porto/demo-36/',
+        base: '/ecom-user-app',
         linkActiveClass: '',
-        linkExactActiveClass: 'active'
+        linkExactActiveClass: 'active',
     },
 
     build: {
-        publicPath: "http://d-themes.com/vue/porto/demo-36/"
+        publicPath: 'http://d-themes.com/vue/porto/demo-36/',
     },
 
     generate: {
         subFolders: false,
-        fallback: '404.html'
+        fallback: '404.html',
     },
 
     ssr: false,
@@ -132,6 +122,15 @@ export default {
 
     server: {
         port: 4000,
-        host: 'localhost'
-    }
+        host: 'localhost',
+    },
+
+    // publicRuntimeConfig: {
+    //     myPublicVariable: process.env.MY_ENV_VARIABLE,
+    //     baseUrl: process.env.VUE_APP_API_URL,
+    // },
+
+    env: {
+        baseDomain: 'http://ecom-project-api.test',
+    },
 };
