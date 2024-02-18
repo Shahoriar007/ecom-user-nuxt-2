@@ -19,7 +19,7 @@
         </div>
         <div class="sticky-info">
             <nuxt-link to="/pages/login">
-                <i class="icon-user-2"></i>Track Order
+                <i class="icon-wishlist"></i>Track Order
             </nuxt-link>
         </div>
         <div class="sticky-info">
