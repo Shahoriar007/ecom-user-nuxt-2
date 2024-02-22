@@ -59,6 +59,9 @@ export default {
 		return {
 			productSlider: productSlider
 		};
-	}
+	},
+	// mounted() {
+	// 	console.log('Products:', this.products);
+	// },
 };
 </script>

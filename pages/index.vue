@@ -12,7 +12,7 @@
             <pv-service-section></pv-service-section>
         </div>
 
-        <div class="bg-gray">
+        <div class="bg-gray" v-if="products && products.length > 0">
             <div class="container">
                 <pv-products-collection-four
                     :products="products"
@@ -111,29 +111,41 @@ export default {
         },
     },
     mounted: function () {
-        Api.get(`https://d-themes.com/vue/porto/server/demo36`)
+        Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {
                 console.log(
-                    '🚀 ~ response.data.products:',
-                    response.data.products
+                    response.data.data
                 );
-                this.products = response.data.products;
+                this.products = response.data.data;
+
+
+// console.log(this.products);
+
+
                 this.posts = response.data.posts;
                 this.featuredProducts = getProductsByAttri(
-                    response.data.products
+                    response.data.data
                 );
                 this.newProducts = getProductsByAttri(
-                    response.data.products,
+                    response.data.data,
                     'is_new'
                 );
                 this.bestProducts = getTopSellingProducts(
-                    response.data.products
+                    response.data.data
                 );
                 this.topRatedProducts = getTopRatedProducts(
-                    response.data.products
+                    response.data.data
                 );
             })
             .catch((error) => ({ error: JSON.stringify(error) }));
+
+        //     Api.get(`http://project-ecom-laravel-api.test/api/categories/active-all`)
+		// 	.then((response) => {
+		// 		console.log(response?.data?.data);
+		// 	})
+		// 	.catch((error) => ({ error: JSON.stringify(error) }));
+
+		// console.log("im here3");
 
         Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {

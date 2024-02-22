@@ -30,7 +30,7 @@
 					v-model="search_term"
 					@input="searchProducts"
 				/>
-				<div class="select-custom">
+				<!-- <div class="select-custom">
 					<select
 						:id="'searchCategory' + getId"
 						name="searchCategory"
@@ -64,7 +64,7 @@
 							Supplies
 						</option>
 					</select>
-				</div>
+				</div> -->
 				<button
 					class="btn icon-magnifier p-0"
 					title="search"

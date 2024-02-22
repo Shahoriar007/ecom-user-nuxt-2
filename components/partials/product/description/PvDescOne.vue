@@ -655,6 +655,9 @@ export default {
 					.classList.remove('active');
 			e.currentTarget.classList.add('active');
 		}
+	},
+	mounted: function() {
+		console.log(this.product);
 	}
 };
 </script>

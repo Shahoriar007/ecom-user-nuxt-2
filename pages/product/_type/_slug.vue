@@ -43,13 +43,13 @@
 						<pv-media-one :product="product"></pv-media-one>
 					</div>
 
-					<div class="col-lg-7 col-md-6 product-single-details">
+					<!-- <div class="col-lg-7 col-md-6 product-single-details">
 						<pv-detail-one
 							:product="product"
 							:prev-product="prevProduct"
 							:next-product="nextProduct"
 						></pv-detail-one>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -109,18 +109,16 @@ export default {
 		getProduct: function() {
 			this.loaded = false;
 
-			Api.get(`${baseUrl}/products/${this.$route.params.slug}`, {
-				params: { demo: currentDemo }
-			})
+			Api.get(`${baseUrl}/api/products/${this.$route.params.slug}`)
 				.then(response => {
-					this.product = response.data.product;
-					this.relatedProducts = response.data.relatedProducts;
-					this.featuredProducts = response.data.featuredProducts;
-					this.bestProducts = response.data.bestSellingProducts;
-					this.latestProducts = response.data.latestProducts;
-					this.topRatedProducts = response.data.topRatedProducts;
-					this.prevProduct = response.data.prevProduct;
-					this.nextProduct = response.data.nextProduct;
+					this.product = response.data.data;
+					// this.relatedProducts = response.data.relatedProducts;
+					// this.featuredProducts = response.data.featuredProducts;
+					// this.bestProducts = response.data.bestSellingProducts;
+					// this.latestProducts = response.data.latestProducts;
+					// this.topRatedProducts = response.data.topRatedProducts;
+					// this.prevProduct = response.data.prevProduct;
+					// this.nextProduct = response.data.nextProduct;
 
 					this.product.product_categories.map(item => {
 						this.productCategory.push(item);

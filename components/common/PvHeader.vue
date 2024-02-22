@@ -140,11 +140,14 @@ export default {
 		...mapGetters('wishlist', ['wishList'])
 	},
 	mounted: function() {
+		
+
 		let items = document.querySelectorAll('.menu-vertical > li');
 		items.forEach(item => {
 			item.addEventListener('mouseenter', this.mouseOverHandler);
 			item.addEventListener('mouseleave', this.mouseLeaveHandler);
 		});
+
 	},
 	destroyed: function() {
 		let items = document.querySelectorAll('.menu-vertical > li');

@@ -5,7 +5,7 @@
 				<img
 					v-for="(item,index) in product.large_pictures.slice(0,2)"
 					:key="`related-large-${index}`"
-					v-lazy="`${baseUrl}${item.url}`"
+					v-lazy="item.original_url"
 					alt="large-picture"
 					:width="item.width"
 					:height="item.height"
@@ -27,11 +27,11 @@
 				>-{{ discount }}%</div>
 			</div>
 
-			<div class="btn-icon-group">
+			<!-- <div class="btn-icon-group">
 				<nuxt-link
 					:to="'/product/default/' + product.slug"
 					class="btn-icon btn-add-cart"
-					v-if="product.variants.length > 0"
+					
 					key="variantProduct"
 				>
 					<i class="fa fa-arrow-right"></i>
@@ -40,21 +40,21 @@
 				<a
 					href="javascript:;"
 					class="btn-icon btn-add-cart product-type-simple"
-					v-else
+					
 					@click="addCart"
 				>
 					<i class="icon-shopping-cart"></i>
 				</a>
-			</div>
+			</div> -->
 
 			<a
 				href="javascript:;"
 				class="btn-quickview"
 				title="Quick View"
-				@click="openQuickview"
-			>Quick View</a>
+				@click="addCart"
+			>Add To Cart</a>
 
-			<div
+			<!-- <div
 				class="product-countdown-container"
 				v-if="product.until"
 			>
@@ -64,7 +64,8 @@
 					:until="product.until"
 					:compact="true"
 				></pv-count-down>
-			</div>
+			</div> -->
+
 		</figure>
 
 		<div class="product-details">
@@ -78,16 +79,16 @@
 						<template v-if="index < product.product_categories.length - 1">,</template>
 					</span>
 				</div>
-				<nuxt-link
+				<!-- <nuxt-link
 					to="/pages/wishlist"
 					class="btn-icon-wish added-wishlist"
 					title="Go to Wishlist"
 					v-if="isWishlisted"
 				>
 					<i class="icon-heart"></i>
-				</nuxt-link>
+				</nuxt-link> -->
 
-				<a
+				<!-- <a
 					href="javascript:;"
 					class="btn-icon-wish"
 					title="Add to Wishlist"
@@ -95,14 +96,15 @@
 					v-if="!isWishlisted"
 				>
 					<i class="icon-heart"></i>
-				</a>
+				</a> -->
 			</div>
 
 			<h3 class="product-title">
 				<nuxt-link :to="'/product/default/' + product.slug">{{ product.name }}</nuxt-link>
 			</h3>
 
-			<div class="ratings-container">
+			<!-- Retting -->
+			<!-- <div class="ratings-container">
 				<div class="product-ratings">
 					<span
 						class="ratings"
@@ -110,7 +112,7 @@
 					></span>
 					<span class="tooltiptext tooltip-top">{{ product.ratings.toFixed(2) }}</span>
 				</div>
-			</div>
+			</div> -->
 
 			<div
 				class="price-box"
@@ -181,6 +183,12 @@ export default {
 		}
 	},
 	mounted: function() {
+
+		console.log(this.product);
+		// console.log(this.adClass);
+		// console.log(this.isActions);
+
+
 		if (this.product.is_sale && this.product.price) {
 			this.discount =
 				((this.product.price - this.product.sale_price) /
