@@ -14,7 +14,7 @@
                 <div class="swiper-slide" v-for="item in product.large_pictures" :key="item.name">
                     <img
                         class="product-single-image"
-                        v-lazy="`${baseUrl}${item.url}`"
+                        v-lazy="item.original_url"
                         :width="item.width"
                         :height="item.height"
                         alt="lgPicture"
@@ -92,6 +92,9 @@ export default {
 		}
 	},
 	mounted: function () {
+
+		console.log(this.product);
+
 		if ( this.product !== null ) {
 			this.$nextTick( () => {
 				let self = this;

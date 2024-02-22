@@ -43,7 +43,7 @@
 											class="product-image"
 										>
 											<img
-												:src="`${baseUrl}${product.small_pictures[0].url}`"
+												:src="`${product.small_pictures[0].original_url}`"
 												:width="product.small_pictures[0].width"
 												:height="product.small_pictures[0].height"
 												alt="product"
@@ -136,7 +136,7 @@
 								<td>${{ totalPrice | priceFormat }}</td>
 							</tr>
 
-							<tr>
+							<!-- <tr>
 								<td
 									colspan="2"
 									class="text-left"
@@ -214,7 +214,7 @@
 										>Update Totals</button>
 									</form>
 								</td>
-							</tr>
+							</tr> -->
 						</tbody>
 
 						<tfoot>

@@ -2,7 +2,7 @@ import axios from 'axios';
 import nuxtConfig from '~/nuxt.config.js';
 console.log('🚀 ~ nuxtConfig:', nuxtConfig);
 
-const baseDonmain = 'https://d-themes.com/vue/porto/server';
+const baseDonmain = 'http://project-ecom-laravel-api.test';
 // 'https://d-themes.com/vue/porto/server'
 export const customHeader = {
     'Content-Type': 'application/json',

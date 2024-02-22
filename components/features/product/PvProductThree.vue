@@ -27,7 +27,7 @@
 				>-{{ discount }}%</div>
 			</div>
 
-			<div class="btn-icon-group">
+			<!-- <div class="btn-icon-group">
 				<nuxt-link
 					:to="'/product/default/' + product.slug"
 					class="btn-icon btn-add-cart"
@@ -45,14 +45,14 @@
 				>
 					<i class="icon-shopping-cart"></i>
 				</a>
-			</div>
+			</div> -->
 
 			<a
 				href="javascript:;"
 				class="btn-quickview"
 				title="Quick View"
-				@click="openQuickview"
-			>Quick View</a>
+				@click="addCart"
+			>Add To Cart</a>
 
 			<!-- <div
 				class="product-countdown-container"
@@ -65,6 +65,7 @@
 					:compact="true"
 				></pv-count-down>
 			</div> -->
+
 		</figure>
 
 		<div class="product-details">
@@ -183,7 +184,7 @@ export default {
 	},
 	mounted: function() {
 
-		// console.log(this.product);
+		console.log(this.product);
 		// console.log(this.adClass);
 		// console.log(this.isActions);
 

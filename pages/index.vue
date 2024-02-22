@@ -111,7 +111,7 @@ export default {
         },
     },
     mounted: function () {
-        Api.get(`http://project-ecom-laravel-api.test/api/active-products`)
+        Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {
                 console.log(
                     response.data.data
@@ -119,7 +119,7 @@ export default {
                 this.products = response.data.data;
 
 
-console.log(this.products);
+// console.log(this.products);
 
 
                 this.posts = response.data.posts;
@@ -147,7 +147,7 @@ console.log(this.products);
 
 		// console.log("im here3");
 
-        Api.get(`http://project-ecom-laravel-api.test/api/active-products`)
+        Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {
                 console.log('🚀 ~ response.data.products:', response);
                 // this.products = response.data.products;

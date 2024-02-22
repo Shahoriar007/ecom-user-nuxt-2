@@ -63,7 +63,7 @@ export default {
     },
     mounted: function () {
         Api.get(
-            `http://project-ecom-laravel-api.test/api/categories/active-all`
+            `${baseUrl}/api/categories/active-all`
         )
             .then((response) => {
 				this.categories = response?.data?.data;

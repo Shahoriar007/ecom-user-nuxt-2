@@ -39,18 +39,6 @@
 		</div>
 
 		<div
-			class="product-countdown-container-two mt-1"
-			v-if="product.until"
-		>
-			<h5 class="daily-deal-title">Offer Ends In:</h5>
-			<pv-count-down
-				class="product-countdown countdown-compact"
-				:until="product.until"
-				:label-short="true"
-			></pv-count-down>
-		</div>
-
-		<div
 			class="product-desc"
 			v-if="product.short_description"
 		>
@@ -283,68 +271,7 @@
 			>View cart</nuxt-link>
 		</div>
 
-		<!-- <hr class="divider mb-0 mt-0" /> -->
-
-		<!-- <div class="product-single-share mb-3">
-			<label class="sr-only">Share:</label>
-
-			<div
-				class="social-icons mr-2"
-				v-if="isShare"
-			>
-				<a
-					href="javascript:;"
-					class="social-icon social-facebook icon-facebook"
-					
-					title="Facebook"
-				></a>
-				<a
-					href="javascript:;"
-					class="social-icon social-twitter icon-twitter"
-					
-					title="Twitter"
-				></a>
-				<a
-					href="javascript:;"
-					class="social-icon social-linkedin fab fa-linkedin-in"
-					
-					title="Linkedin"
-				></a>
-				<a
-					href="javascript:;"
-					class="social-icon social-gplus fab fa-google-plus-g"
-					
-					title="Google +"
-				></a>
-				<a
-					href="javascript:;"
-					class="social-icon social-mail icon-mail-alt"
-					
-					title="Mail"
-				></a>
-			</div>
-
-			<nuxt-link
-				to="/pages/wishlist"
-				class="btn-icon-wish add-wishlist added-wishlist"
-				title="Go to Wishlist"
-				v-if="isWishlisted"
-			>
-				<i class="icon-wishlist-2"></i>
-				<span>Go to Wishlist</span>
-			</nuxt-link>
-
-			<a
-				href="javascript:;"
-				class="btn-icon-wish add-wishlist"
-				title="Add to Wishlist"
-				@click="addWishlist($event)"
-				v-if="!isWishlisted"
-			>
-				<i class="icon-wishlist-2"></i>
-				<span>Add to Wishlist</span>
-			</a>
-		</div> -->
+		
 	</div>
 </template>
 
@@ -377,7 +304,7 @@ export default {
 			maxPrice: 0,
 			qty: 1,
 			currentIndex: 0,
-			baseUrl: baseUrl,
+			baseUrl: `${baseUrl}/api/`,
 			vSizes: [],
 			vColors: [],
 			curSize: {
@@ -465,6 +392,9 @@ export default {
 		this.getFlag();
 	},
 	mounted: function() {
+
+		console.log(this.product);
+
 		if (this.product.variants && !this.product.price) {
 			this.minPrice = this.product.variants[0].price;
 

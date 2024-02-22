@@ -10,6 +10,7 @@
 			</div>
 		</div>
 
+
 		<div
 			class="row"
 			v-if="product"
@@ -62,11 +63,11 @@ export default {
 	},
 	methods: {
 		getProduct: function() {
-			Respository.get(`${baseUrl}/products/${this.slug}`, {
+			Respository.get(`${baseUrl}/api/products/${this.slug}`, {
 				params: { demo: currentDemo, quick_view: true }
 			})
 				.then(response => {
-					this.product = response.data.product;
+					this.product = response.data.data;
 				})
 				.catch(error => ({ error: JSON.stringify(error) }));
 		}

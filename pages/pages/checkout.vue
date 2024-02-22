@@ -15,7 +15,7 @@
 
 			<template v-if="cartList.length > 0">
 				<div class="login-form-container">
-					<h4>
+					<!-- <h4>
 						Returning customer?
 						<button
 							data-toggle="collapse"
@@ -25,7 +25,7 @@
 							class="btn btn-link btn-toggle"
 							@click="loginOpened = !loginOpened"
 						>Login</button>
-					</h4>
+					</h4> -->
 
 					<vue-slide-toggle :open="loginOpened">
 						<div class="login-section feature-box">
@@ -102,7 +102,7 @@
 				</div>
 
 				<div class="checkout-discount">
-					<h4>
+					<!-- <h4>
 						Have a coupon?
 						<button
 							data-toggle="collapse"
@@ -112,7 +112,7 @@
 							class="btn btn-link btn-toggle"
 							@click="codeOpened = !codeOpened"
 						>ENTER YOUR CODE</button>
-					</h4>
+					</h4> -->
 
 					<vue-slide-toggle :open="codeOpened">
 						<div class="feature-box">
@@ -327,7 +327,7 @@
 										/>
 									</div>
 
-									<div class="form-group mb-1">
+									<!-- <div class="form-group mb-1">
 										<div class="custom-control custom-checkbox">
 											<input
 												type="checkbox"
@@ -343,9 +343,9 @@
 												@click="accountOpened = !accountOpened"
 											>Create an account?</label>
 										</div>
-									</div>
+									</div> -->
 
-									<vue-slide-toggle :open="accountOpened">
+									<!-- <vue-slide-toggle :open="accountOpened">
 										<div class="form-group">
 											<label>
 												Create account password
@@ -361,9 +361,9 @@
 												required
 											/>
 										</div>
-									</vue-slide-toggle>
+									</vue-slide-toggle> -->
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<div class="custom-control custom-checkbox mt-0">
 											<input
 												type="checkbox"
@@ -531,7 +531,7 @@
 												/>
 											</div>
 										</div>
-									</vue-slide-toggle>
+									</vue-slide-toggle> -->
 
 									<div class="form-group">
 										<label class="order-comments">Order notes (optional)</label>
@@ -571,6 +571,7 @@
 										<td class="price-col">
 											<span>${{product.price | priceFormat}}</span>
 										</td>
+
 									</tr>
 								</tbody>
 								<tbody v-else>
@@ -579,14 +580,16 @@
 								<tfoot>
 									<tr class="cart-subtotal">
 										<td>
+											<h6>Delivery Charge</h6>
 											<h4>Subtotal</h4>
+											
 										</td>
 
 										<td class="price-col">
 											<span>${{ totalPrice | priceFormat }}</span>
 										</td>
 									</tr>
-									<tr class="order-shipping">
+									<!-- <tr class="order-shipping">
 										<td
 											class="text-left"
 											colspan="2"
@@ -616,7 +619,7 @@
 												</div>
 											</div>
 										</td>
-									</tr>
+									</tr> -->
 
 									<tr class="order-total">
 										<td>
