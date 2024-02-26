@@ -43,13 +43,16 @@
 						<pv-media-one :product="product"></pv-media-one>
 					</div>
 
-					<!-- <div class="col-lg-7 col-md-6 product-single-details">
-						<pv-detail-one
+					<div class="col-lg-7 col-md-6 product-single-details">
+						<!-- <pv-detail-one
 							:product="product"
 							:prev-product="prevProduct"
 							:next-product="nextProduct"
+						></pv-detail-one> -->
+						<pv-detail-one
+							:product="product"
 						></pv-detail-one>
-					</div> -->
+					</div>
 				</div>
 			</div>
 
@@ -104,6 +107,8 @@ export default {
 	},
 	created: function() {
 		this.getProduct();
+		console.log("im here");
+
 	},
 	methods: {
 		getProduct: function() {
@@ -112,17 +117,21 @@ export default {
 			Api.get(`${baseUrl}/api/products/${this.$route.params.slug}`)
 				.then(response => {
 					this.product = response.data.data;
+
+					console.log(this.product);
 					// this.relatedProducts = response.data.relatedProducts;
 					// this.featuredProducts = response.data.featuredProducts;
 					// this.bestProducts = response.data.bestSellingProducts;
 					// this.latestProducts = response.data.latestProducts;
 					// this.topRatedProducts = response.data.topRatedProducts;
-					// this.prevProduct = response.data.prevProduct;
-					// this.nextProduct = response.data.nextProduct;
+					this.prevProduct = response.data.data;
+					this.nextProduct = response.data.data;
 
 					this.product.product_categories.map(item => {
 						this.productCategory.push(item);
 					});
+
+					console.log(this.productCategory);
 
 					this.loaded = true;
 				})

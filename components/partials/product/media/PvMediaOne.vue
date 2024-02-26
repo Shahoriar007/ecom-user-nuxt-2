@@ -35,13 +35,13 @@
         >
             <div
                 class="swiper-dot swiper-slide"
-                v-for="(item,index) in product.pictures"
+                v-for="(item,index) in product.large_pictures"
                 :key="'media-one' + index"
                 @click="activeThumbItem(index, $event)"
                 :class="{ active : index === 0 }"
             >
                 <img
-                    v-lazy="`${baseUrl}${item.url}`"
+                    v-lazy="item.original_url"
                     :width="item.width"
                     :height="item.height"
                     alt="product-thumbnail"

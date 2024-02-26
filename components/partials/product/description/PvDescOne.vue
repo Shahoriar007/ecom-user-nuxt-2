@@ -55,7 +55,7 @@
 				>Reviews ({{ product.reviews }})</a>
 			</li> -->
 
-			<li
+			<!-- <li
 				class="nav-item"
 				v-if="isCustom"
 			>
@@ -68,7 +68,7 @@
 					aria-controls="product-custom-content"
 					aria-selected="false"
 				>Custom Tab</a>
-			</li>
+			</li> -->
 		</ul>
 
 		<div class="tab-content">
@@ -181,14 +181,10 @@
 					class="product-desc-content"
 					v-else
 				>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-						incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud ipsum
-						consectetur sed do, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-						commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat.
+					<p v-html="product.short_description">
+						
 					</p>
-					<ul>
+					<!-- <ul>
 						<li>
 							Any Product types that You want - Simple,
 							Configurable
@@ -203,7 +199,7 @@
 						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
 						veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat.
-					</p>
+					</p> -->
 				</div>
 			</div>
 
@@ -629,7 +625,7 @@ export default {
 		return {
 			isCustom: false,
 			isFullwidth: false,
-			isAddition: false
+			isAddition: false,
 		};
 	},
 	watch: {

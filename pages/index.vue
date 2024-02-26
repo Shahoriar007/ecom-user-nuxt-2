@@ -113,14 +113,10 @@ export default {
     mounted: function () {
         Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {
-                console.log(
-                    response.data.data
-                );
+                // console.log(
+                //     response.data.data
+                // );
                 this.products = response.data.data;
-
-
-// console.log(this.products);
-
 
                 this.posts = response.data.posts;
                 this.featuredProducts = getProductsByAttri(

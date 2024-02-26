@@ -27,7 +27,7 @@
 						>Login</button>
 					</h4> -->
 
-					<vue-slide-toggle :open="loginOpened">
+					<!-- <vue-slide-toggle :open="loginOpened">
 						<div class="login-section feature-box">
 							<div class="feature-box-content">
 								<form
@@ -98,7 +98,7 @@
 								</form>
 							</div>
 						</div>
-					</vue-slide-toggle>
+					</vue-slide-toggle> -->
 				</div>
 
 				<div class="checkout-discount">
@@ -161,6 +161,7 @@
 													>*</abbr>
 												</label>
 												<input
+													v-model="firstName"
 													type="text"
 													class="form-control"
 													required
@@ -178,6 +179,7 @@
 													>*</abbr>
 												</label>
 												<input
+													v-model="lastName"
 													type="text"
 													class="form-control"
 													required
@@ -189,6 +191,7 @@
 									<div class="form-group">
 										<label>Company name (optional)</label>
 										<input
+											v-model="companyName"
 											type="text"
 											class="form-control"
 										/>
@@ -196,103 +199,49 @@
 
 									<div class="select-custom">
 										<label>
-											Country / Region
+											Country
 											<abbr
 												class="required"
 												title="required"
 											>*</abbr>
 										</label>
-										<select
-											name="orderby"
+										<input
+											v-model="countryName"
+											type="text"
 											class="form-control"
-										>
-											<option
-												value
-												selected="selected"
-											>Vanuatu</option>
-											<option value="1">Brunei</option>
-											<option value="2">Bulgaria</option>
-											<option value="3">Burkina Faso</option>
-											<option value="4">Burundi</option>
-											<option value="5">Cameroon</option>
-										</select>
+											required
+										/>
+									</div>
+
+									<div class="form-group">
+										<label>
+											City
+											<abbr
+												class="required"
+												title="required"
+											>*</abbr>
+										</label>
+										<input
+											v-model="cityName"
+											type="text"
+											class="form-control"
+											required
+										/>
 									</div>
 
 									<div class="form-group mb-1 pb-2">
 										<label>
-											Street address
+											Detail address
 											<abbr
 												class="required"
 												title="required"
 											>*</abbr>
 										</label>
 										<input
+											v-model="detailAddress"
 											type="text"
 											class="form-control"
 											placeholder="House number and street name"
-											required
-										/>
-									</div>
-
-									<div class="form-group">
-										<input
-											type="text"
-											class="form-control"
-											placeholder="Apartment, suite, unite, etc. (optional)"
-											required
-										/>
-									</div>
-
-									<div class="form-group">
-										<label>
-											Town / City
-											<abbr
-												class="required"
-												title="required"
-											>*</abbr>
-										</label>
-										<input
-											type="text"
-											class="form-control"
-											required
-										/>
-									</div>
-
-									<div class="select-custom">
-										<label>
-											State / County
-											<abbr
-												class="required"
-												title="required"
-											>*</abbr>
-										</label>
-										<select
-											name="orderby"
-											class="form-control"
-										>
-											<option
-												value
-												selected="selected"
-											>NY</option>
-											<option value="1">Brunei</option>
-											<option value="2">Bulgaria</option>
-											<option value="3">Burkina Faso</option>
-											<option value="4">Burundi</option>
-											<option value="5">Cameroon</option>
-										</select>
-									</div>
-
-									<div class="form-group">
-										<label>
-											Postcode / Zip
-											<abbr
-												class="required"
-												title="required"
-											>*</abbr>
-										</label>
-										<input
-											type="text"
-											class="form-control"
 											required
 										/>
 									</div>
@@ -306,6 +255,7 @@
 											>*</abbr>
 										</label>
 										<input
+											v-model="phone"
 											type="tel"
 											class="form-control"
 											required
@@ -314,16 +264,12 @@
 
 									<div class="form-group">
 										<label>
-											Email address
-											<abbr
-												class="required"
-												title="required"
-											>*</abbr>
+											Email address (optional)
 										</label>
 										<input
+											v-model="email"
 											type="email"
 											class="form-control"
-											required
 										/>
 									</div>
 
@@ -536,6 +482,7 @@
 									<div class="form-group">
 										<label class="order-comments">Order notes (optional)</label>
 										<textarea
+											v-model="orderNotes"
 											class="form-control"
 											placeholder="Notes about your order, e.g. special notes for delivery."
 											required
@@ -569,7 +516,7 @@
 										</td>
 
 										<td class="price-col">
-											<span>${{product.price | priceFormat}}</span>
+											<span>(BDT)  {{product.price | priceFormat}}</span>
 										</td>
 
 									</tr>
@@ -580,13 +527,14 @@
 								<tfoot>
 									<tr class="cart-subtotal">
 										<td>
-											<h6>Delivery Charge</h6>
 											<h4>Subtotal</h4>
-											
+											<h6>Delivery Charge</h6>
 										</td>
 
 										<td class="price-col">
-											<span>${{ totalPrice | priceFormat }}</span>
+											<span>(BDT)  {{ totalPrice | priceFormat }}</span>
+
+											<h6>(BDT)  {{ deliveryCharge | priceFormat }}</h6>
 										</td>
 									</tr>
 									<!-- <tr class="order-shipping">
@@ -627,7 +575,7 @@
 										</td>
 										<td>
 											<b class="total-price">
-												<span>${{ totalPrice | priceFormat }}</span>
+												<span>(BDT)  {{ totalPrice + deliveryCharge | priceFormat }}</span>
 											</b>
 										</td>
 									</tr>
@@ -647,9 +595,9 @@
 							</div>
 
 							<button
-								type="submit"
 								class="btn btn-dark btn-place-order"
 								form="checkout-form"
+								@click="submitOrder"
 							>Place order</button>
 						</div>
 					</div>
@@ -732,6 +680,8 @@
 <script>
 import { VueSlideToggle } from 'vue-slide-toggle';
 import { mapGetters } from 'vuex';
+import Api, { baseUrl } from '~/api';
+
 
 export default {
 	components: {
@@ -742,11 +692,62 @@ export default {
 			loginOpened: false,
 			codeOpened: false,
 			accountOpened: false,
-			addressOpened: false
+			addressOpened: false,
+
+			// order
+			firstName: '',
+			lastName: '',
+			companyName: '',
+			countryName: '',
+			cityName: '',
+			detailAddress: '',
+			phone: '',
+			email: '',
+			orderNotes: '',
+
+			deliveryCharge: 70,
+
+			
 		};
 	},
 	computed: {
 		...mapGetters('cart', ['cartList', 'totalCount', 'totalPrice'])
+	},
+
+	mounted: function () {
+
+		console.log(this.cartList);
+		console.log(this.totalPrice);
+
+	},
+	methods: {
+		async submitOrder() {
+			try {
+				const order = {
+					firstName: this.firstName,
+					lastName: this.lastName,
+					companyName: this.companyName,
+					countryName: this.countryName,
+					cityName: this.cityName,
+					detailAddress: this.detailAddress,
+					phone: this.phone,
+					email: this.email,
+					orderNotes: this.orderNotes,
+					deliveryCharge: this.deliveryCharge,
+					totalPrice: this.totalPrice + this.deliveryCharge,
+					products: this.cartList
+				};
+
+				const response = await Api.post(`${baseUrl}/api/order`, order);
+				console.log(response);
+			} catch (error) {
+				console.log(error);
+		}
 	}
+
+	}
+
+
+	
 };
 </script>
