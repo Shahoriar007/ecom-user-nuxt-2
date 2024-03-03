@@ -121,17 +121,24 @@ export default {
 		};
 	},
 	created: function() {
+
 		this.getProduct();
 	},
 	methods: {
 		getProduct: function() {
 			this.loaded = false;
 
+
+
 			Api.get(`${baseUrl}/products/${this.$route.params.slug}`, {
 				params: { demo: currentDemo }
 			})
 				.then(response => {
 					this.product = response.data.product;
+					console.log(this.product);
+
+
+
 					this.relatedProducts = response.data.relatedProducts;
 					this.featuredProducts = response.data.featuredProducts;
 					this.bestProducts = response.data.bestSellingProducts;

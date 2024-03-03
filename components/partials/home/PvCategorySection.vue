@@ -63,10 +63,11 @@ export default {
     },
     mounted: function () {
         Api.get(
-            `${baseUrl}/api/categories/active-all`
+            `${baseUrl}/api/categories/featured`
         )
             .then((response) => {
 				this.categories = response?.data?.data;
+
             })
             .catch((error) => ({ error: JSON.stringify(error) }));
     },

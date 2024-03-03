@@ -2,11 +2,11 @@
 	<div>
 		<h1 class="product-title">{{ product.name }}</h1>
 
-		<pv-product-nav
+		<!-- <pv-product-nav
 			v-if="isProductNav"
 			:prev-product="prevProduct"
 			:next-product="nextProduct"
-		></pv-product-nav>
+		></pv-product-nav> -->
 
 		<hr class="short-divider" />
 
@@ -42,10 +42,15 @@
 			class="product-desc"
 			v-if="product.short_description"
 		>
-			<p>{{ product.short_description }}</p>
+			<p v-html="product.short_description"></p>
 		</div>
 
 		<ul class="single-info-list">
+			<li v-if="product.stock">
+				AVAILABLE IN STOCK:
+				<strong>{{ product.stock }}</strong>
+			</li>
+
 			<li v-if="product.sku">
 				SKU:
 				<strong>{{ product.sku }}</strong>
@@ -66,7 +71,8 @@
 				</strong>
 			</li>
 
-			<li v-if="product.product_tags.length > 0">
+			<!-- No need -->
+			<!-- <li v-if="product.product_tags.length > 0">
 				TAGS:
 				<strong>
 					<nuxt-link
@@ -79,10 +85,10 @@
 						<template v-if="index < product.product_tags.length - 1">,</template>
 					</nuxt-link>
 				</strong>
-			</li>
+			</li> -->
 		</ul>
 
-		<div
+		<!-- <div
 			class="product-filters-container"
 			v-if="product.variants.length > 0"
 		>
@@ -178,10 +184,10 @@
 					>Clear</a>
 				</vue-slide-toggle>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="product-action">
-			<vue-slide-toggle
+			<!-- <vue-slide-toggle
 				:open="isPriceShow"
 				v-if="product.variants.length > 0"
 			>
@@ -208,9 +214,9 @@
 						<span class="product-price">${{ product.variants[curIndex].price | priceFormat }}</span>
 					</template>
 				</div>
-			</vue-slide-toggle>
+			</vue-slide-toggle> -->
 
-			<div class="product-single-qty">
+			<!-- <div class="product-single-qty">
 				<div class="input-group bootstrap-touchspin bootstrap-touchspin-injected">
 					<span class="input-group-btn input-group-prepend">
 						<button
@@ -234,35 +240,33 @@
 						></button>
 					</span>
 				</div>
-			</div>
+			</div> -->
 
 			<a
 				href="javascript:;"
 				class="btn btn-dark add-cart mr-2"
 				title="Add to Cart"
 				@click="addCart"
-				:class="{ disabled: !isCartActive }"
+				
 			>Add to Cart</a>
 
 			<v-row>
-				<a
-				href="javascript:;"
-				class="btn btn-dark mr-2"
+			<a
+				href="https://wa.me/1234567890" 
+				class="btn btn-dark add-cart mr-2"
 				title="Buy Now"
-				@click="addCart"
-				:class="{ disabled: !isCartActive }"
+				target="_blank"
 			>Buy Now (Whatsapp)</a>
-			</v-row>
+		</v-row>
 
 			
 			<b-row>
-			<a
-				href="javascript:;"
-				class="btn btn-dark mr-2"
-				title="Buy Now"
-				@click="addCart"
-				:class="{ disabled: !isCartActive }"
-			>Buy Now (Messenger)</a>
+				<a
+					href="https://m.me/yourusername"  
+					class="btn btn-dark add-cart mr-2"
+					title="Buy Now"
+					target="_blank"
+				>Buy Now (Messenger)</a>
 			</b-row>
 
 			<nuxt-link
@@ -291,8 +295,8 @@ export default {
 	},
 	props: {
 		product: Object,
-		prevProduct: Object,
-		nextProduct: Object,
+		// prevProduct: Object,
+		// nextProduct: Object,
 		isProductNav: {
 			type: Boolean,
 			default: true
@@ -304,7 +308,7 @@ export default {
 			maxPrice: 0,
 			qty: 1,
 			currentIndex: 0,
-			baseUrl: `${baseUrl}/api/`,
+			baseUrl: `${baseUrl}`,
 			vSizes: [],
 			vColors: [],
 			curSize: {
@@ -331,53 +335,53 @@ export default {
 	},
 	computed: {
 		...mapGetters('wishlist', ['wishList']),
-		curIndex: function() {
-			if (this.curColor.name !== null && this.vSizes.length === 0) {
-				let index = this.product.variants.findIndex(
-					item => item.colors[0].color_name === this.curColor.name
-				);
-				this.tIndex = index;
-				return index;
-			}
-			if (this.curSize.name !== null && this.vColors.length === 0) {
-				let index = this.product.variants.findIndex(
-					item => item.size[0].size_name === this.curSize.name
-				);
-				this.tIndex = index;
-				return index;
-			}
-			if (this.curColor.name !== null && this.curSize.name !== null) {
-				let index = this.product.variants.findIndex(
-					item =>
-						item.colors[0].color_name === this.curColor.name &&
-						item.size[0].size_name === this.curSize.name
-				);
-				this.tIndex = index;
-				return index;
-			} else {
-				return this.tIndex;
-			}
-		},
+		// curIndex: function() {
+		// 	if (this.curColor.name !== null && this.vSizes.length === 0) {
+		// 		let index = this.product.variants.findIndex(
+		// 			item => item.colors[0].color_name === this.curColor.name
+		// 		);
+		// 		this.tIndex = index;
+		// 		return index;
+		// 	}
+		// 	if (this.curSize.name !== null && this.vColors.length === 0) {
+		// 		let index = this.product.variants.findIndex(
+		// 			item => item.size[0].size_name === this.curSize.name
+		// 		);
+		// 		this.tIndex = index;
+		// 		return index;
+		// 	}
+		// 	if (this.curColor.name !== null && this.curSize.name !== null) {
+		// 		let index = this.product.variants.findIndex(
+		// 			item =>
+		// 				item.colors[0].color_name === this.curColor.name &&
+		// 				item.size[0].size_name === this.curSize.name
+		// 		);
+		// 		this.tIndex = index;
+		// 		return index;
+		// 	} else {
+		// 		return this.tIndex;
+		// 	}
+		// },
 		isCartActive: function() {
 			if (this.product.stock < parseInt(this.qty)) return false;
-			if (this.product.variants.length === 0) return true;
-			if (this.curSize.name !== null && this.curColor.name !== null)
-				return true;
-			if (this.curColor.name !== null && this.vSizes.length === 0)
-				return true;
-			if (this.curSize.name !== null && this.vColors.length === 0)
-				return true;
+			if (this.product.length === 0) return true;
+			// if (this.curSize.name !== null && this.curColor.name !== null)
+			// 	return true;
+			// if (this.curColor.name !== null && this.vSizes.length === 0)
+			// 	return true;
+			// if (this.curSize.name !== null && this.vColors.length === 0)
+			// 	return true;
 			return false;
 		},
-		isWishlisted: function() {
-			if (
-				this.wishList.findIndex(
-					item => item.name === this.product.name
-				) > -1
-			)
-				return true;
-			return false;
-		},
+		// isWishlisted: function() {
+		// 	if (
+		// 		this.wishList.findIndex(
+		// 			item => item.name === this.product.name
+		// 		) > -1
+		// 	)
+		// 		return true;
+		// 	return false;
+		// },
 		isPriceShow: function() {
 			if (this.curSize.name !== null && this.curColor.name !== null)
 				return true;
@@ -405,35 +409,35 @@ export default {
 			});
 		}
 
-		if (this.product.variants.length > 0) {
-			if (this.product.variants[0].size[0])
-				this.product.variants.forEach(item => {
-					if (
-						this.vSizes.findIndex(
-							vsize => vsize.name === item.size[0].size_name
-						) === -1
-					)
-						this.vSizes.push({
-							name: item.size[0].size_name,
-							text: item.size[0].size,
-							image: item.size[0].size_thumbnail
-						});
-				});
+		// if (this.product.variants.length > 0) {
+		// 	if (this.product.variants[0].size[0])
+		// 		this.product.variants.forEach(item => {
+		// 			if (
+		// 				this.vSizes.findIndex(
+		// 					vsize => vsize.name === item.size[0].size_name
+		// 				) === -1
+		// 			)
+		// 				this.vSizes.push({
+		// 					name: item.size[0].size_name,
+		// 					text: item.size[0].size,
+		// 					image: item.size[0].size_thumbnail
+		// 				});
+		// 		});
 
-			if (this.product.variants[0].colors[0])
-				this.product.variants.forEach(item => {
-					if (
-						this.vColors.findIndex(
-							vColor => vColor.name === item.colors[0].color_name
-						) === -1
-					)
-						this.vColors.push({
-							name: item.colors[0].color_name,
-							text: item.colors[0].color,
-							image: item.colors[0].color_thumbnail
-						});
-				});
-		}
+		// 	if (this.product.variants[0].colors[0])
+		// 		this.product.variants.forEach(item => {
+		// 			if (
+		// 				this.vColors.findIndex(
+		// 					vColor => vColor.name === item.colors[0].color_name
+		// 				) === -1
+		// 			)
+		// 				this.vColors.push({
+		// 					name: item.colors[0].color_name,
+		// 					text: item.colors[0].color,
+		// 					image: item.colors[0].color_thumbnail
+		// 				});
+		// 		});
+		// }
 	},
 	methods: {
 		...mapActions('cart', ['addToCart']),
@@ -445,52 +449,10 @@ export default {
 			if (this.qty > 1) this.qty--;
 		},
 		addCart: function() {
-			if (this.isCartActive) {
-				let saledProduct;
-				if (this.product.variants.length > 0) {
-					let saledPrice;
-					if (this.product.price)
-						saledPrice = this.product.sale_price
-							? this.product.sale_price
-							: this.product.price;
-					else {
-						saledPrice = this.product.variants[this.curIndex]
-							.sale_price
-							? this.product.variants[this.curIndex].sale_price
-							: this.product.variants[this.curIndex].price;
-					}
-
-					let saledName;
-					if (this.curColor.name && this.curSize.name) {
-						saledName =
-							this.curColor.name.charAt(0).toUpperCase() +
-							this.curColor.name.slice(1) +
-							', ' +
-							this.curSize.name;
-					}
-					if (!this.curColor.name) {
-						saledName = this.curSize.name;
-					}
-					if (!this.curSize.name) {
-						saledName =
-							this.curColor.name.charAt(0).toUpperCase() +
-							this.curColor.name.slice(1);
-					}
-
-					saledProduct = {
-						...this.product,
-						qty: this.qty,
-						name: this.product.name + ' - ' + saledName,
-						price: saledPrice
-					};
-				} else {
-					saledProduct = {
-						...this.product,
-						qty: this.qty,
-						price: this.product.sale_price
-							? this.product.sale_price
-							: this.product.price
-					};
+			if (this.product.stock > 0) {
+				let saledProduct = { ...this.product };
+				if (this.product.is_sale) {
+					saledProduct.price = this.product.sale_price;
 				}
 
 				this.addToCart({ product: saledProduct });

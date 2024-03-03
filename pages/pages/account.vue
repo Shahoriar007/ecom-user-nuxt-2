@@ -2,7 +2,7 @@
 	<main class="main">
 		<div class="page-header">
 			<div class="container d-flex flex-column align-items-center">
-				<nav
+				<!-- <nav
 					aria-label="breadcrumb"
 					class="breadcrumb-nav border-0"
 				>
@@ -21,7 +21,7 @@
 							aria-current="page"
 						>My Account</li>
 					</ol>
-				</nav>
+				</nav> -->
 
 				<h1>My Account</h1>
 			</div>
@@ -68,7 +68,7 @@
 									>Orders</a>
 								</li>
 
-								<li class="nav-item">
+								<!-- <li class="nav-item">
 									<a
 										class="nav-link"
 										id="download-tab"
@@ -134,7 +134,7 @@
 										aria-controls="shipping"
 										aria-selected="false"
 									>Shipping</a>
-								</li>
+								</li> -->
 							</ul>
 						</pv-tabs>
 					</div>
@@ -148,7 +148,7 @@
 						aria-labelledby="dashboard-tab"
 					>
 						<div class="dashboard-content">
-							<p>
+							<!-- <p>
 								Hello
 								<strong class="text-dark">Editor</strong> (not
 								<strong class="text-dark">Editor</strong>?
@@ -156,9 +156,9 @@
 									to="/pages/login"
 									class="btn btn-link"
 								>Log out</nuxt-link>)
-							</p>
+							</p> -->
 
-							<p>
+							<!-- <p>
 								From your account dashboard you can view your
 								<a
 									class="btn btn-link link-to-tab"
@@ -178,7 +178,7 @@
 									data-toggle="edit"
 									@click.prevent="tabClicked($event)"
 								>edit your password and account details.</a>
-							</p>
+							</p> -->
 
 							<div class="mb-2 mb-lg-5"></div>
 
@@ -201,7 +201,7 @@
 									</div>
 								</div>
 
-								<div class="col-6 col-md-4">
+								<!-- <div class="col-6 col-md-4">
 									<div
 										class="feature-box text-center pb-4"
 										data-toggle="download"
@@ -275,7 +275,7 @@
 											<h3>LOGOUT</h3>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 							<!-- End .row -->
 						</div>
@@ -324,7 +324,7 @@
 					</div>
 					<!-- End .tab-pane -->
 
-					<div
+					<!-- <div
 						class="tab-pane fade"
 						id="download"
 						role="tabpanel"
@@ -342,10 +342,10 @@
 								>GO SHOP</nuxt-link>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- End .tab-pane -->
 
-					<div
+					<!-- <div
 						class="tab-pane fade"
 						id="address"
 						role="tabpanel"
@@ -389,10 +389,10 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- End .tab-pane -->
 
-					<div
+					<!-- <div
 						class="tab-pane fade"
 						id="edit"
 						role="tabpanel"
@@ -511,10 +511,10 @@
 								</div>
 							</form>
 						</div>
-					</div>
+					</div> -->
 					<!-- End .tab-pane -->
 
-					<div
+					<!-- <div
 						class="tab-pane fade"
 						id="billing"
 						role="tabpanel"
@@ -676,10 +676,10 @@
 								</div>
 							</form>
 						</div>
-					</div>
+					</div> -->
 					<!-- End .tab-pane -->
 
-					<div
+					<!-- <div
 						class="tab-pane fade"
 						id="shipping"
 						role="tabpanel"
@@ -816,7 +816,7 @@
 								</div>
 							</form>
 						</div>
-					</div>
+					</div> -->
 					<!-- End .tab-pane -->
 				</div>
 			</div>
