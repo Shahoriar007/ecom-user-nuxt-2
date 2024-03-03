@@ -6,7 +6,7 @@
 		v-animate
 	>
 		<div class="heading shop-list d-flex align-items-center flex-wrap bg-gray mb-0 pl-0 pr-0">
-			<h4 class="section-title text-transform-none mb-0 mr-0">Recently Viewed Products</h4>
+			<h4 class="section-title text-transform-none mb-0 mr-0">{{ tags[0] }}</h4>
 			<nuxt-link
 				class="view-all ml-auto"
 				to="/shop"
@@ -53,7 +53,8 @@ export default {
 		PvProductThree
 	},
 	props: {
-		products: Array
+		products: Array,
+		tags: "",
 	},
 	data: function() {
 		return {

@@ -15,21 +15,25 @@
         <div class="bg-gray" v-if="products && products.length > 0">
             <div class="container">
                 <pv-products-collection-four
-                    :products="products"
+                    :products="flashSaleProducts"
+                    :tags = "['Flash Sale']"
                 ></pv-products-collection-four>
 
                 <pv-products-collection-four
-                    :products="products"
-                ></pv-products-collection-four>
-
-                <pv-feature-section></pv-feature-section>
-
-                <pv-products-collection-four
-                    :products="products"
-                ></pv-products-collection-four>
-
-                <pv-products-collection-four
-                    :products="products"
+                    :products="isForYouProducts"
+                    :tags = "['For You']"
+                    ></pv-products-collection-four>
+                    
+                    <pv-feature-section></pv-feature-section>
+                    
+                    <pv-products-collection-four
+                    :products="newArrivalProducts"
+                    :tags = "['New Arrival']"
+                    ></pv-products-collection-four>
+                    
+                    <pv-products-collection-four
+                    :products="hotDealProducts"
+                    :tags = "['Hot Deals']"
                 ></pv-products-collection-four>
             </div>
         </div>
@@ -56,9 +60,13 @@ import PvCategorySectionThree from '~/components/partials/home/PvCategorySection
 import PvCategorySectionFour from '~/components/partials/home/PvCategorySectionFour';
 
 import {
-    getProductsByAttri,
     getTopSellingProducts,
     getTopRatedProducts,
+
+    getProductsByAttri,
+    getProductsByAttriSale,
+    getProductsByAttriForYou,
+    getProductsByAttriNewArrival,
 } from '~/utils/service';
 import { getCookie } from '~/utils';
 import Api, { baseUrl } from '~/api';
@@ -87,10 +95,12 @@ export default {
         return {
             products: [],
             posts: [],
-            featuredProducts: [],
-            newProducts: [],
+            hotDealProducts: [],
+            flashSaleProducts: [],
             bestProducts: [],
             topRatedProducts: [],
+            isForYouProducts: [],
+            newArrivalProducts: [],
         };
     },
     computed: {
@@ -119,19 +129,21 @@ export default {
                 this.products = response.data.data;
 
                 this.posts = response.data.posts;
-                this.featuredProducts = getProductsByAttri(
-                    response.data.data
-                );
-                this.newProducts = getProductsByAttri(
+
+                this.flashSaleProducts = getProductsByAttriSale(
                     response.data.data,
-                    'is_new'
                 );
-                this.bestProducts = getTopSellingProducts(
+                this.isForYouProducts = getProductsByAttriForYou(
+                    response.data.data,
+                );
+                this.newArrivalProducts = getProductsByAttriNewArrival(
+                    response.data.data,
+                );
+                this.hotDealProducts = getProductsByAttri(
                     response.data.data
                 );
-                this.topRatedProducts = getTopRatedProducts(
-                    response.data.data
-                );
+                
+                
             })
             .catch((error) => ({ error: JSON.stringify(error) }));
 
@@ -148,10 +160,10 @@ export default {
                 console.log('🚀 ~ response.data.products:', response);
                 // this.products = response.data.products;
                 // this.posts = response.data.posts;
-                // this.featuredProducts = getProductsByAttri(
+                // this.hotDealProducts = getProductsByAttri(
                 //     response.data.products
                 // );
-                // this.newProducts = getProductsByAttri(
+                // this.flashSaleProducts = getProductsByAttri(
                 //     response.data.products,
                 //     'is_new'
                 // );
