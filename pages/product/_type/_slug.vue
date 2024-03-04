@@ -118,7 +118,6 @@ export default {
 				.then(response => {
 					this.product = response.data.data;
 
-					console.log(this.product);
 					// this.relatedProducts = response.data.relatedProducts;
 					// this.featuredProducts = response.data.featuredProducts;
 					// this.bestProducts = response.data.bestSellingProducts;
@@ -131,7 +130,6 @@ export default {
 						this.productCategory.push(item);
 					});
 
-					console.log(this.productCategory);
 
 					this.loaded = true;
 				})

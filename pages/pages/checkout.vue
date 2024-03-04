@@ -151,17 +151,17 @@
 									id="checkout-form"
 								>
 									<div class="row">
-										<div class="col-md-6">
+										<div class="col-md-12">
 											<div class="form-group">
 												<label>
-													First name
+													Full name
 													<abbr
 														class="required"
 														title="required"
 													>*</abbr>
 												</label>
 												<input
-													v-model="firstName"
+													v-model="fullName"
 													type="text"
 													class="form-control"
 													required
@@ -169,7 +169,7 @@
 											</div>
 										</div>
 
-										<div class="col-md-6">
+										<!-- <div class="col-md-6">
 											<div class="form-group">
 												<label>
 													Last name
@@ -185,19 +185,19 @@
 													required
 												/>
 											</div>
-										</div>
+										</div> -->
 									</div>
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>Company name (optional)</label>
 										<input
 											v-model="companyName"
 											type="text"
 											class="form-control"
 										/>
-									</div>
+									</div> -->
 
-									<div class="select-custom">
+									<!-- <div class="select-custom">
 										<label>
 											Country
 											<abbr
@@ -211,9 +211,9 @@
 											class="form-control"
 											required
 										/>
-									</div>
+									</div> -->
 
-									<div class="form-group">
+									<!-- <div class="form-group">
 										<label>
 											City
 											<abbr
@@ -227,7 +227,7 @@
 											class="form-control"
 											required
 										/>
-									</div>
+									</div> -->
 
 									<div class="form-group mb-1 pb-2">
 										<label>
@@ -537,12 +537,12 @@
 											<h6>(BDT)  {{ deliveryCharge | priceFormat }}</h6>
 										</td>
 									</tr>
-									<!-- <tr class="order-shipping">
+									<tr class="order-shipping">
 										<td
 											class="text-left"
 											colspan="2"
 										>
-											<h4 class="m-b-sm">Shipping</h4>
+											<h4 class="m-b-sm">Delivery Charge</h4>
 
 											<div class="form-group form-group-custom-control">
 												<div class="custom-control custom-radio d-flex">
@@ -550,9 +550,10 @@
 														type="radio"
 														class="custom-control-input"
 														name="radio"
-														checked
+														value= 80
+														v-model="deliveryCharge"
 													/>
-													<label class="custom-control-label">Local Pickup</label>
+													<label class="custom-control-label">Inside Dhaka</label>
 												</div>
 											</div>
 
@@ -562,12 +563,16 @@
 														type="radio"
 														name="radio"
 														class="custom-control-input"
+														checked
+														value= 120
+														v-model="deliveryCharge"
+														
 													/>
-													<label class="custom-control-label">Flat Rate</label>
+													<label class="custom-control-label">Outside Dhaka</label>
 												</div>
 											</div>
 										</td>
-									</tr> -->
+									</tr>
 
 									<tr class="order-total">
 										<td>
@@ -575,7 +580,7 @@
 										</td>
 										<td>
 											<b class="total-price">
-												<span>(BDT)  {{ totalPrice + deliveryCharge | priceFormat }}</span>
+												<span>(BDT)  {{ Number(totalPrice) + Number(deliveryCharge) | priceFormat }}</span>
 											</b>
 										</td>
 									</tr>
@@ -586,10 +591,7 @@
 								<h4 class>Payment methods</h4>
 								<div class="info-box with-icon p-0">
 									<p>
-										Sorry, it seems that there are no available
-										payment methods for your state. Please
-										contact us if you require assistance or wish
-										to make alternate arrangements.
+										Cash On Delivery.
 									</p>
 								</div>
 							</div>
@@ -694,7 +696,8 @@ export default {
 			accountOpened: false,
 			addressOpened: false,
 
-			// order
+			//order
+			fullName: '',
 			firstName: '',
 			lastName: '',
 			companyName: '',
@@ -705,7 +708,7 @@ export default {
 			email: '',
 			orderNotes: '',
 
-			deliveryCharge: 70,
+			deliveryCharge: '',
 
 			
 		};
@@ -716,15 +719,16 @@ export default {
 
 	mounted: function () {
 
-		console.log(this.cartList);
-		console.log(this.totalPrice);
+		// console.log(this.cartList);
+		// console.log(this.totalPrice);
 
 	},
 	methods: {
 		async submitOrder() {
 			try {
 				const order = {
-					firstName: this.firstName,
+					fullName: this.fullName,
+					firstName: this.fullName,
 					lastName: this.lastName,
 					companyName: this.companyName,
 					countryName: this.countryName,

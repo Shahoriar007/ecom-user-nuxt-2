@@ -38,12 +38,24 @@
 			</template>
 		</div>
 
+		<a
+				:href="product.video_link"
+				class="btn btn-danger add-cart mr-2"
+				title="Buy Now"
+				target="_blank"
+			>Video</a>
+
+			<br>
+			<br>
+
 		<div
 			class="product-desc"
 			v-if="product.short_description"
 		>
 			<p v-html="product.short_description"></p>
 		</div>
+
+		
 
 		<ul class="single-info-list">
 			<li v-if="product.stock">
@@ -251,12 +263,20 @@
 			>Add to Cart</a>
 
 			<v-row>
+				<a
+				href="javascript:;" 
+				class="btn btn-dark add-cart mr-2"
+				title="Buy Now"
+				@click="buyNow"
+
+			>Buy Now</a>
 			<a
 				href="https://wa.me/1234567890" 
 				class="btn btn-dark add-cart mr-2"
 				title="Buy Now"
 				target="_blank"
-			>Buy Now (Whatsapp)</a>
+			>Whatsapp</a>
+			
 		</v-row>
 
 			
@@ -266,7 +286,7 @@
 					class="btn btn-dark add-cart mr-2"
 					title="Buy Now"
 					target="_blank"
-				>Buy Now (Messenger)</a>
+				>Messenger</a>
 			</b-row>
 
 			<nuxt-link
@@ -458,6 +478,20 @@ export default {
 				this.addToCart({ product: saledProduct });
 			}
 		},
+
+		buyNow: function() {
+			if (this.product.stock > 0) {
+				let saledProduct = { ...this.product };
+				if (this.product.is_sale) {
+					saledProduct.price = this.product.sale_price;
+				}
+
+				this.addToCart({ product: saledProduct });
+			}
+
+			this.$router.push('/pages/cart');
+		},
+
 		addWishlist: function(e) {
 			e.currentTarget.classList.add('load-more-overlay', 'loading');
 
