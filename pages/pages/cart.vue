@@ -87,7 +87,7 @@
 									colspan="5"
 									class="clearfix"
 								>
-									<div class="float-left">
+									<!-- <div class="float-left">
 										<div class="cart-discount">
 											<form action="#">
 												<div class="input-group">
@@ -109,7 +109,7 @@
 												</div>
 											</form>
 										</div>
-									</div>
+									</div> -->
 
 									<div class="float-right">
 										<button

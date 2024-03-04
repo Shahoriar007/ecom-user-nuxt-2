@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<nav class="toolbox sticky-header horizontal-filter filter-sorts">
+		<!-- <nav class="toolbox sticky-header horizontal-filter filter-sorts">
 			<div
 				class="sidebar-overlay d-lg-none"
 				@click="toggleSidebar"
@@ -137,7 +137,7 @@
 					<i class="icon-mode-list"></i>
 				</nuxt-link>
 			</div>
-		</nav>
+		</nav> -->
 
 		<div class="divide-line-wrapper">
 			<div class="row row-joined divide-line product-section">
@@ -230,21 +230,24 @@ export default {
 		getProducts: function() {
 			this.products = null;
 			this.totalCount = null;
-			Api.get(`${baseUrl}/shop`, {
-				params: {
-					...this.$route.query,
-					demo: currentDemo,
-					order_by: this.orderBy,
-					per_page: this.itemsPerPage
-				}
-			})
+
+			Api.get(`${baseUrl}/api/active-products`)
 				.then(response => {
-					this.products = response.data.products;
-					this.totalCount = response.data.totalCount;
+					this.products = response.data.data;
+					//this.totalCount = response.data.totalCount;
+					scrollTopHandler();
+				})
+				.catch(error => ({ error: JSON.stringify(error) }));
+
+			Api.get(`${baseUrl}/api/total-products`)
+				.then(response => {
+					this.totalCount = response.data.total_products;
 					scrollTopHandler();
 				})
 				.catch(error => ({ error: JSON.stringify(error) }));
 		},
+
+
 		colorFilterRoute: function(item) {
 			let selectedColors = this.$route.query.color
 				? this.$route.query.color.split(',')
