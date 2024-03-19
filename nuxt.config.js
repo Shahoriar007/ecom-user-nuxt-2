@@ -1,7 +1,7 @@
 export default {
     head: {
-        titleTemplate: 'Porto - Multi-purpose Ecomerce template with Vue.js',
-        title: 'Porto - Multi-purpose Ecomerce template with Vue.js',
+        titleTemplate: 'Flare Brand',
+        title: 'Flare Brand',
         meta: [
             { charset: 'utf-8' },
             {
@@ -23,11 +23,11 @@ export default {
             },
             {
                 name: 'app-mobile-web-app-title',
-                content: 'Porto',
+                content: 'Flare Brand',
             },
             {
                 name: 'application-name',
-                content: 'Porto Vue eCommerce Template',
+                content: 'Flare Brand',
             },
             {
                 name: 'msapplication-TileColor',
