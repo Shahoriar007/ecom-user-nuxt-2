@@ -1,21 +1,23 @@
 <template>
-	<main class="main main-test">
-		<div class="container checkout-container">
-			<ul class="checkout-progress-bar d-flex justify-content-center flex-wrap">
-				<li>
-					<nuxt-link to="/pages/cart">Shopping Cart</nuxt-link>
-				</li>
-				<li class="active">
-					<nuxt-link to="/pages/checkout">Checkout</nuxt-link>
-				</li>
-				<li class="disabled">
-					<a href="javascript:;">Order Complete</a>
-				</li>
-			</ul>
+    <main class="main main-test">
+        <div class="container checkout-container">
+            <ul
+                class="checkout-progress-bar d-flex justify-content-center flex-wrap"
+            >
+                <li>
+                    <nuxt-link to="/pages/cart">Shopping Cart</nuxt-link>
+                </li>
+                <li class="active">
+                    <nuxt-link to="/pages/checkout">Checkout</nuxt-link>
+                </li>
+                <li class="disabled">
+                    <a href="javascript:;">Order Complete</a>
+                </li>
+            </ul>
 
-			<template v-if="cartList.length > 0">
-				<div class="login-form-container">
-					<!-- <h4>
+            <template v-if="cartList.length > 0">
+                <div class="login-form-container">
+                    <!-- <h4>
 						Returning customer?
 						<button
 							data-toggle="collapse"
@@ -27,7 +29,7 @@
 						>Login</button>
 					</h4> -->
 
-					<!-- <vue-slide-toggle :open="loginOpened">
+                    <!-- <vue-slide-toggle :open="loginOpened">
 						<div class="login-section feature-box">
 							<div class="feature-box-content">
 								<form
@@ -99,10 +101,10 @@
 							</div>
 						</div>
 					</vue-slide-toggle> -->
-				</div>
+                </div>
 
-				<div class="checkout-discount">
-					<!-- <h4>
+                <div class="checkout-discount">
+                    <!-- <h4>
 						Have a coupon?
 						<button
 							data-toggle="collapse"
@@ -114,62 +116,65 @@
 						>ENTER YOUR CODE</button>
 					</h4> -->
 
-					<vue-slide-toggle :open="codeOpened">
-						<div class="feature-box">
-							<div class="feature-box-content">
-								<p>If you have a coupon code, please apply it below.</p>
+                    <vue-slide-toggle :open="codeOpened">
+                        <div class="feature-box">
+                            <div class="feature-box-content">
+                                <p>
+                                    If you have a coupon code, please apply it
+                                    below.
+                                </p>
 
-								<form action="#">
-									<div class="input-group">
-										<input
-											type="text"
-											class="form-control form-control-sm w-auto"
-											placeholder="Coupon code"
-											required
-										/>
-										<div class="input-group-append">
-											<button
-												class="btn btn-sm mt-0"
-												type="submit"
-											>Apply Coupon</button>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</vue-slide-toggle>
-				</div>
+                                <form action="#">
+                                    <div class="input-group">
+                                        <input
+                                            type="text"
+                                            class="form-control form-control-sm w-auto"
+                                            placeholder="Coupon code"
+                                            required
+                                        />
+                                        <div class="input-group-append">
+                                            <button
+                                                class="btn btn-sm mt-0"
+                                                type="submit"
+                                            >
+                                                Apply Coupon
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </vue-slide-toggle>
+                </div>
 
-				<div class="row">
-					<div class="col-lg-7">
-						<ul class="checkout-steps">
-							<li>
-								<h2 class="step-title">Billing details</h2>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <ul class="checkout-steps">
+                            <li>
+                                <h2 class="step-title">Billing details</h2>
 
-								<form
-									action="#"
-									id="checkout-form"
-								>
-									<div class="row">
-										<div class="col-md-12">
-											<div class="form-group">
-												<label>
-													Full name
-													<abbr
-														class="required"
-														title="required"
-													>*</abbr>
-												</label>
-												<input
-													v-model="fullName"
-													type="text"
-													class="form-control"
-													required
-												/>
-											</div>
-										</div>
+                                <form action="#" id="checkout-form">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>
+                                                    Full name
+                                                    <abbr
+                                                        class="required"
+                                                        title="required"
+                                                        >*</abbr
+                                                    >
+                                                </label>
+                                                <input
+                                                    v-model="fullName"
+                                                    type="text"
+                                                    class="form-control"
+                                                    required
+                                                />
+                                            </div>
+                                        </div>
 
-										<!-- <div class="col-md-6">
+                                        <!-- <div class="col-md-6">
 											<div class="form-group">
 												<label>
 													Last name
@@ -186,9 +191,9 @@
 												/>
 											</div>
 										</div> -->
-									</div>
+                                    </div>
 
-									<!-- <div class="form-group">
+                                    <!-- <div class="form-group">
 										<label>Company name (optional)</label>
 										<input
 											v-model="companyName"
@@ -197,7 +202,7 @@
 										/>
 									</div> -->
 
-									<!-- <div class="select-custom">
+                                    <!-- <div class="select-custom">
 										<label>
 											Country
 											<abbr
@@ -213,7 +218,7 @@
 										/>
 									</div> -->
 
-									<!-- <div class="form-group">
+                                    <!-- <div class="form-group">
 										<label>
 											City
 											<abbr
@@ -229,51 +234,77 @@
 										/>
 									</div> -->
 
-									<div class="form-group mb-1 pb-2">
-										<label>
-											Detail address
-											<abbr
-												class="required"
-												title="required"
-											>*</abbr>
-										</label>
-										<input
-											v-model="detailAddress"
-											type="text"
-											class="form-control"
-											placeholder="House number and street name"
-											required
-										/>
-									</div>
+                                    <!-- <div class="form-group mb-1 pb-2">
+                                        <label>
+                                            Detail address
+                                            <abbr
+                                                class="required"
+                                                title="required"
+                                                >*</abbr
+                                            >
+                                        </label>
+                                        <input
+                                            v-model="detailAddress"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="House number and street name"
+                                            required
+                                        />
+                                    </div> -->
+                                    <div class="form-group mb-1 pb-2">
+                                        <label>
+                                            Detail address
+                                            <abbr
+                                                class="required"
+                                                title="required"
+                                                >*</abbr
+                                            >
+                                        </label>
+                                        <input
+                                            v-model="detailAddress"
+                                            @input="validateDetailAddress"
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="House number and street name"
+                                            required
+                                        />
+                                        <div
+                                            v-if="detailAddressError"
+                                            class="text-danger"
+                                        >
+                                            Minimum 6 characters required
+                                        </div>
+                                    </div>
 
-									<div class="form-group">
-										<label>
-											Phone
-											<abbr
-												class="required"
-												title="required"
-											>*</abbr>
-										</label>
-										<input
-											v-model="phone"
-											type="tel"
-											class="form-control"
-											required
-										/>
-									</div>
+                                    <div class="form-group">
+                                        <label>
+                                            Phone
+                                            <abbr
+                                                class="required"
+                                                title="required"
+                                                >*</abbr
+                                            >
+                                        </label>
+                                        <input
+                                            v-model="phone"
+                                            type="tel"
+                                            class="form-control"
+                                            required
+                                        />
+                                    </div>
 
-									<div class="form-group">
-										<label>
-											Email address (optional)
-										</label>
-										<input
-											v-model="email"
-											type="email"
-											class="form-control"
-										/>
-									</div>
+                                    <div class="form-group">
+                                        <label>
+                                            Email address (optional)
+                                        </label>
+                                        <input
+                                            v-model="email"
+                                            type="email"
+                                            class="form-control"
+                                        />
+                                    </div>
 
-									<!-- <div class="form-group mb-1">
+                                    <!-- <div class="form-group mb-1">
 										<div class="custom-control custom-checkbox">
 											<input
 												type="checkbox"
@@ -291,7 +322,7 @@
 										</div>
 									</div> -->
 
-									<!-- <vue-slide-toggle :open="accountOpened">
+                                    <!-- <vue-slide-toggle :open="accountOpened">
 										<div class="form-group">
 											<label>
 												Create account password
@@ -309,7 +340,7 @@
 										</div>
 									</vue-slide-toggle> -->
 
-									<!-- <div class="form-group">
+                                    <!-- <div class="form-group">
 										<div class="custom-control custom-checkbox mt-0">
 											<input
 												type="checkbox"
@@ -479,204 +510,238 @@
 										</div>
 									</vue-slide-toggle> -->
 
-									<div class="form-group">
-										<label class="order-comments">Order notes (optional)</label>
-										<textarea
-											v-model="orderNotes"
-											class="form-control"
-											placeholder="Notes about your order, e.g. special notes for delivery."
-											required
-										></textarea>
-									</div>
-								</form>
-							</li>
-						</ul>
-					</div>
+                                    <div class="form-group">
+                                        <label class="order-comments"
+                                            >Order notes (optional)</label
+                                        >
+                                        <textarea
+                                            v-model="orderNotes"
+                                            class="form-control"
+                                            placeholder="Notes about your order, e.g. special notes for delivery."
+                                            
+                                        ></textarea>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
 
-					<div class="col-lg-5">
-						<div class="order-summary">
-							<h3>YOUR ORDER</h3>
+                    <div class="col-lg-5">
+                        <div class="order-summary">
+                            <h3>YOUR ORDER</h3>
 
-							<table class="table table-mini-cart">
-								<thead>
-									<tr>
-										<th colspan="2">Product</th>
-									</tr>
-								</thead>
-								<tbody v-if="cartList.length > 0">
-									<tr
-										v-for="(product, index) in cartList"
-										:key="'cart-product-' + index"
-									>
-										<td class="product-col">
-											<h2 class="product-title">
-												{{product.name}} ×
-												<span class="product-qty">{{product.qty}}</span>
-											</h2>
-										</td>
+                            <table class="table table-mini-cart">
+                                <thead>
+                                    <tr>
+                                        <th colspan="2">Product</th>
+                                    </tr>
+                                </thead>
+                                <tbody v-if="cartList.length > 0">
+                                    <tr
+                                        v-for="(product, index) in cartList"
+                                        :key="'cart-product-' + index"
+                                    >
+                                        <td class="product-col">
+                                            <h2 class="product-title">
+                                                {{ product.name }} ×
+                                                <span class="product-qty">{{
+                                                    product.qty
+                                                }}</span>
+                                            </h2>
+                                        </td>
 
-										<td class="price-col">
-											<span>(BDT)  {{product.price | priceFormat}}</span>
-										</td>
+                                        <td class="price-col">
+                                            <span
+                                                >(BDT)
+                                                {{
+                                                    product.price | priceFormat
+                                                }}</span
+                                            >
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                <tbody v-else>
+                                    <p class="cart-empty-text ml-3">
+                                        No products in the cart.
+                                    </p>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="cart-subtotal">
+                                        <td>
+                                            <h4>Subtotal</h4>
+                                            <h6>Delivery Charge</h6>
+                                        </td>
 
-									</tr>
-								</tbody>
-								<tbody v-else>
-									<p class="cart-empty-text ml-3">No products in the cart.</p>
-								</tbody>
-								<tfoot>
-									<tr class="cart-subtotal">
-										<td>
-											<h4>Subtotal</h4>
-											<h6>Delivery Charge</h6>
-										</td>
+                                        <td class="price-col">
+                                            <span
+                                                >(BDT)
+                                                {{
+                                                    totalPrice | priceFormat
+                                                }}</span
+                                            >
 
-										<td class="price-col">
-											<span>(BDT)  {{ totalPrice | priceFormat }}</span>
+                                            <h6>
+                                                (BDT)
+                                                {{
+                                                    deliveryCharge | priceFormat
+                                                }}
+                                            </h6>
+                                        </td>
+                                    </tr>
+                                    <tr class="order-shipping">
+                                        <td class="text-left" colspan="2">
+                                            <h4 class="m-b-sm">
+                                                Delivery Charge
+                                            </h4>
 
-											<h6>(BDT)  {{ deliveryCharge | priceFormat }}</h6>
-										</td>
-									</tr>
-									<tr class="order-shipping">
-										<td
-											class="text-left"
-											colspan="2"
-										>
-											<h4 class="m-b-sm">Delivery Charge</h4>
+                                            <div
+                                                class="form-group form-group-custom-control"
+                                            >
+                                                <div
+                                                    class="custom-control custom-radio d-flex"
+                                                >
+                                                    <input
+                                                        type="radio"
+                                                        class="custom-control-input"
+                                                        name="radio"
+                                                        value="80"
+                                                        v-model="deliveryCharge"
+                                                        
+                                                    />
+                                                    <label
+                                                        class="custom-control-label"
+                                                        >Inside Dhaka</label
+                                                    >
+                                                </div>
+                                            </div>
 
-											<div class="form-group form-group-custom-control">
-												<div class="custom-control custom-radio d-flex">
-													<input
-														type="radio"
-														class="custom-control-input"
-														name="radio"
-														value= 80
-														v-model="deliveryCharge"
-													/>
-													<label class="custom-control-label">Inside Dhaka</label>
-												</div>
-											</div>
+                                            <div
+                                                class="form-group form-group-custom-control mb-0"
+                                            >
+                                                <div
+                                                    class="custom-control custom-radio d-flex mb-0"
+                                                >
+                                                    <input
+                                                        type="radio"
+                                                        name="radio"
+                                                        class="custom-control-input"
+                                                        checked
+                                                        value="120"
+                                                        v-model="deliveryCharge"
+                                                    />
+                                                    <label
+                                                        class="custom-control-label"
+                                                        >Outside Dhaka</label
+                                                    >
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-											<div class="form-group form-group-custom-control mb-0">
-												<div class="custom-control custom-radio d-flex mb-0">
-													<input
-														type="radio"
-														name="radio"
-														class="custom-control-input"
-														checked
-														value= 120
-														v-model="deliveryCharge"
-														
-													/>
-													<label class="custom-control-label">Outside Dhaka</label>
-												</div>
-											</div>
-										</td>
-									</tr>
+                                    <tr class="order-total">
+                                        <td>
+                                            <h4>Total</h4>
+                                        </td>
+                                        <td>
+                                            <b class="total-price">
+                                                <span
+                                                    >(BDT)
+                                                    {{
+                                                        (Number(totalPrice) +
+                                                            Number(
+                                                                deliveryCharge
+                                                            ))
+                                                            | priceFormat
+                                                    }}</span
+                                                >
+                                            </b>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
 
-									<tr class="order-total">
-										<td>
-											<h4>Total</h4>
-										</td>
-										<td>
-											<b class="total-price">
-												<span>(BDT)  {{ Number(totalPrice) + Number(deliveryCharge) | priceFormat }}</span>
-											</b>
-										</td>
-									</tr>
-								</tfoot>
-							</table>
+                            <div class="payment-methods">
+                                <h4 class>Payment methods</h4>
+                                <div class="info-box with-icon p-0">
+                                    <p>Cash On Delivery.</p>
+                                </div>
+                            </div>
 
-							<div class="payment-methods">
-								<h4 class>Payment methods</h4>
-								<div class="info-box with-icon p-0">
-									<p>
-										Cash On Delivery.
-									</p>
-								</div>
-							</div>
+                            <button
+                                class="btn btn-dark btn-place-order"
+                                form="checkout-form"
+                                @click="submitOrder"
+                            >
+                                Place order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </template>
 
-							<button
-								class="btn btn-dark btn-place-order"
-								form="checkout-form"
-								@click="submitOrder"
-							>Place order</button>
-						</div>
-					</div>
-				</div>
-			</template>
+            <div class="box-content" v-else>
+                <table
+                    class="table-cart"
+                    data-pagination="no"
+                    data-per-page="5"
+                    data-page="1"
+                    data-id
+                    data-token
+                >
+                    <thead class="d-none">
+                        <tr>
+                            <th class="product-thumbnail"></th>
 
-			<div
-				class="box-content"
-				v-else
-			>
-				<table
-					class="table-cart"
-					data-pagination="no"
-					data-per-page="5"
-					data-page="1"
-					data-id
-					data-token
-				>
-					<thead class="d-none">
-						<tr>
-							<th class="product-thumbnail"></th>
+                            <th class="product-name">
+                                <span class="nobr">Product</span>
+                            </th>
 
-							<th class="product-name">
-								<span class="nobr">Product</span>
-							</th>
+                            <th class="product-price">
+                                <span class="nobr">price</span>
+                            </th>
 
-							<th class="product-price">
-								<span class="nobr">price</span>
-							</th>
+                            <th class="product-stock-status">
+                                <span class="nobr">Stock status</span>
+                            </th>
 
-							<th class="product-stock-status">
-								<span class="nobr">Stock status</span>
-							</th>
+                            <th class="product-add-to-cart">
+                                <span class="nobr">Actions</span>
+                            </th>
+                        </tr>
+                    </thead>
 
-							<th class="product-add-to-cart">
-								<span class="nobr">Actions</span>
-							</th>
-						</tr>
-					</thead>
+                    <tbody class="cart-items-wrapper">
+                        <tr class="border-0 py-0">
+                            <td colspan="6" class="px-3 py-2 text-center">
+                                <p class="noproduct-msg mb-2">
+                                    Checkout is not available while your cart is
+                                    empty.
+                                </p>
+                                <i class="icon-bag-2 cart-empty"></i>
+                            </td>
+                        </tr>
+                        <tr class="border-0 py-0">
+                            <td
+                                colspan="6"
+                                class="px-3 py-2 text-center cart-empty"
+                            >
+                                No products added to the cart
+                            </td>
+                        </tr>
+                        <tr class="border-0 py-0">
+                            <td colspan="6" class="px-3 text-center">
+                                <nuxt-link to="/shop" class="btn btn-go-shop"
+                                    >RETURN TO SHOP</nuxt-link
+                                >
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-					<tbody class="cart-items-wrapper">
-						<tr class="border-0 py-0">
-							<td
-								colspan="6"
-								class="px-3 py-2 text-center"
-							>
-								<p class="noproduct-msg mb-2">Checkout is not available while your cart is empty.</p>
-								<i class="icon-bag-2 cart-empty"></i>
-							</td>
-						</tr>
-						<tr class="border-0 py-0">
-							<td
-								colspan="6"
-								class="px-3 py-2 text-center cart-empty"
-							>
-								No products added to the
-								cart
-							</td>
-						</tr>
-						<tr class="border-0 py-0">
-							<td
-								colspan="6"
-								class="px-3 text-center"
-							>
-								<nuxt-link
-									to="/shop"
-									class="btn btn-go-shop"
-								>RETURN TO SHOP</nuxt-link>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-
-				<div class="mb-6"></div>
-			</div>
-		</div>
-	</main>
+                <div class="mb-6"></div>
+            </div>
+        </div>
+    </main>
 </template>
 
 <script>
@@ -684,74 +749,96 @@ import { VueSlideToggle } from 'vue-slide-toggle';
 import { mapGetters } from 'vuex';
 import Api, { baseUrl } from '~/api';
 
-
 export default {
-	components: {
-		VueSlideToggle
-	},
-	data: function() {
-		return {
-			loginOpened: false,
-			codeOpened: false,
-			accountOpened: false,
-			addressOpened: false,
+    components: {
+        VueSlideToggle,
+    },
+    data: function () {
+        return {
+            loginOpened: false,
+            codeOpened: false,
+            accountOpened: false,
+            addressOpened: false,
 
-			//order
-			fullName: '',
-			firstName: '',
-			lastName: '',
-			companyName: '',
-			countryName: '',
-			cityName: '',
-			detailAddress: '',
-			phone: '',
-			email: '',
-			orderNotes: '',
+            //order
+            fullName: '',
+            firstName: '',
+            lastName: '',
+            companyName: '',
+            countryName: '',
+            cityName: '',
+            detailAddress: '',
+            phone: '',
+            email: '',
+            orderNotes: '',
 
-			deliveryCharge: '',
+            deliveryCharge: '',
 
-			
-		};
-	},
-	computed: {
-		...mapGetters('cart', ['cartList', 'totalCount', 'totalPrice'])
-	},
+            detailAddressError: false,
+        };
+    },
+    computed: {
+        ...mapGetters('cart', ['cartList', 'totalCount', 'totalPrice']),
+    },
 
-	mounted: function () {
+    mounted: function () {
+        // console.log(this.cartList);
+        // console.log(this.totalPrice);
+    },
+    methods: {
+        async submitOrder() {
+            try {
+                const order = {
+                    fullName: this.fullName,
+                    firstName: this.fullName,
+                    lastName: this.lastName,
+                    companyName: this.companyName,
+                    countryName: this.countryName,
+                    cityName: this.cityName,
+                    detailAddress: this.detailAddress,
+                    phone: this.phone,
+                    email: this.email,
+                    orderNotes: this.orderNotes,
+                    deliveryCharge: this.deliveryCharge,
+                    totalPrice: this.totalPrice + this.deliveryCharge,
+                    products: this.cartList,
+                };
 
-		// console.log(this.cartList);
-		// console.log(this.totalPrice);
+                // console.log(order);
 
-	},
-	methods: {
-		async submitOrder() {
-			try {
-				const order = {
-					fullName: this.fullName,
-					firstName: this.fullName,
-					lastName: this.lastName,
-					companyName: this.companyName,
-					countryName: this.countryName,
-					cityName: this.cityName,
-					detailAddress: this.detailAddress,
-					phone: this.phone,
-					email: this.email,
-					orderNotes: this.orderNotes,
-					deliveryCharge: this.deliveryCharge,
-					totalPrice: this.totalPrice + this.deliveryCharge,
-					products: this.cartList
-				};
+                const response = await Api.post(`${baseUrl}/api/order`, order);
+                console.log(response);
 
-				const response = await Api.post(`${baseUrl}/api/order`, order);
-				console.log(response);
-			} catch (error) {
-				console.log(error);
-		}
-	}
+                return response;
+            } catch (error) {
+                console.log(error);
+            }
+        },
 
-	}
+        // async checkout() {
+        //     try {
+        //         const response = await this.submitOrder();
 
+        //         // if (response.status === 200) {
+        //         //     alert('Order placed successfully!');
+        //         // } else {
+        //         //     alert('Order failed!');
+        //         //     this.$router.push('/pages/account');
+        //         // }
+        //     } catch (error) {
+        //         alert('An error occurred while placing the order.');
+        //         console.error(error); // Log the error for debugging
+        //         this.$router.push('/pages/account');
+        //     }
+        // },
 
-	
+        validateDetailAddress() {
+            if (this.detailAddress.length >= 6) {
+                this.detailAddressError = false; // Input is valid, so set detailAddressError to false
+            } else {
+                this.detailAddressError = true; // Input is invalid, so set detailAddressError to true
+            }
+        },
+    },
 };
 </script>
