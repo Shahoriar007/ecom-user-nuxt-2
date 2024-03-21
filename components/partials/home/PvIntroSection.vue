@@ -13,7 +13,7 @@
 				height="350"
 				image-ratio="24.64"
 			/>
-			<div class="container d-flex align-items-sm-center justify-content-sm-between justify-content-center flex-column flex-sm-row">
+			<!-- <div class="container d-flex align-items-sm-center justify-content-sm-between justify-content-center flex-column flex-sm-row">
 				<div class="banner-content content-left text-sm-right mb-sm-0 mb-2">
 					<h2
 						class="text-shadow text-white font1 mb-0 appear-animate"
@@ -58,7 +58,7 @@
 						class="btn btn-dark btn-lg"
 					>Shop Now</nuxt-link>
 				</div>
-			</div>
+			</div> -->
 		</div>
 
 		<div class="home-slide home-slide2 banner swiper-slide">
@@ -70,7 +70,7 @@
 				height="350"
 				image-ratio="24.64"
 			/>
-			<div class="container d-flex align-items-sm-center justify-content-center justify-content-sm-between flex-column-reverse flex-sm-row">
+			<!-- <div class="container d-flex align-items-sm-center justify-content-center justify-content-sm-between flex-column-reverse flex-sm-row">
 				<div
 					class="banner-content content-left mt-2 mt-sm-0 appear-animate"
 					data-animation-duration="1200"
@@ -114,7 +114,7 @@
 						data-animation-delay="800"
 					>RELEASES</h2>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</pv-carousel>
 </template>

@@ -8,9 +8,9 @@
             </div>
         </div>
 
-        <div class="container">
+        <!-- <div class="container">
             <pv-service-section></pv-service-section>
-        </div>
+        </div> -->
 
         <div class="bg-gray" v-if="products && products.length > 0">
             <div class="container">

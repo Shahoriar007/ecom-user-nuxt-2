@@ -6,12 +6,12 @@
 		v-animate
 	>
 		<div class="container text-center d-flex align-items-center justify-content-center flex-column flex-xl-row ">
-			<img
+			<!-- <img
 				src="~/static/images/home/shop-logo.png"
 				width="116"
 				height="23"
 				alt="logo"
-			/>
+			/> -->
 			<h5 class="d-inline-block mb-0 pl-3 pr-3 pt-1 pb-1">The Lowest Prices Once A Month! Hurry To
 				Snap Up
 			</h5>

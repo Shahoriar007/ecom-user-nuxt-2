@@ -41,12 +41,12 @@
 								<ul>
 									<li><a href="javascript:;">Help & FAQs</a></li>
 									<li><a href="javascript:;">Order Tracking</a></li>
-									<li><a href="javascript:;">Shipping & Delivery</a></li>
+									<!-- <li><a href="javascript:;">Shipping & Delivery</a></li>
 									<li><a href="javascript:;">Orders History</a></li>
 									<li><a href="javascript:;">Advanced Search</a></li>
 									<li>
 										<nuxt-link to="/pages/login">Login</nuxt-link>
-									</li>
+									</li> -->
 								</ul>
 							</div>
 						</div>
@@ -59,15 +59,15 @@
 									<li>
 										<nuxt-link to="/pages/about-us">About Us</nuxt-link>
 									</li>
-									<li><a href="javascript:;">Careers</a></li>
+									<!-- <li><a href="javascript:;">Careers</a></li>
 									<li><a href="javascript:;">Our Stores</a></li>
 									<li><a href="javascript:;">Corporate Sales</a></li>
-									<li><a href="javascript:;">Careers</a></li>
+									<li><a href="javascript:;">Careers</a></li> -->
 								</ul>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-3">
+					<!-- <div class="col-md-6 col-lg-3">
 						<div class="widget">
 							<h3 class="widget-title">More Information</h3>
 							<div class="widget-content">
@@ -79,14 +79,14 @@
 								</ul>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="col-md-6 col-lg-3">
 						<div class="widget">
 							<h3 class="widget-title">Social Media</h3>
 							<div class="widget-content">
 								<div class="social-icons">
 									<a
-										href="javascript:;"
+										href="https://www.facebook.com/people/Flare-Brand/100064835408819/?mibextid=ZbWKwL"
 										class="social-icon social-facebook icon-facebook"
 										
 										title="Facebook"
@@ -203,7 +203,7 @@
 				</div>
 			</div> -->
 			<div class="footer-bottom d-sm-flex align-items-center justify-content-center">
-				<span class="footer-copyright">Porto eCommerce. © 2021. All Rights
+				<span class="footer-copyright">Flare-Brand. © 2024. All Rights
 					Reserved</span>
 			</div>
 		</div>

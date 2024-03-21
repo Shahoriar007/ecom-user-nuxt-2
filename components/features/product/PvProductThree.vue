@@ -120,12 +120,12 @@
 				key="singlePrice"
 			>
 				<template v-if="!product.is_sale">
-					<span class="product-price">${{ product.price | priceFormat }}</span>
+					<span class="product-price">BDT {{ product.price | priceFormat }}</span>
 				</template>
 
 				<template v-else>
-					<span class="old-price">${{ product.price | priceFormat }}</span>
-					<span class="product-price">${{ product.sale_price | priceFormat }}</span>
+					<span class="old-price">BDT {{ product.price | priceFormat }}</span>
+					<span class="product-price">BDT {{ product.sale_price | priceFormat }}</span>
 				</template>
 			</div>
 
@@ -134,11 +134,11 @@
 				v-else
 			>
 				<template v-if="minPrice !== maxPrice">
-					<span class="product-price">${{ minPrice | priceFormat }} &ndash; ${{ maxPrice | priceFormat }}</span>
+					<span class="product-price">BDT {{ minPrice | priceFormat }} &ndash; ${{ maxPrice | priceFormat }}</span>
 				</template>
 
 				<template v-else>
-					<span class="product-price">${{ minPrice | priceFormat }}</span>
+					<span class="product-price">BDT {{ minPrice | priceFormat }}</span>
 				</template>
 			</div>
 		</div>

@@ -16,12 +16,12 @@
 			key="singlePrice"
 		>
 			<template v-if="!product.is_sale">
-				<span class="new-price">${{ product.price | priceFormat }}</span>
+				<span class="new-price">BDT {{ product.price | priceFormat }}</span>
 			</template>
 
 			<template v-else>
-				<span class="new-price">${{ product.sale_price | priceFormat }}</span>
-				<span class="old-price">${{ product.price | priceFormat }}</span>
+				<span class="new-price">BDT {{ product.sale_price | priceFormat }}</span>
+				<span class="old-price">BDT {{ product.price | priceFormat }}</span>
 			</template>
 		</div>
 
@@ -30,11 +30,11 @@
 			v-else
 		>
 			<template v-if="minPrice !== maxPrice">
-				<span class="new-price">${{ minPrice | priceFormat }} &ndash; ${{ maxPrice | priceFormat }}</span>
+				<span class="new-price">BDT {{ minPrice | priceFormat }} &ndash; BDT {{ maxPrice | priceFormat }}</span>
 			</template>
 
 			<template v-else>
-				<span class="new-price">${{ minPrice | priceFormat }}</span>
+				<span class="new-price">BDT {{ minPrice | priceFormat }}</span>
 			</template>
 		</div>
 
@@ -58,10 +58,10 @@
 		
 
 		<ul class="single-info-list">
-			<li v-if="product.stock">
+			<!-- <li v-if="product.stock">
 				AVAILABLE IN STOCK:
 				<strong>{{ product.stock }}</strong>
-			</li>
+			</li> -->
 
 			<li v-if="product.sku">
 				SKU:
@@ -271,7 +271,7 @@
 
 			>Buy Now</a>
 			<a
-				href="https://wa.me/1234567890" 
+				href="https://wa.me/01994635351" 
 				class="btn btn-dark add-cart mr-2"
 				title="Buy Now"
 				target="_blank"
@@ -282,7 +282,7 @@
 			
 			<b-row>
 				<a
-					href="https://m.me/yourusername"  
+					href="https://www.facebook.com/people/Flare-Brand/100064835408819/?mibextid=ZbWKwL"  
 					class="btn btn-dark add-cart mr-2"
 					title="Buy Now"
 					target="_blank"
