@@ -111,13 +111,13 @@
 										</div>
 									</div> -->
 
-									<div class="float-right">
+									<!-- <div class="float-right">
 										<button
 											type="submit"
 											class="btn btn-shop btn-update-cart"
 											@click="updateCart({cartItems: cartItems})"
 										>Update Cart</button>
-									</div>
+									</div> -->
 								</td>
 							</tr>
 						</tfoot>
@@ -230,7 +230,7 @@
 							to="/pages/checkout"
 							class="btn btn-block btn-dark"
 						>
-							Proceed to Checkout
+						এগিয়ে যান
 							<i class="fa fa-arrow-right"></i>
 						</nuxt-link>
 					</div>
@@ -306,6 +306,10 @@
 		</div>
 
 		<div class="mb-6"></div>
+
+		<template>
+			<pv-sticky-footer></pv-sticky-footer>
+		</template>
 	</div>
 </template>
 
@@ -313,15 +317,18 @@
 import { mapGetters, mapActions } from 'vuex';
 import { baseUrl } from '~/api/index';
 import PvQuantityInput from '~/components/features/PvQuantityInput';
+import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
 
 export default {
 	components: {
-		PvQuantityInput
+		PvQuantityInput,
+		PvStickyFooter,
 	},
 	data: function() {
 		return {
 			baseUrl: baseUrl,
-			cartItems: []
+			cartItems: [],
+			totalCalculatedPrice: '',
 		};
 	},
 	computed: {
@@ -330,23 +337,33 @@ export default {
 	watch: {
 		cartList: function() {
 			this.cartItems = this.cartList;
-		}
+
+			console.log(this.cartItems);
+		},
+
+		 
+		
 	},
 	created: function() {
 		this.cartItems = [...this.cartList];
 	},
 	methods: {
 		...mapActions('cart', ['updateCart', 'removeFromCart']),
+
 		changeQty: function(value, product) {
 			this.cartItems = this.cartItems.reduce((acc, cur) => {
 				if (cur.name === product.name) {
-					return [
+					 const test = [
 						...acc,
 						{
 							...cur,
 							qty: value
 						}
 					];
+
+					this.updateCart({ cartItems: test });
+
+					return test
 				} else {
 					return [...acc, cur];
 				}

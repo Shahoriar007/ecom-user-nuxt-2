@@ -53,7 +53,7 @@
                             <i class="sicon-location-pin"></i>
                             <div class="feature-box-content">
                                 <h3>Address</h3>
-                                <h5>123 Wall Street, New York / NY</h5>
+                                <h5>Newmarket City Complex Biswas Builders, Dhaka Bangladesh</h5>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                             <i class="fa fa-mobile-alt"></i>
                             <div class="feature-box-content">
                                 <h3>Phone Number</h3>
-                                <h5>(800) 123-4567</h5>
+                                <h5>+8801994635351</h5>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                             <i class="far fa-envelope"></i>
                             <div class="feature-box-content">
                                 <h3>E-mail Address</h3>
-                                <h5>porto@portotheme.com</h5>
+                                <h5>mail.flareonlineshop@gmail.com</h5>
                             </div>
                         </div>
                     </div>
@@ -80,7 +80,7 @@
                             <i class="far fa-calendar-alt"></i>
                             <div class="feature-box-content">
                                 <h3>Working Days/Hours</h3>
-                                <h5>Mon - Sun / 9:00AM - 8:00PM</h5>
+                                <h5>24/7</h5>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                     </form>
                 </div>
 
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <h2 class="mt-6 mb-1">Frequently Asked Questions</h2>
                     <div id="accordion">
                         <div class="card card-accordion">
@@ -323,11 +323,16 @@
                             </vue-slide-toggle>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
         <div class="mb-8"></div>
+
+        <template>
+			<pv-sticky-footer></pv-sticky-footer>
+		</template>
+
     </main>
 </template>
 
@@ -335,6 +340,8 @@
 import Vue from 'vue';
 import { VueSlideToggle } from 'vue-slide-toggle';
 import * as VueGoogleMaps from 'vue2-google-maps'
+import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
+
 
 
 Vue.use(VueGoogleMaps, {
@@ -346,7 +353,9 @@ Vue.use(VueGoogleMaps, {
 
 export default {
 	components: {
-		VueSlideToggle
+		VueSlideToggle,
+		PvStickyFooter,
+
 	},
 	data: function() {
 		return {

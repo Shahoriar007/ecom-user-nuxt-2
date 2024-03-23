@@ -193,6 +193,10 @@
 				v-if="totalCount"
 			></pv-pagination>
 		</nav>
+
+		<template>
+			<pv-sticky-footer></pv-sticky-footer>
+		</template>
 	</div>
 </template>
 
@@ -202,12 +206,15 @@ import PvPagination from '~/components/features/PvPagination';
 import PvSidebarFilterTwo from '~/components/partials/shop/sidebar-filter/PvSidebarFilterTwo';
 import { scro, scrollTopHandler } from '~/utils';
 import Api, { baseUrl, currentDemo } from '~/api';
+import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
+
 
 export default {
 	components: {
 		PvProductThree,
 		PvPagination,
-		PvSidebarFilterTwo
+		PvSidebarFilterTwo,
+		PvStickyFooter
 	},
 	data: function() {
 		return {

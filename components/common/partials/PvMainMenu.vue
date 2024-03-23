@@ -165,13 +165,13 @@
 
 			</li>
 
-			<li>
+			<!-- <li>
 				<nuxt-link
 					to="/pages/account"
 					class="sub-menu-link sf-with-ul"
 				>Orders</nuxt-link>
 
-			</li>
+			</li> -->
 
 			<!-- <li>
 				<a

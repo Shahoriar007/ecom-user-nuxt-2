@@ -37,6 +37,11 @@
                 ></pv-products-collection-four>
             </div>
         </div>
+
+        <template>
+			<pv-sticky-footer></pv-sticky-footer>
+		</template>
+       
     </main>
 </template>
 
@@ -58,6 +63,7 @@ import PvProductsCollectionThree from '~/components/partials/home/PvProductsColl
 import PvProductsCollectionFour from '~/components/partials/home/PvProductsCollectionFour';
 import PvCategorySectionThree from '~/components/partials/home/PvCategorySectionThree';
 import PvCategorySectionFour from '~/components/partials/home/PvCategorySectionFour';
+import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
 
 import {
     getTopSellingProducts,
@@ -90,6 +96,8 @@ export default {
         PvCategorySectionThree,
         PvCategorySectionFour,
         PvFeatureSection,
+		PvStickyFooter,
+
     },
     data: function () {
         return {

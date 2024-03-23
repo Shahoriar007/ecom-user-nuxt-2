@@ -23,11 +23,11 @@
 					</ol>
 				</nav> -->
 
-				<h1>My Account</h1>
+				<h1>Thank You, Order Placed Successfully!</h1>
 			</div>
 		</div>
 
-		<div class="container account-container custom-account-container">
+		<!-- <div class="container account-container custom-account-container">
 			<div class="row">
 				<div
 					class="sidebar widget widget-dashboard col-lg-3 order-0"
@@ -66,7 +66,7 @@
 										aria-controls="order"
 										aria-selected="false"
 									>Orders</a>
-								</li>
+								</li> -->
 
 								<!-- <li class="nav-item">
 									<a
@@ -135,7 +135,7 @@
 										aria-selected="false"
 									>Shipping</a>
 								</li> -->
-							</ul>
+							<!-- </ul>
 						</pv-tabs>
 					</div>
 				</div>
@@ -147,7 +147,7 @@
 						role="tabpanel"
 						aria-labelledby="dashboard-tab"
 					>
-						<div class="dashboard-content">
+						<div class="dashboard-content"> -->
 							<!-- <p>
 								Hello
 								<strong class="text-dark">Editor</strong> (not
@@ -180,7 +180,7 @@
 								>edit your password and account details.</a>
 							</p> -->
 
-							<div class="mb-2 mb-lg-5"></div>
+							<!-- <div class="mb-2 mb-lg-5"></div>
 
 							<div class="row row-lg">
 								<div class="col-6 col-md-4">
@@ -199,7 +199,7 @@
 											<h3>ORDERS</h3>
 										</div>
 									</div>
-								</div>
+								</div> -->
 
 								<!-- <div class="col-6 col-md-4">
 									<div
@@ -276,12 +276,12 @@
 										</div>
 									</div>
 								</div> -->
-							</div>
+							<!-- </div> -->
 							<!-- End .row -->
-						</div>
-					</div>
+						<!-- </div>
+					</div> -->
 
-					<div
+					<!-- <div
 						class="tab-pane fade"
 						id="order"
 						role="tabpanel"
@@ -321,7 +321,7 @@
 								>Go Shop</nuxt-link>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- End .tab-pane -->
 
 					<!-- <div
@@ -818,9 +818,9 @@
 						</div>
 					</div> -->
 					<!-- End .tab-pane -->
-				</div>
+				<!-- </div>
 			</div>
-		</div>
+		</div> -->
 	</main>
 </template>
 
@@ -837,9 +837,16 @@ export default {
 	},
 	data: function() {
 		return {
-			isSticky: false
+			isSticky: false,
+			hasReloaded: false,
 		};
 	},
+	created: function() {
+	// 	if (!this.hasReloaded) {
+    //     window.location.reload();
+    //     this.hasReloaded = true;
+    // }
+},
 	mounted: function() {
 		this.resizeHandler();
 		window.addEventListener('resize', this.resizeHandler, {

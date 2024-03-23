@@ -293,7 +293,7 @@
                                         />
                                     </div>
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label>
                                             Email address (optional)
                                         </label>
@@ -302,7 +302,7 @@
                                             type="email"
                                             class="form-control"
                                         />
-                                    </div>
+                                    </div> -->
 
                                     <!-- <div class="form-group mb-1">
 										<div class="custom-control custom-checkbox">
@@ -510,7 +510,7 @@
 										</div>
 									</vue-slide-toggle> -->
 
-                                    <div class="form-group">
+                                    <!-- <div class="form-group">
                                         <label class="order-comments"
                                             >Order notes (optional)</label
                                         >
@@ -520,7 +520,7 @@
                                             placeholder="Notes about your order, e.g. special notes for delivery."
                                             
                                         ></textarea>
-                                    </div>
+                                    </div> -->
                                 </form>
                             </li>
                         </ul>
@@ -566,7 +566,7 @@
                                     </p>
                                 </tbody>
                                 <tfoot>
-                                    <tr class="cart-subtotal">
+                                    <!-- <tr class="cart-subtotal">
                                         <td>
                                             <h4>Subtotal</h4>
                                             <h6>Delivery Charge</h6>
@@ -587,7 +587,7 @@
                                                 }}
                                             </h6>
                                         </td>
-                                    </tr>
+                                    </tr> -->
                                     <tr class="order-shipping">
                                         <td class="text-left" colspan="2">
                                             <h4 class="m-b-sm">
@@ -610,7 +610,7 @@
                                                     />
                                                     <label
                                                         class="custom-control-label"
-                                                        >Inside Dhaka</label
+                                                        >Inside Dhaka - (BDT) {{ insideDhaka }}</label
                                                     >
                                                 </div>
                                             </div>
@@ -631,7 +631,7 @@
                                                     />
                                                     <label
                                                         class="custom-control-label"
-                                                        >Outside Dhaka</label
+                                                        >Outside Dhaka - (BDT) {{ outsideDhaka }}</label
                                                     >
                                                 </div>
                                             </div>
@@ -660,20 +660,20 @@
                                 </tfoot>
                             </table>
 
-                            <div class="payment-methods">
+                            <!-- <div class="payment-methods">
                                 <h4 class>Payment methods</h4>
                                 <div class="info-box with-icon p-0">
                                     <p>Cash On Delivery.</p>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <button
                                 class="btn btn-dark btn-place-order"
-                                form="checkout-form"
                                 @click="submitOrder"
-                            >
-                                Place order
+                                >
+                                অর্ডার করুন
                             </button>
+                            <!-- form="checkout-form" -->
                         </div>
                     </div>
                 </div>
@@ -741,6 +741,9 @@
                 <div class="mb-6"></div>
             </div>
         </div>
+        <template>
+			<pv-sticky-footer></pv-sticky-footer>
+		</template>
     </main>
 </template>
 
@@ -748,10 +751,13 @@
 import { VueSlideToggle } from 'vue-slide-toggle';
 import { mapGetters } from 'vuex';
 import Api, { baseUrl } from '~/api';
+import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
+
 
 export default {
     components: {
         VueSlideToggle,
+        PvStickyFooter
     },
     data: function () {
         return {
@@ -818,10 +824,17 @@ export default {
                     products: this.cartList,
                 };
 
-                console.log(order);
-
                 const response = await Api.post(`${baseUrl}/api/order`, order);
-                console.log(response);
+
+               // i want to reload the page
+              
+
+
+                if (response.status === 200) {
+                    this.$router.push('/pages/account');
+                } else {
+                    alert('Order failed!');
+                }
 
                 return response;
             } catch (error) {

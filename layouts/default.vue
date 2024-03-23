@@ -26,7 +26,18 @@
 
 		<pv-mobile-menu></pv-mobile-menu>
 
-		<pv-sticky-footer></pv-sticky-footer>
+		<template>
+			<div class="whatsapp-logo">
+				<a href="https://wa.me/+8801994635351" target="_blank">
+					<img src="~/static/images/whatsapp.png" alt="whatsapp-logo" />
+				</a>
+			</div>
+		</template>
+
+
+		<!-- <template>
+			<pv-sticky-footer v-if="isHideStickyFooter" :isHideStickyFooter="isHideStickyFooter"></pv-sticky-footer>
+		</template> -->
 	</div>
 </template>
 
@@ -55,7 +66,8 @@ export default {
 	},
 	data: function() {
 		return {
-			isHide: false
+			isHide: false,
+			isHideStickyFooter: true
 		};
 	},
 	watch: {
@@ -67,6 +79,7 @@ export default {
 	},
 	created: function() {
 		this.isHide = getCookie('topNotice');
+		this.getCurrentUrl();
 	},
 	mounted: function() {
 		window.addEventListener('scroll', stickyHeaderHandler, {
@@ -89,6 +102,21 @@ export default {
 		window.removeEventListener('resize', resizeHandler);
 	},
 	methods: {
+
+		getCurrentUrl: function() {
+			const url = window.location.href;
+    		if (url.includes('/product/default/')) {
+
+				this.isHideStickyFooter = false;
+				console.log('true', this.isHideStickyFooter)
+			}else{
+				this.isHideStickyFooter = true;
+				console.log('false', this.isHideStickyFooter)
+			}
+
+    },
+		
+
 		scrollToTop: function() {
 			scrollTop(false);
 		},
@@ -115,3 +143,13 @@ export default {
 	}
 };
 </script>
+
+<style scoped>
+.whatsapp-logo {
+    position: fixed;
+    right: 30px;
+    bottom: 80px;
+    z-index: 1000;
+	width: 50px;
+}
+</style>

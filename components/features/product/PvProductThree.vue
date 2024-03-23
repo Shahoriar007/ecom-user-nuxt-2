@@ -49,23 +49,23 @@
 
 			
 			<div class="button-container">
-				<a
-					href="javascript:;"
+				<nuxt-link
+					:to="`/product/default/${product.slug}`"
 					class="button-new"
 					title="Quick View"
 					@click="addCart"
 				>
 					Add to Cart
-				</a>
+				</nuxt-link>
 
-				<a
-					href="javascript:;"
+				<nuxt-link
+					:to="`/product/default/${product.slug}`"
 					class="button-new-two"
 					title="Another Button"
 					@click="buyNow"
 				>
 					Buy now
-				</a>
+				</nuxt-link>
 			</div>
 
 		

@@ -281,7 +281,7 @@ Video</a>
   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
 </svg>Buy Now</a>
 			<a
-				href="https://wa.me/01994635351" 
+				href="https://wa.me/+8801994635351" 
 				class="btn btn-whatsapp add-cart mr-2 mt-2"
 				title="Buy Now"
 				target="_blank"
@@ -313,8 +313,29 @@ Messenger</a>
 			>View cart</nuxt-link>
 		</div>
 
+		<template>
+    <div class="sticky-navbar fixed">
+        <div class="container">
+        <div class="row">
+            
+                <a class="btn btn-primary width-50" href="javascript:;" @click="addCart">
+                    Add to Cart
+                </a>
+            
+                <a class="btn btn-warning width-50" href="javascript:;" @click="buyNow">
+                    Buy Now
+                </a>
+            
+        </div>
+    </div>
+        
+    </div>
+</template>
+
 		
 	</div>
+
+	
 </template>
 
 <script>
@@ -323,13 +344,15 @@ import { VueSlideToggle } from 'vue-slide-toggle';
 import PvProductNav from '~/components/partials/product/PvProductNav';
 import { baseUrl } from '~/api/index';
 import PvCountDown from '~/components/features/PvCountDown';
+import PvStickyButton from '~/components/common/partials/PvStickyButton';
 
 export default {
 	components: {
 		
 		VueSlideToggle,
 		PvProductNav,
-		PvCountDown
+		PvCountDown,
+		PvStickyButton,
 	},
 	props: {
 		product: Object,
@@ -615,6 +638,13 @@ export default {
 .btn-whatsapp{
 	background-color: #25d366;
 	color: #fff;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+.width-50 {
+    width: 50%;
 }
 	
 </style>

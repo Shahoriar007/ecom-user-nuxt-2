@@ -56,7 +56,7 @@ p<template>
 			</div>
 		</div>
 
-		<div class="features-section bg-gray">
+		<!-- <div class="features-section bg-gray">
 			<div class="container">
 				<h2 class="subtitle">WHY CHOOSE US</h2>
 				<div class="row">
@@ -103,7 +103,11 @@ p<template>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
+
+		<template>
+			<pv-sticky-footer></pv-sticky-footer>
+		</template>
 
 		
 	</main>
@@ -113,11 +117,14 @@ p<template>
 import PvCarousel from '~/components/features/PvCarousel';
 import PvCountTo from '~/components/features/PvCountTo';
 import { baseSlider4 } from '~/utils/data/carousel';
+import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
+
 
 export default {
 	components: {
 		PvCarousel,
-		PvCountTo
+		PvCountTo,
+		PvStickyFooter
 	},
 	data: function() {
 		return {
