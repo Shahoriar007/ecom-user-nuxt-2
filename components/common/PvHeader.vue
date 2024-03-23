@@ -36,16 +36,16 @@
 							class="social-icon social-facebook icon-facebook"
 							
 						></a>
-						<a
+						<!-- <a
 							href="javascript:;"
 							class="social-icon social-twitter icon-twitter"
 							
-						></a>
-						<a
+						></a> -->
+						<!-- <a
 							href="javascript:;"
-							class="social-icon social-instagram icon-instagram"
+							class="social-icon social-messenger icon-messenger"
 							
-						></a>
+						></a> -->
 					</div>
 				</div>
 			</div>

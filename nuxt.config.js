@@ -53,11 +53,11 @@ export default {
                 rel: 'icon',
                 type: 'image/png',
                 sizes: '16x16',
-                href: './images/icons/favicon.ico',
+                href: './images/icons/favicon.jpeg',
             },
             {
                 rel: 'shortcut icon',
-                href: './images/icons/favicon.ico',
+                href: './images/icons/favicon.jpeg',
             },
             {
                 rel: 'apple-touch-icon',

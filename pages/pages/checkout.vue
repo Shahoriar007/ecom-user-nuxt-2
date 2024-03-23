@@ -604,7 +604,7 @@
                                                         type="radio"
                                                         class="custom-control-input"
                                                         name="radio"
-                                                        value="80"
+                                                        :value=insideDhaka
                                                         v-model="deliveryCharge"
                                                         
                                                     />
@@ -626,7 +626,7 @@
                                                         name="radio"
                                                         class="custom-control-input"
                                                         checked
-                                                        value="120"
+                                                        :value=outsideDhaka
                                                         v-model="deliveryCharge"
                                                     />
                                                     <label
@@ -775,6 +775,8 @@ export default {
             deliveryCharge: '',
 
             detailAddressError: false,
+            insideDhaka: '',
+            outsideDhaka: '',
         };
     },
     computed: {
@@ -782,12 +784,23 @@ export default {
     },
 
     mounted: function () {
-        // console.log(this.cartList);
-        // console.log(this.totalPrice);
+        Api.get(`${baseUrl}/api/order-delivery-charge`).then((response) => {
+            this.insideDhaka = response.data.data[0].inside_dhaka;
+            this.outsideDhaka = response.data.data[0].outside_dhaka;
+            this.deliveryCharge = this.outsideDhaka;
+            
+        });
     },
     methods: {
         async submitOrder() {
             try {
+
+                if(this.deliveryCharge == this.insideDhaka){
+                    this.orderFrom = "Inside Dhaka";
+                }else{
+                    this.orderFrom = "Outside Dhaka";
+                }
+
                 const order = {
                     fullName: this.fullName,
                     firstName: this.fullName,
@@ -801,10 +814,11 @@ export default {
                     orderNotes: this.orderNotes,
                     deliveryCharge: this.deliveryCharge,
                     totalPrice: this.totalPrice + this.deliveryCharge,
+                    orderFrom: this.orderFrom,
                     products: this.cartList,
                 };
 
-                // console.log(order);
+                console.log(order);
 
                 const response = await Api.post(`${baseUrl}/api/order`, order);
                 console.log(response);

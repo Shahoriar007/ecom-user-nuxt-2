@@ -47,12 +47,31 @@
 				</a>
 			</div> -->
 
-			<a
-				href="javascript:;"
-				class="btn-quickview"
-				title="Quick View"
-				@click="addCart"
-			>Add To Cart</a>
+			
+			<div class="button-container">
+				<a
+					href="javascript:;"
+					class="button-new"
+					title="Quick View"
+					@click="addCart"
+				>
+					Add to Cart
+				</a>
+
+				<a
+					href="javascript:;"
+					class="button-new-two"
+					title="Another Button"
+					@click="buyNow"
+				>
+					Buy now
+				</a>
+			</div>
+
+		
+
+
+			
 
 			<!-- <div
 				class="product-countdown-container"
@@ -246,7 +265,77 @@ export default {
 
 				this.addToCart({ product: saledProduct });
 			}
-		}
+		},
+		buyNow: function() {
+			if (this.product.stock > 0) {
+				let saledProduct = { ...this.product };
+				if (this.product.is_sale) {
+					saledProduct.price = this.product.sale_price;
+				}
+
+				this.addToCart({ product: saledProduct });
+			}
+
+			this.$router.push('/pages/cart');
+		},
+
 	}
 };
 </script>
+<style scoped>
+.button-container {
+    display: flex;
+    gap: 10px; /* Adjust this value to change the space between the buttons */
+}
+
+.button-new {
+	text-align: center;
+	position: absolute;
+	padding: 0.8rem 1.4rem;
+	bottom: 0;
+	left: 0;
+	width: 50%;
+	height: auto;
+	color: #fff;
+	background-color: #3050ffd4;
+	font-size: 1.3rem;
+	font-weight: 400;
+	letter-spacing: 0.025em;
+	/* font-family: $second-font-family; */
+	text-transform: uppercase;
+	/* visibility: hidden; */
+	/* opacity: 1; */
+	transform: none;
+	margin: 0;
+	border: none;
+	line-height: 1.82;
+	/* transition: padding-top 0.2s, padding-bottom 0.2s;
+	z-index: 2; */
+}
+
+.button-new-two {
+	margin-right: 1px;
+	text-align: center;
+	position: absolute;
+	padding: 0.8rem 1.4rem;
+	bottom: 0;
+	right: 0;
+	width: 50%;
+	height: auto;
+	color: #fff;
+	background-color: #ab13a5e0;
+	font-size: 1.3rem;
+	font-weight: 400;
+	letter-spacing: 0.025em;
+	/* font-family: $second-font-family; */
+	text-transform: uppercase;
+	/* visibility: hidden; */
+	/* opacity: 1; */
+	transform: none;
+	margin: 0;
+	border: none;
+	line-height: 1.82;
+	/* transition: padding-top 0.2s, padding-bottom 0.2s;
+	z-index: 2; */
+}
+</style>
