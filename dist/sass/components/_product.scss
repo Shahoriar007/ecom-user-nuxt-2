@@ -188,10 +188,10 @@ figure {
         overflow: hidden;
         text-overflow: ellipsis;
 
-        &:hover {
-            color: $primary-color;
-            text-decoration: none;
-        }
+        // &:hover {
+        //     color: $primary-color;
+        //     text-decoration: none;
+        // }
     }
 
     &:not(.product-list) figure img {
