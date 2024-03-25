@@ -29,7 +29,7 @@
 		<template>
 			<div class="whatsapp-logo">
 				<a href="https://wa.me/+8801994635351" target="_blank">
-					<img src="~/static/images/whatsapp.png" alt="whatsapp-logo" />
+					<img src="~/static/images/whatsapp2.png" alt="whatsapp-logo" />
 				</a>
 			</div>
 		</template>
@@ -147,9 +147,9 @@ export default {
 <style scoped>
 .whatsapp-logo {
     position: fixed;
-    right: 30px;
+    left: 30px;
     bottom: 80px;
     z-index: 1000;
-	width: 50px;
+	width: 100px;
 }
 </style>

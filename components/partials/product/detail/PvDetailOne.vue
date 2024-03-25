@@ -268,7 +268,7 @@ Video</a>
 				
 			><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"  fill="currentColor" class="bi bi-bag mr-2" viewBox="0 0 16 16">
   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-</svg>  Add to Cart</a>
+</svg>  কার্টে যোগ করুন</a>
 
 			<v-row>
 				<a
@@ -279,7 +279,7 @@ Video</a>
 
 			> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart2 mr-2" viewBox="0 0 16 16">
   <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l1.25 5h8.22l1.25-5zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
-</svg>Buy Now</a>
+</svg>অর্ডার করুন</a>
 			<a
 				href="https://wa.me/+8801994635351" 
 				class="btn btn-whatsapp add-cart mr-2 mt-2"
@@ -319,11 +319,11 @@ Messenger</a>
         <div class="row">
             
                 <a class="btn btn-primary width-50" href="javascript:;" @click="addCart">
-                    Add to Cart
-                </a>
+					কার্টে যোগ করুন
+				                </a>
             
                 <a class="btn btn-warning width-50" href="javascript:;" @click="buyNow">
-                    Buy Now
+                    অর্ডার করুন
                 </a>
             
         </div>
