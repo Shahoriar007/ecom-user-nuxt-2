@@ -147,7 +147,7 @@ export default {
 <style scoped>
 .whatsapp-logo {
     position: fixed;
-    left: 30px;
+    left: -15px;
     bottom: 80px;
     z-index: 1000;
 	width: 100px;
