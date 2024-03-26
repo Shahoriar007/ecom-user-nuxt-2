@@ -298,7 +298,7 @@ export default {
 	height: auto;
 	color: #fff;
 	background-color: #3050ffd4;
-	font-size: 1.3rem;
+	font-size: 1.05rem;
 	font-weight: 400;
 	letter-spacing: 0.025em;
 	/* font-family: $second-font-family; */
@@ -324,7 +324,7 @@ export default {
 	height: auto;
 	color: #fff;
 	background-color: #ab13a5e0;
-	font-size: 1.3rem;
+	font-size: 1.05rem;
 	font-weight: 400;
 	letter-spacing: 0.025em;
 	/* font-family: $second-font-family; */
