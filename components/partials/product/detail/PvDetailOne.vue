@@ -54,12 +54,12 @@ Video</a>
 			<br>
 			<br>
 
-		<div
+		<!-- <div
 			class="product-desc"
 			v-if="product.short_description"
 		>
 			<p v-html="product.short_description"></p>
-		</div>
+		</div> -->
 
 		
 
@@ -76,18 +76,29 @@ Video</a>
 
 			<li>
 				CATEGORY:
-				<strong>
-					<nuxt-link
-						:to="{path: '/shop', query: {category: item.slug}}"
-						class="product-category"
-						v-for="(item,index) in product.product_categories"
-						:key="'product-category-' + index"
-					>
-						{{ item.name }}
-						<template v-if="index < product.product_categories.length - 1">,</template>
+				<nuxt-link :to="`/shop?category=${product.category.id}`">
+					<strong>
+						{{ product.category.name }} 
+					</strong>
+				</nuxt-link>
+				<template v-if="product.sub_category_id">
+					>>
+					<nuxt-link :to="`/shop?subCategory=${product.sub_category.id}`">
+						<strong>
+							{{ product.sub_category.name }} 
+						</strong>
 					</nuxt-link>
-				</strong>
+				</template>
+				<template v-if="product.child_category_id">
+					>>
+					<nuxt-link :to="`/shop?childCategory=${product.child_category.id}`">
+						<strong>
+							{{ product.child_category.name }} 
+						</strong>
+					</nuxt-link>
+				</template>
 			</li>
+			
 
 			<!-- No need -->
 			<!-- <li v-if="product.product_tags.length > 0">
@@ -645,6 +656,9 @@ export default {
 }
 .width-50 {
     width: 50%;
+}
+.product-title {
+	width: 100% !important;
 }
 	
 </style>

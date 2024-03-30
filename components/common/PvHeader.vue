@@ -1,8 +1,8 @@
 <template>
 	<header class="header">
-		<div class="header-top">
+		<!-- <div class="header-top">
 			<div class="container">
-				<!-- <div class="header-left d-none d-sm-block">
+				<div class="header-left d-none d-sm-block">
 					<div class="info-box info-box-icon-left text-primary justify-content-start p-0">
 						<i class="icon-shipping"></i>
 
@@ -10,7 +10,7 @@
 							<h4 class="text-transform-none">FREE Express Shipping On Orders $99+</h4>
 						</div>
 					</div>
-				</div> -->
+				</div>
 
 				<div class="header-right header-dropdowns ml-0 ml-sm-auto w-sm-100">
 					
@@ -36,20 +36,20 @@
 							class="social-icon social-facebook icon-facebook"
 							
 						></a>
-						<!-- <a
+						<a
 							href="javascript:;"
 							class="social-icon social-twitter icon-twitter"
 							
-						></a> -->
-						<!-- <a
+						></a>
+						<a
 							href="javascript:;"
 							class="social-icon social-messenger icon-messenger"
 							
-						></a> -->
+						></a>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="header-middle sticky-header mobile-sticky">
 			<div class="container">

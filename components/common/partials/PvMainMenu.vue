@@ -21,21 +21,24 @@
 				>
 					<ul class="menu menu-vertical sf-arrows d-block no-superfish">
 						<li v-for="product in products" :key="product">
-							<a
-								href="javascript:;"
+							<nuxt-link
+								:to="`/shop?category=${product.id}`"
 								class="sf-with-ul"
-							>{{ product.name }}</a>
+							>{{ product.name }}</nuxt-link>
 
 							<div class="megamenu megamenu-fixed-width megamenu-one" v-if="product.sub_categories.length > 0">
 								<div class="row">
 									<div class="col-lg-3 mb-1 pb-2" v-for="subCategory in product.sub_categories" :key="subCategory">
-										<a
-											href="javascript:;"
+										<nuxt-link
+											:to="`/shop?subCategory=${subCategory.id}`"
 											class="nolink pl-0"
-										>{{ subCategory.name }}</a>
+										>{{ subCategory.name }}</nuxt-link>
 										<ul class="submenu">
 											<li v-for="childCategory in subCategory.child_categories" :key="childCategory">
-												<nuxt-link to="/shop">{{ childCategory.name }}</nuxt-link>
+												<nuxt-link 
+													:to="`/shop?childCategory=${childCategory.id}`">
+													{{ childCategory.name }}
+												</nuxt-link>
 											</li>
 										</ul>
 

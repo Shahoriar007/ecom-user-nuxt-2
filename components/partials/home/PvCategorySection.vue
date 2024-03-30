@@ -23,7 +23,7 @@
 				v-for="(item, index) in categories" :key="index"
             >
                 <nuxt-link
-                    :to="{ path: '/shop', query: { category: 'fashion' } }"
+                    :to="{ path: '/shop', query: { category: item.id } }"
                 >
                     <figure>
                         <img

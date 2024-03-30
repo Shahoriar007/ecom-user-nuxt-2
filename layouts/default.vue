@@ -67,7 +67,8 @@ export default {
 	data: function() {
 		return {
 			isHide: false,
-			isHideStickyFooter: true
+			isHideStickyFooter: true,
+			categories: [],
 		};
 	},
 	watch: {
@@ -90,6 +91,7 @@ export default {
 		});
 		window.addEventListener('resize', stickyHeaderHandler);
 		window.addEventListener('resize', resizeHandler);
+
 	},
 	destroyed: function() {
 		window.removeEventListener('scroll', showScrollTopHandler, {

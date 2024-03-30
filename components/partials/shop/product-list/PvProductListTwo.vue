@@ -238,7 +238,9 @@ export default {
 			this.products = null;
 			this.totalCount = null;
 
-			Api.get(`${baseUrl}/api/active-products`)
+			let query = this.$route.query
+
+			Api.get(`${baseUrl}/api/active-products` , { params: query })
 				.then(response => {
 					this.products = response.data.data;
 					//this.totalCount = response.data.totalCount;
