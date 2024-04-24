@@ -15,28 +15,35 @@
         <div class="bg-gray" v-if="products && products.length > 0">
             <div class="container">
                 <pv-products-collection-four
+                    :products="newArrivalProducts"
+                    :tags = "['New Arrival']"
+                ></pv-products-collection-four>
+
+                <pv-products-collection-four
                     :products="flashSaleProducts"
                     :tags = "['Flash Sale']"
                 ></pv-products-collection-four>
 
-                <pv-products-collection-four
-                    :products="isForYouProducts"
-                    :tags = "['For You']"
-                    ></pv-products-collection-four>
-                    
                     <pv-feature-section></pv-feature-section>
-                    
-                    <pv-products-collection-four
-                    :products="newArrivalProducts"
-                    :tags = "['New Arrival']"
-                    ></pv-products-collection-four>
                     
                     <pv-products-collection-four
                     :products="hotDealProducts"
                     :tags = "['Hot Deals']"
                 ></pv-products-collection-four>
+
+                <!-- <pv-products-collection-four
+                    :products="isForYouProducts"
+                    :tags = "['For You']"
+                    ></pv-products-collection-four> -->
+
+                <pv-products-filter-one
+                    :products="isForYouProducts"
+                    :tags = "['For You']"
+                    >
+                </pv-products-filter-one>
             </div>
         </div>
+        
 
         <template>
 			<pv-sticky-footer></pv-sticky-footer>

@@ -5,44 +5,43 @@
         data-animation-delay="100"
         v-animate
     >
-        <pv-carousel
+        <!-- <pv-carousel
             class="categories-slider swiper-carousel swiper-theme show-nav-hover nav-outer appear-animate"
             :options="categorySlider"
             data-animation-name="fadeInUpShorter"
             data-animation-delay="200"
             data-animation-duration="1000"
             v-animate
-        >
+        > -->
 
-		<template >
-			<div
-                class="product-category swiper-slide"
+        <template>
+            <div class="row">
+                <div
+                class=" col-3 col-sm-3 col-md-3 col-lg-2 product-category swiper-slide"
                 data-animation-name="fadeInUpShorter"
                 v-animate
-
-				v-for="(item, index) in categories" :key="index"
-            >
-                <nuxt-link
-                    :to="{ path: '/shop', query: { category: item.id } }"
+                v-for="(item, index) in categories"
+                :key="index"
                 >
+                <nuxt-link :to="{ path: '/shop', query: { category: item.id } }">
                     <figure>
-                        <img
-                            v-lazy="item.category_image"
-                            alt="category"
-                            width="280"
-                            height="240"
-                            style="background: #f4f4f4"
-                        />
+                    <img
+                        v-lazy="item.category_image"
+                        alt="category"
+                        width="280"
+                        height="240"
+                        style="background: #f4f4f4"
+                    />
                     </figure>
                     <div class="category-content">
-                        <h3>{{ item?.name }}</h3>
+                    <h3>{{ item?.name }}</h3>
                     </div>
                 </nuxt-link>
+                </div>
             </div>
-
-		</template>
+            </template>
             
-        </pv-carousel>
+        <!-- </pv-carousel> -->
     </div>
 </template>
 

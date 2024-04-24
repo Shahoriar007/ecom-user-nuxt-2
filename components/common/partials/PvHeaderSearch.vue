@@ -85,7 +85,7 @@
 						>
 							<div class="search-media">
 								<img
-									:src="`${baseUrl}${product.small_pictures[0].url}`"
+									:src="`${product.small_pictures[0].original_url}`"
 									alt="Product"
 									width="40"
 									height="40"
@@ -99,23 +99,19 @@
 							</div>
 
 							<div class="search-price">
-								<div
+								<!-- <div
 									class="product-price mb-0"
-									v-if="product.minPrice == product.maxPrice"
-								>${{ product.minPrice.toFixed(2) }}</div>
+									
+								>{{ product.sale_price }} Tk</div> -->
 
-								<template v-else>
+								<template>
 									<div
 										class="product-price mb-0"
-										v-if="product.variants.length == 0"
 									>
-										<span class="new-price">${{ product.minPrice.toFixed(2) }}</span>
-										<span class="old-price">${{ product.maxPrice.toFixed(2) }}</span>
+										<span class="new-price">{{ product.sale_price }} Tk</span>
+										<span class="old-price">{{ product.price }} Tk</span>
 									</div>
-									<div
-										class="product-price mb-0"
-										v-else
-									>${{product.minPrice.toFixed(2)}} - ${{product.maxPrice.toFixed(2)}}</div>
+									
 								</template>
 							</div>
 							<!-- <a
@@ -155,6 +151,15 @@ export default {
 			return Math.random() * 100;
 		}
 	},
+	watch: {
+		search_term: function (val) {
+			if (val) {
+				this.searchProducts();
+			}else{
+				this.suggestions = [];
+			}
+    	},
+	},
 	methods: {
 		searchProducts: function() {
 			if (this.search_term.length > 2) {
@@ -164,55 +169,15 @@ export default {
 				});
 				this.timeouts.push(
 					setTimeout(() => {
-						Api.get(`${baseUrl}/search`, {
+						Api.get(`${baseUrl}/api/product-search`, {
 							params: {
 								search_term: search_term,
-								demo: this.currentDemo,
-								category: this.searchCategory
+								
 							}
 						})
 							.then(response => {
-								this.suggestions = response.data.reduce(
-									(acc, cur) => {
-										let max = 0;
-										let min = 99999;
-										min = cur.sale_price
-											? cur.sale_price
-											: 99999;
-										max = cur.price ? cur.price : 0;
-										if (cur.variants && !cur.price) {
-											min = cur.variants[0].price;
-
-											cur.variants.forEach(item => {
-												let itemPrice = item.sale_price
-													? item.sale_price
-													: item.price;
-												if (min > itemPrice)
-													min = itemPrice;
-												if (max < itemPrice)
-													max = itemPrice;
-											});
-										}
-										if (min === 99999) min = max;
-										else if (max === 0) max = min;
-										return [
-											...acc,
-											{
-												...cur,
-												minPrice: min,
-												maxPrice: max
-											}
-										];
-									},
-									[]
-								);
-								if (
-									document.querySelector('.search-suggests')
-								) {
-									document
-										.querySelector('.search-suggests')
-										.setAttribute('style', '');
-								}
+								this.suggestions = response.data.data;
+								
 							})
 							.catch(error => {});
 					}, 500)
@@ -224,6 +189,9 @@ export default {
 				this.suggestions = [];
 			}
 		},
+
+
+
 		emphasizeMatchWord: function(name) {
 			var regExp = new RegExp(this.search_term, 'i');
 			return name.replace(
