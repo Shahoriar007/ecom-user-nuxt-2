@@ -251,6 +251,25 @@
                                             required
                                         />
                                     </div> -->
+                                   
+
+                                    <div class="form-group">
+                                        <label>
+                                            Phone
+                                            <abbr
+                                                class="required"
+                                                title="required"
+                                                >*</abbr
+                                            >
+                                        </label>
+                                        <input
+                                            v-model="phone"
+                                            type="tel"
+                                            class="form-control"
+                                            required
+                                        />
+                                    </div>
+
                                     <div class="form-group mb-1 pb-2">
                                         <label>
                                             Detail address
@@ -274,23 +293,6 @@
                                         >
                                             Minimum 6 characters required
                                         </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label>
-                                            Phone
-                                            <abbr
-                                                class="required"
-                                                title="required"
-                                                >*</abbr
-                                            >
-                                        </label>
-                                        <input
-                                            v-model="phone"
-                                            type="tel"
-                                            class="form-control"
-                                            required
-                                        />
                                     </div>
 
                                     <!-- <div class="form-group">
@@ -543,7 +545,7 @@
                                     >
                                         <td class="product-col">
                                             <h2 class="product-title">
-                                                {{ product.name }} ×
+                                                {{ truncateName(product.name) }} ×
                                                 <span class="product-qty">{{
                                                     product.qty
                                                 }}</span>
@@ -671,7 +673,7 @@
                                 class="btn btn-dark btn-place-order"
                                 @click="submitOrder"
                                 >
-                                অর্ডার করুন
+                                অর্ডার কনফার্ম করুন
                             </button>
                             <!-- form="checkout-form" -->
                         </div>
@@ -742,8 +744,28 @@
             </div>
         </div>
         <template>
-			<pv-sticky-footer></pv-sticky-footer>
-		</template>
+			
+            <div class="sticky-navbar fixed" v-if="cartList.length > 0">
+				<div class="container">
+					<div class="row">
+						
+							<button class="btn btn-primary" href="javascript:;"  @click="submitOrder">
+								অর্ডার কনফার্ম করুন
+											</button>
+						
+							
+						
+					</div>
+				</div>
+			
+			</div>
+
+            <div v-else>
+                <pv-sticky-footer></pv-sticky-footer>
+            </div>
+
+            </template>
+            
     </main>
 </template>
 
@@ -798,6 +820,15 @@ export default {
         });
     },
     methods: {
+        truncateName(name) {
+            if (!name) return '';
+            const words = name.split(' ');
+            if (words.length > 2) {
+                return words.slice(0, 2).join(' ') + '...';
+            } else {
+                return name;
+            }
+        },
         async submitOrder() {
             try {
 
@@ -805,6 +836,21 @@ export default {
                     this.orderFrom = "Inside Dhaka";
                 }else{
                     this.orderFrom = "Outside Dhaka";
+                }
+
+                if (this.fullName.length < 1) {
+                    alert("Full name is required!");
+                    return;
+                }
+
+                if (this.phone.length < 1) {
+                    alert("Phone number is required!");
+                    return;
+                }
+
+                if (this.detailAddress.length < 6) {
+                    alert("Address must be at least 6 characters long!");
+                    return;
                 }
 
                 const order = {
@@ -826,19 +872,16 @@ export default {
 
                 const response = await Api.post(`${baseUrl}/api/order`, order);
 
-               // i want to reload the page
-              
-
-
                 if (response.status === 200) {
                     this.$router.push('/pages/account');
                 } else {
-                    alert('Order failed!');
+                    alert('Order failed! Please try again.');
                 }
 
                 return response;
             } catch (error) {
-                console.log(error);
+                alert('Failed! Please try again.');
+            
             }
         },
 
@@ -869,3 +912,11 @@ export default {
     },
 };
 </script>
+
+<style scoped>
+.btn-primary {
+    border-color: #222529 !important;
+    background-color: #222529 !important;
+    width: 100%;
+}
+</style>

@@ -663,7 +663,7 @@ hr {
 
     .product-default {
         img {
-            max-height: 215px;
+            // max-height: 215px;
             object-fit: cover;
         }
     }
@@ -1482,6 +1482,17 @@ hr {
         font-size: .7rem;
     }
 
+    .home-slide {
+        .banner-content {
+            position: static;
+            margin-left: 3rem;
+        }
+
+        img {
+            min-height: 100px;
+        }
+    }
+
     .deal-product {
         height: auto;
         
@@ -1535,6 +1546,17 @@ hr {
 
         .btn {
             margin-left: 0;
+        }
+    }
+
+    .home-slide {
+        .banner-content {
+            position: static;
+            margin-left: 3rem;
+        }
+
+        img {
+            min-height: 100px;
         }
     }
 
@@ -1597,6 +1619,17 @@ hr {
     .banner1 .banner-layer {
         right: calc(9.3% + 10px);
     }
+
+    .home-slide {
+        .banner-content {
+            position: static;
+            margin-left: 3rem;
+        }
+
+        img {
+            min-height: 100px;
+        }
+    }
 }
 
 @media(max-width: 575px) {
@@ -1617,7 +1650,7 @@ hr {
         }
 
         img {
-            min-height: 400px;
+            min-height: 100px;
         }
     }
 

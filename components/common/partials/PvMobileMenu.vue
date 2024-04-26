@@ -208,7 +208,7 @@
                     </ul>
                 </nav>
 
-                <form class="search-wrapper mb-2" action="#">
+                <!-- <form class="search-wrapper mb-2" action="#">
                     <input
                         type="text"
                         class="form-control mb-0"
@@ -221,21 +221,33 @@
                         type="submit"
                         @click="submitSearchForm"
                     ></button>
-                </form>
+                </form> -->
+
+                <div class="social-icons">
+                    <a
+                            href="javascript:;"
+                            class="d-flex align-items-center ml-2 text-white"
+                        ><i class="icon-phone-1"></i> 019-94635351</a>
+                </div>
+                
+<br><br>
 
                 <div class="social-icons">
                     <a
                         href="https://www.facebook.com/p/Flare-Brand-100064835408819/"
                         class="social-icon social-facebook icon-facebook"
                     ></a>
+
+                   
+                    
                     <!-- <a
                         href="javascript:;"
                         class="social-icon social-twitter icon-twitter"
-                    ></a>
+                    ></a> -->
                     <a
                         href="javascript:;"
                         class="social-icon social-instagram icon-instagram"
-                    ></a> -->
+                    ></a>
                 </div>
             </div>
         </div>
