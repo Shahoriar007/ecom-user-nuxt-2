@@ -39,17 +39,18 @@
 		</div>
 
 	
-			<a
-					:href="product.video_link"
-					class="btn btn-video add-cart mr-2 mt-2"
-					title="Watch Video"
-					target="_blank"
+			<a v-if="product.video_link"
+				:href="product.video_link"
+				class="btn btn-video add-cart mr-2 mt-2"
+				title="Watch Video"
+				target="_blank"
 				>
 				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-play-btn mr-2" viewBox="0 0 16 16">
-  <path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
-  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
-</svg>
-Video</a>
+					<path d="M6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814z"/>
+					<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
+					</svg>
+					Video
+			</a>
 
 			<br>
 			<br>
@@ -325,23 +326,23 @@ Messenger</a>
 		</div>
 
 		<template>
-    <div class="sticky-navbar fixed">
-        <div class="container">
-        <div class="row">
-            
-                <a class="btn btn-primary width-50" href="javascript:;" @click="addCart">
-					কার্টে যোগ করুন
-				                </a>
-            
-                <a class="btn btn-warning width-50" href="javascript:;" @click="buyNow">
-                    অর্ডার করুন
-                </a>
-            
-        </div>
-    </div>
-        
-    </div>
-</template>
+			<div class="sticky-navbar fixed">
+				<div class="container">
+					<div class="row">
+						
+							<a class="btn btn-primary width-50" href="javascript:;" @click="addCart">
+								কার্টে যোগ করুন
+											</a>
+						
+							<a class="btn btn-warning width-50" href="javascript:;" @click="buyNow">
+								অর্ডার করুন
+							</a>
+						
+					</div>
+				</div>
+			
+			</div>
+		</template>
 
 		
 	</div>

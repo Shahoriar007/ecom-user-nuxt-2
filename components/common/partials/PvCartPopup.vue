@@ -5,7 +5,7 @@
 		:width="300"
 		:max="4"
 		animation-name="fade-left"
-		position="bottom right"
+		position="top right"
 	>
 		<template slot="body" slot-scope="props">
 			<div class="minipopup-box">
@@ -13,7 +13,7 @@
 					<figure class="product-media">
 						<nuxt-link :to="'/product/default' + props.item.data.slug">
 							<img 
-								:src="`${baseUrl}${props.item.data.small_pictures[0].url}`" 
+								:src="`${props.item.data.small_pictures[0].original_url}`" 
 								alt="product" 
 								:width="props.item.data.small_pictures[0].width"
 								:height="props.item.data.small_pictures[0].height"

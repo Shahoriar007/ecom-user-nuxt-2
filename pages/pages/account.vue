@@ -1,8 +1,8 @@
 <template>
-	<main class="main">
-		<div class="page-header">
-			<div class="container d-flex flex-column align-items-center">
-				<!-- <nav
+    <main class="main">
+        <div class="page-header">
+            <div class="container d-flex flex-column align-items-center">
+                <!-- <nav
 					aria-label="breadcrumb"
 					class="breadcrumb-nav border-0"
 				>
@@ -23,11 +23,19 @@
 					</ol>
 				</nav> -->
 
-				<h1>Thank You, Order Placed Successfully!</h1>
-			</div>
-		</div>
+                <h1 class="hind-siliguri">
+                    আপনার অর্ডারটি কনফার্ম করা হয়েছে | কিছুক্ষণ এর মধ্যে আপনাকে
+                    কল করা হবে। আপনার প্রয়োজনে কল করুন - 09639279019 এই নম্বরে।
 
-		<!-- <div class="container account-container custom-account-container">
+                </h1>
+				<br><br>
+				<h1 class="hind-siliguri">
+					Flare Brand এ কেনাকাটা করার জন্য আপনাকে অসংখ্য ধন্যবাদ।
+				</h1>
+            </div>
+        </div>
+
+        <!-- <div class="container account-container custom-account-container">
 			<div class="row">
 				<div
 					class="sidebar widget widget-dashboard col-lg-3 order-0"
@@ -68,7 +76,7 @@
 									>Orders</a>
 								</li> -->
 
-								<!-- <li class="nav-item">
+        <!-- <li class="nav-item">
 									<a
 										class="nav-link"
 										id="download-tab"
@@ -135,7 +143,7 @@
 										aria-selected="false"
 									>Shipping</a>
 								</li> -->
-							<!-- </ul>
+        <!-- </ul>
 						</pv-tabs>
 					</div>
 				</div>
@@ -148,7 +156,7 @@
 						aria-labelledby="dashboard-tab"
 					>
 						<div class="dashboard-content"> -->
-							<!-- <p>
+        <!-- <p>
 								Hello
 								<strong class="text-dark">Editor</strong> (not
 								<strong class="text-dark">Editor</strong>?
@@ -158,7 +166,7 @@
 								>Log out</nuxt-link>)
 							</p> -->
 
-							<!-- <p>
+        <!-- <p>
 								From your account dashboard you can view your
 								<a
 									class="btn btn-link link-to-tab"
@@ -180,7 +188,7 @@
 								>edit your password and account details.</a>
 							</p> -->
 
-							<!-- <div class="mb-2 mb-lg-5"></div>
+        <!-- <div class="mb-2 mb-lg-5"></div>
 
 							<div class="row row-lg">
 								<div class="col-6 col-md-4">
@@ -201,7 +209,7 @@
 									</div>
 								</div> -->
 
-								<!-- <div class="col-6 col-md-4">
+        <!-- <div class="col-6 col-md-4">
 									<div
 										class="feature-box text-center pb-4"
 										data-toggle="download"
@@ -276,12 +284,12 @@
 										</div>
 									</div>
 								</div> -->
-							<!-- </div> -->
-							<!-- End .row -->
-						<!-- </div>
+        <!-- </div> -->
+        <!-- End .row -->
+        <!-- </div>
 					</div> -->
 
-					<!-- <div
+        <!-- <div
 						class="tab-pane fade"
 						id="order"
 						role="tabpanel"
@@ -322,9 +330,9 @@
 							</div>
 						</div>
 					</div> -->
-					<!-- End .tab-pane -->
+        <!-- End .tab-pane -->
 
-					<!-- <div
+        <!-- <div
 						class="tab-pane fade"
 						id="download"
 						role="tabpanel"
@@ -343,9 +351,9 @@
 							</div>
 						</div>
 					</div> -->
-					<!-- End .tab-pane -->
+        <!-- End .tab-pane -->
 
-					<!-- <div
+        <!-- <div
 						class="tab-pane fade"
 						id="address"
 						role="tabpanel"
@@ -390,9 +398,9 @@
 							</div>
 						</div>
 					</div> -->
-					<!-- End .tab-pane -->
+        <!-- End .tab-pane -->
 
-					<!-- <div
+        <!-- <div
 						class="tab-pane fade"
 						id="edit"
 						role="tabpanel"
@@ -512,9 +520,9 @@
 							</form>
 						</div>
 					</div> -->
-					<!-- End .tab-pane -->
+        <!-- End .tab-pane -->
 
-					<!-- <div
+        <!-- <div
 						class="tab-pane fade"
 						id="billing"
 						role="tabpanel"
@@ -677,9 +685,9 @@
 							</form>
 						</div>
 					</div> -->
-					<!-- End .tab-pane -->
+        <!-- End .tab-pane -->
 
-					<!-- <div
+        <!-- <div
 						class="tab-pane fade"
 						id="shipping"
 						role="tabpanel"
@@ -817,64 +825,82 @@
 							</form>
 						</div>
 					</div> -->
-					<!-- End .tab-pane -->
-				<!-- </div>
+        <!-- End .tab-pane -->
+        <!-- </div>
 			</div>
 		</div> -->
-	</main>
+        <div>
+            <pv-sticky-footer></pv-sticky-footer>
+        </div>
+    </main>
 </template>
 
 <script>
 import PvTabs from '~/components/features/PvTabs';
 import Sticky from 'vue-sticky-directive';
+import PvStickyFooter from '~/components/common/partials/PvStickyFooter';
 
 export default {
-	directives: {
-		Sticky
-	},
-	components: {
-		PvTabs
-	},
-	data: function() {
-		return {
-			isSticky: false,
-			hasReloaded: false,
-		};
-	},
-	created: function() {
-	// 	if (!this.hasReloaded) {
-    //     window.location.reload();
-    //     this.hasReloaded = true;
-    // }
-},
-	mounted: function() {
-		this.resizeHandler();
-		window.addEventListener('resize', this.resizeHandler, {
-			passive: true
-		});
-	},
-	destroyed: function() {
-		window.removeEventListener('resize', this.resizeHandler);
-	},
-	methods: {
-		tabClicked: function(e) {
-			let linkId = e.target.getAttribute('data-toggle');
-			if (!linkId)
-				linkId = e.target.parentNode.parentNode.getAttribute(
-					'data-toggle'
-				);
-			if (document.getElementById(linkId + '-tab'))
-				document.getElementById(linkId + '-tab').click();
-		},
-		handler: function(e) {
-			let linkId = e.target.getAttribute('href');
-			if (document.querySelector(linkId + '-tab')) {
-				document.querySelector(linkId + '-tab').classList.add('active');
-			}
-		},
-		resizeHandler: function() {
-			this.isSticky = window.innerWidth > 991 ? true : false;
-		}
-	}
+    directives: {
+        Sticky,
+    },
+    components: {
+        PvTabs,
+        PvStickyFooter,
+    },
+    data: function () {
+        return {
+            isSticky: false,
+            hasReloaded: false,
+        };
+    },
+    created: function () {
+        // 	if (!this.hasReloaded) {
+        //     window.location.reload();
+        //     this.hasReloaded = true;
+        // }
+    },
+    mounted: function () {
+        this.resizeHandler();
+        window.addEventListener('resize', this.resizeHandler, {
+            passive: true,
+        });
+    },
+    destroyed: function () {
+        window.removeEventListener('resize', this.resizeHandler);
+    },
+    methods: {
+        tabClicked: function (e) {
+            let linkId = e.target.getAttribute('data-toggle');
+            if (!linkId)
+                linkId =
+                    e.target.parentNode.parentNode.getAttribute('data-toggle');
+            if (document.getElementById(linkId + '-tab'))
+                document.getElementById(linkId + '-tab').click();
+        },
+        handler: function (e) {
+            let linkId = e.target.getAttribute('href');
+            if (document.querySelector(linkId + '-tab')) {
+                document.querySelector(linkId + '-tab').classList.add('active');
+            }
+        },
+        resizeHandler: function () {
+            this.isSticky = window.innerWidth > 991 ? true : false;
+        },
+    },
 };
 </script>
+
+<style scoped>
+@font-face {
+    font-family: 'Hind Siliguri';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Hind Siliguri Regular'), local('HindSiliguri-Regular'), url(https://fonts.gstatic.com/s/hindsiliguri/v4/f2eEi2pbIa8eBfNwpUl0AitmK5NdMj7SMXnqwujOiyU.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0981-09FB, U+200B-200D, U+20B9, U+25CC;
+}
+
+.hind-siliguri {
+    font-family: 'Hind Siliguri', sans-serif;
+}
+</style>
