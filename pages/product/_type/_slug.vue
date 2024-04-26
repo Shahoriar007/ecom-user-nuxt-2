@@ -18,11 +18,7 @@
 						class="breadcrumb-item"
 						v-if="loaded"
 					>
-						<nuxt-link
-							:to="{path: '/shop', query: {category: category.slug}}"
-							v-for="(category, index) in productCategory"
-							:key="`product-category-${index}`"
-						>{{index === productCategory.length - 1 ? category.name : category.name + ', '}}</nuxt-link>
+						{{ productCategory }}
 					</li>
 					<li
 						class="breadcrumb-item active"
@@ -70,6 +66,11 @@
 				v-if="product"
 			></pv-desc-one>
 
+			<pv-related-products
+				:products="relatedProducts"
+			>
+			</pv-related-products>
+
 			
 		</div>
 	</main>
@@ -102,12 +103,11 @@ export default {
 			nextProduct: null,
 			prevProduct: null,
 			loaded: false,
-			productCategory: []
+			productCategory: ""
 		};
 	},
 	created: function() {
 		this.getProduct();
-		console.log("im here");
 
 	},
 	methods: {
@@ -126,15 +126,31 @@ export default {
 					this.prevProduct = response.data.data;
 					this.nextProduct = response.data.data;
 
-					this.product.product_categories.map(item => {
-						this.productCategory.push(item);
-					});
+					this.productCategory = this.product.category.name;
 
+
+
+					this.getRelatedProducts();
 
 					this.loaded = true;
+
+
+
 				})
 				.catch(error => ({ error: JSON.stringify(error) }));
+		},
+
+		getRelatedProducts: function() {
+
+			Api.get(`${baseUrl}/api/related-products/${this.product.category.id}` , { params: { avoid_product_id: this.product.id } })
+				.then(response => {
+					this.relatedProducts = response.data.data;
+				})
+				.catch(error => ({ error: JSON.stringify(error) }));
+
 		}
+
+		
 	}
 };
 </script>

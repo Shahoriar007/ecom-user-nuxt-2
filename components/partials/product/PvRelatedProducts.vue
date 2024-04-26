@@ -11,24 +11,28 @@
 			v-if="!products"
 		>
 			<div
-				v-for="item in [1,2,3,4,5]"
+				v-for="item in [1,2,3,4]"
 				:key="item"
 				class="swiper-slide skel-pro"
 			></div>
 		</pv-carousel>
 
 		<pv-carousel
-			class="products-slider dots-top dots-small"
+			class="products-slider swiper-carousel swiper-theme carousel-with-bg nav-circle pb-0 appear-animate"
+			data-animation-name="fadeIn"
+			data-animation-delay="100"
 			:options="productSliderThree"
+			v-animate
 			v-if="products && products.length > 0"
 		>
 			<pv-product-three
 				:product="item"
-				v-for="(item,index) in products.slice(0, 5)"
+				v-for="(item,index) in products"
 				:key="'related-product' + index"
 				class="swiper-slide"
 			></pv-product-three>
 		</pv-carousel>
+
 
 		<div
 			class="info-box with-icon p-0 mb-3"
