@@ -11,7 +11,7 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: 'Porto - Multi-purpose eCommerce Vue Template',
+                content: 'Flare Brand - Online Shopping',
             },
             {
                 name: 'author',
@@ -19,7 +19,7 @@ export default {
             },
             {
                 name: 'keywords',
-                content: 'Porto Vue eCommerce Template',
+                content: 'Flare Brand - Online Shopping',
             },
             {
                 name: 'app-mobile-web-app-title',
@@ -38,6 +38,7 @@ export default {
                 content: '/images/icons/browserconfig.xml',
             },
         ],
+
         link: [
             {
                 rel: 'dns-prefetch',

@@ -1,10 +1,15 @@
 <template>
+
+
+	
+
 	<div
 		class="recent-products-section appear-animate"
 		data-animation-name="fadeIn"
 		data-animation-delay="100"
 		v-animate
 	>
+
 		<div class="heading shop-list d-flex align-items-center flex-wrap bg-gray mb-0 pl-0 pr-0">
 			<h4 class="section-title text-transform-none mb-0 mr-0">{{ tags[0] }}</h4>
 			<nuxt-link
