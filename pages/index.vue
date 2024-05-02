@@ -5,15 +5,7 @@
 
     <main class="main home skeleton-body">
 
-        <head>
-            <!-- Google Tag Manager -->
-            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TZ7FH7BK');</script>
-        <!-- End Google Tag Manager -->
-        </head>
+       
 
         <div class="bg-gray pb-5">
             <div class="container pb-3">
@@ -64,12 +56,7 @@
 			<pv-sticky-footer></pv-sticky-footer>
 		</template>
 
-        <body>
-            <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ7FH7BK"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <!-- End Google Tag Manager (noscript) -->
-        </body>
+        
 
        
     </main>
@@ -159,6 +146,8 @@ export default {
         },
     },
     mounted: function () {
+        this.someMethod();
+
         Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {
                 // console.log(
@@ -237,6 +226,17 @@ export default {
         clearTimeout(this.timerId);
     },
     methods: {
+        someMethod() {
+            // Some attributes you want to send with the event
+            let someAttributes = {
+            attribute1: 'value1',
+            attribute2: 'value2',
+            // add more attributes as needed
+            };
+
+            // Push the event to GTM
+            this.$gtm.push({ event: 'myEvent', ...someAttributes });
+        },
         toggleSidebar: function () {
             let body = document.querySelector('body');
             if (body.classList.contains('sidebar-opened')) {

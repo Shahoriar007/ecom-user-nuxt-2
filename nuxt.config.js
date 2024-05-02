@@ -94,11 +94,36 @@ export default {
         { src: '~/plugins/directives/animate.js', ssr: false },
         { src: '~/plugins/directives/parallax.js', ssr: false },
         { src: '~/plugins/directives/sticky.js', ssr: false },
+        { src: '~/plugins/gtm' },
     ],
 
     buildModules: ['@nuxtjs/style-resources', 'cookie-universal-nuxt'],
 
-    modules: ['@nuxtjs/axios'],
+    modules: ['@nuxtjs/axios', '@nuxtjs/gtm'],
+
+    gtm: {
+        enabled: true, // Enable GTM
+        debug: true,
+
+        id: 'GTM-TZ7FH7BK', // Your GTM ID
+        layer: 'dataLayer',
+        variables: {},
+
+        pageTracking: false,
+        pageViewEventName: 'nuxtRoute',
+
+        autoInit: true,
+        respectDoNotTrack: true,
+
+        scriptId: 'gtm-script',
+        scriptDefer: false,
+        scriptURL: 'https://www.googletagmanager.com/gtm.js',
+        crossOrigin: false,
+
+        noscript: true,
+        noscriptId: 'gtm-noscript',
+        noscriptURL: 'https://www.googletagmanager.com/ns.html',
+    },
 
     router: {
         base: '/ecom-user-app',
