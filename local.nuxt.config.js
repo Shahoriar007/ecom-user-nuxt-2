@@ -126,8 +126,7 @@ export default {
     },
 
     router: {
-        // base: '/ecom-user-app',
-        base: '/',
+        base: '/ecom-user-app',
         linkActiveClass: '',
         linkExactActiveClass: 'active',
     },
@@ -148,8 +147,7 @@ export default {
     pageTransition: 'page',
 
     server: {
-        // port: 4000,
-        port: 3000,
+        port: 4000,
         host: 'localhost',
     },
 
@@ -159,7 +157,6 @@ export default {
     // },
 
     env: {
-        // baseDomain: 'http://ecom-project-api.test',
-        baseDomain: 'https://api.flarebranded.com/',
+        baseDomain: 'http://ecom-project-api.test',
     },
 };
