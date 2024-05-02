@@ -1,3 +1,6 @@
+/*! For license information please see vue-image-lightbox.min.js.LICENSE.txt */
+
+
 /*
 object-assign
 (c) Sindre Sorhus
@@ -36,9 +39,6 @@ object-assign
  */
 
 /*! nouislider - 9.2.0 - 2017-01-11 10:35:34 */
-
-
-/*! For license information please see vue-image-lightbox.min.js.LICENSE.txt */
 
 
 /*!
