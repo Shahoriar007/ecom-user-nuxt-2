@@ -480,35 +480,9 @@ export default {
 			});
 		}
 
-		// if (this.product.variants.length > 0) {
-		// 	if (this.product.variants[0].size[0])
-		// 		this.product.variants.forEach(item => {
-		// 			if (
-		// 				this.vSizes.findIndex(
-		// 					vsize => vsize.name === item.size[0].size_name
-		// 				) === -1
-		// 			)
-		// 				this.vSizes.push({
-		// 					name: item.size[0].size_name,
-		// 					text: item.size[0].size,
-		// 					image: item.size[0].size_thumbnail
-		// 				});
-		// 		});
+		this.viewItems();
 
-		// 	if (this.product.variants[0].colors[0])
-		// 		this.product.variants.forEach(item => {
-		// 			if (
-		// 				this.vColors.findIndex(
-		// 					vColor => vColor.name === item.colors[0].color_name
-		// 				) === -1
-		// 			)
-		// 				this.vColors.push({
-		// 					name: item.colors[0].color_name,
-		// 					text: item.colors[0].color,
-		// 					image: item.colors[0].color_thumbnail
-		// 				});
-		// 		});
-		// }
+		
 	},
 	methods: {
 		...mapActions('cart', ['addToCart']),
@@ -586,6 +560,32 @@ export default {
 				) === -1
 			);
 		},
+		viewItems() {
+            // Some attributes you want to send with the event
+            let someAttributes = {
+				ecommerce: {
+					currency: "BDT",
+					value: this.product.sale_price,
+					items: [
+					{
+						item_name: this.product.name,
+						item_id: "",
+						price: this.product.sale_price,
+						item_brand: "",
+						item_category: this.product.category.name,
+						item_variant: "",
+						item_list_name: "",
+						item_list_id: "",
+						discount: ""
+				   }
+				    ]
+				  }
+            // add more attributes as needed
+            };
+
+            // Push the event to GTM
+            this.$gtm.push({ event: 'view_item', ...someAttributes });
+        },
 		toggleColorItem: function(color) {
 			if (!this.isDisabled(color, this.curSize)) {
 				if (this.curColor === color) {

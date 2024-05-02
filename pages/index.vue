@@ -146,7 +146,7 @@ export default {
         },
     },
     mounted: function () {
-        this.someMethod();
+        // this.viewItems();
 
         Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {
@@ -226,7 +226,7 @@ export default {
         clearTimeout(this.timerId);
     },
     methods: {
-        someMethod() {
+        viewItems() {
             // Some attributes you want to send with the event
             let someAttributes = {
             attribute1: 'value1',
