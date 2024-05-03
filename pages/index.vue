@@ -159,6 +159,7 @@ export default {
         },
     },
     mounted: function () {
+
         Api.get(`${baseUrl}/api/active-products`)
             .then((response) => {
                 // console.log(
@@ -232,11 +233,25 @@ export default {
         // 		);
         // 	}
         // }, 10000);
+
+        this.testScript();
+
     },
     destroyed: function () {
         clearTimeout(this.timerId);
     },
     methods: {
+        testScript: function () {
+
+            console.log("test dl");
+
+            window.dataLayer.push({
+            event: 'page_view',
+            pageType: 'home',
+            // Add more key-value pairs as needed
+        });
+
+        },
         toggleSidebar: function () {
             let body = document.querySelector('body');
             if (body.classList.contains('sidebar-opened')) {
