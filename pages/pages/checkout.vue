@@ -1,17 +1,6 @@
 <template>
     <main class="main main-test">
 
-        <head>
-            <!-- Google Tag Manager -->
-            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-TZ7FH7BK');</script>
-        <!-- End Google Tag Manager -->
-        </head>
-
-
         <div class="container checkout-container">
             <ul
                 class="checkout-progress-bar d-flex justify-content-center flex-wrap"
@@ -778,12 +767,7 @@
 
             </template>
 
-        <body>
-            <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ7FH7BK"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-            <!-- End Google Tag Manager (noscript) -->
-        </body>
+       
             
     </main>
 </template>
@@ -867,13 +851,13 @@ export default {
                     },
 				items: [
 				{
-					item_name: cart.name,
-					item_id: cart.id,
-					price: cart.price,
+					item_name: "",
+					item_id: "",
+					price: "",
 					item_brand: "",
-					item_category: cart.category.name,
+					item_category: "",
 					
-        			quantity: cart.qyt
+        			quantity: 1,
 			   }
 			    ]
 			  }
@@ -884,10 +868,11 @@ export default {
         async submitOrder() {
             try {
 
+
                 const value = this.totalPrice + this.deliveryCharge;
                 const shipping = this.deliveryCharge;
 
-                // this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
+                this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
 
 
                 if(this.deliveryCharge == this.insideDhaka){
