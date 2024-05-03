@@ -850,33 +850,33 @@ export default {
             }
         },
 
-        purchaseConfirmedGTM: function () {
-            console.log("testtest");
+        purchaseConfirmedGTM: function (value, shipping, name, phone, address, cart) {
+
+            let items = cart.map(item => ({
+                item_name: item.name,
+                item_id: item.id,
+                price: item.price,
+                item_brand: "", 
+                item_category: item.category.name || "", 
+                quantity: item.qty
+            }));
+
 			window.dataLayer.push({
 			event: 'purchase',
 			ecommerce: {
-                transaction_id: 77,
-                affiliation: "rongdhonumart.com",
-                value: 1020,
+                transaction_id: 0,
+                affiliation: "",
+                value: value,
                 tax: 0,
-                shipping: 120,
+                shipping: shipping,
                 currency: "USD",
                 coupon: "null",
                 customer: {
-                name: "Tofayel",
-                phone: "01723735407",
-                address: "Rajshahi"
+                name: name,
+                phone: phone,
+                address: address
                 },
-                items: [
-                {
-                    item_name: "Electric Nail Trimmer for Baby Newborn",
-                    item_id: 60,
-                    price: 450,
-                    item_brand: "Unknown",
-                    item_category: "",
-                    quantity: 2
-                }
-                ]
+                items: items
             }
 			});
 
@@ -884,17 +884,6 @@ export default {
 
         async submitOrder() {
             try {
-
-
-                // const value = this.totalPrice + this.deliveryCharge;
-                // const shipping = this.deliveryCharge;
-
-                console.log("ami ekhane");
-                this.purchaseConfirmedGTM();
-
-                console.log("ami nai");
-
-
 
                 if(this.deliveryCharge == this.insideDhaka){
                     this.orderFrom = "Inside Dhaka";
@@ -937,6 +926,16 @@ export default {
                 const response = await Api.post(`${baseUrl}/api/order`, order);
 
                 if (response.status === 200) {
+
+                    const value = this.totalPrice + this.deliveryCharge;
+                    const shipping = this.deliveryCharge;
+                    const name = this.fullName;
+                    const phone = this.phone;
+                    const address = this.detailAddress;
+                    const cart = this.cartList;
+                    
+
+                    this.purchaseConfirmedGTM(value, shipping, name, phone, address, cart);
 
                    this.$router.push('/pages/account');
                 } else {
