@@ -590,17 +590,17 @@ export default {
 		},
 		viewItemGTM: function () {
 			window.dataLayer.push({
-			event: 'page_view',
+			event: 'view_item',
 			ecommerce: {
 				currency: "BDT",
-				value: 450,
+				value: this.product.sale_price,
 				items: [
 				{
-					item_name: "Electric Nail Trimmer for Baby Newborn",
-					item_id: 60,
-					price: 450,
+					item_name: this.product.name,
+					item_id: this.product.id,
+					price: this.product.sale_price,
 					item_brand: "",
-					item_category: "",
+					item_category: this.product.category.name,
 					item_variant: "",
 					item_list_name: "",
 					item_list_id: "",
