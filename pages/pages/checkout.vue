@@ -886,8 +886,8 @@ export default {
 
                 const value = this.totalPrice + this.deliveryCharge;
                 const shipping = this.deliveryCharge;
-                
-                this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
+
+                // this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
 
 
                 if(this.deliveryCharge == this.insideDhaka){
