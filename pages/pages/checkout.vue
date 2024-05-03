@@ -834,33 +834,33 @@ export default {
         },
 
         purchaseConfirmedGTM: function () {
+            console.log("testtest");
 			window.dataLayer.push({
 			event: 'purchase',
 			ecommerce: {
-				transaction_id: "",
-				affiliation: "",
-                value: "",
+                transaction_id: 77,
+                affiliation: "rongdhonumart.com",
+                value: 1020,
                 tax: 0,
-                shipping: "",
+                shipping: 120,
                 currency: "BDT",
                 coupon: "null",
                 customer: {
-                    name: "",
-                    phone: "",
-                    address: ""
-                    },
-				items: [
-				{
-					item_name: "",
-					item_id: "",
-					price: "",
-					item_brand: "",
-					item_category: "",
-					
-        			quantity: 1,
-			   }
-			    ]
-			  }
+                name: "Tofayel",
+                phone: "01723735407",
+                address: "Rajshahi"
+                },
+                items: [
+                {
+                    item_name: "Electric Nail Trimmer for Baby Newborn",
+                    item_id: 60,
+                    price: 450,
+                    item_brand: "Unknown",
+                    item_category: "",
+                    quantity: 2
+                }
+                ]
+            }
 			});
 
 		},
