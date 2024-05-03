@@ -889,7 +889,11 @@ export default {
                 // const value = this.totalPrice + this.deliveryCharge;
                 // const shipping = this.deliveryCharge;
 
+                console.log("ami ekhane");
                 this.purchaseConfirmedGTM();
+
+                console.log("ami nai");
+
 
 
                 if(this.deliveryCharge == this.insideDhaka){
