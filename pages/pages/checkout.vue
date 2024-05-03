@@ -833,21 +833,21 @@ export default {
             }
         },
 
-        purchaseConfirmedGTM: function (value, shipping, customerName, customerPhone, customerAddress, cart) {
+        purchaseConfirmedGTM: function () {
 			window.dataLayer.push({
 			event: 'purchase',
 			ecommerce: {
 				transaction_id: "",
 				affiliation: "",
-                value: value,
+                value: "",
                 tax: 0,
-                shipping: shipping,
+                shipping: "",
                 currency: "BDT",
                 coupon: "null",
                 customer: {
-                    name: customerName,
-                    phone: customerPhone,
-                    address: customerAddress
+                    name: "",
+                    phone: "",
+                    address: ""
                     },
 				items: [
 				{
@@ -869,10 +869,10 @@ export default {
             try {
 
 
-                const value = this.totalPrice + this.deliveryCharge;
-                const shipping = this.deliveryCharge;
+                // const value = this.totalPrice + this.deliveryCharge;
+                // const shipping = this.deliveryCharge;
 
-                this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
+                this.purchaseConfirmedGTM();
 
 
                 if(this.deliveryCharge == this.insideDhaka){
