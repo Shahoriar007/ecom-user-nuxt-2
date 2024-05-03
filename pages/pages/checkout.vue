@@ -929,12 +929,10 @@ export default {
                     const value = this.totalPrice + this.deliveryCharge;
                     const shipping = this.deliveryCharge;
 
-                    console.log(this.cartList);
-
 
                     this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
 
-                   // this.$router.push('/pages/account');
+                   this.$router.push('/pages/account');
                 } else {
                     alert('Order failed! Please try again.');
                 }
