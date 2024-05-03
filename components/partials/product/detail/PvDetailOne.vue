@@ -480,6 +480,8 @@ export default {
 			});
 		}
 
+		this.viewItemGTM();
+
 		// if (this.product.variants.length > 0) {
 		// 	if (this.product.variants[0].size[0])
 		// 		this.product.variants.forEach(item => {
@@ -585,6 +587,28 @@ export default {
 						item.size[0].size_name === size.name
 				) === -1
 			);
+		},
+		viewItemGTM: function () {
+			window.dataLayer.push({
+			event: 'page_view',
+			ecommerce: {
+				currency: "BDT",
+				value: 450,
+				items: [
+				{
+					item_name: "Electric Nail Trimmer for Baby Newborn",
+					item_id: 60,
+					price: 450,
+					item_brand: "",
+					item_category: "",
+					item_variant: "",
+					item_list_name: "",
+					item_list_id: "",
+					discount: ""
+			   }
+			    ]
+			  }
+			});
 		},
 		toggleColorItem: function(color) {
 			if (!this.isDisabled(color, this.curSize)) {
