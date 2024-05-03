@@ -838,6 +838,8 @@ export default {
             this.deliveryCharge = this.outsideDhaka;
             
         });
+
+        this.beginCheckoutGTM(this.totalPrice, this.cartList);
     },
     methods: {
         truncateName(name) {
@@ -848,6 +850,32 @@ export default {
             } else {
                 return name;
             }
+        },
+
+        beginCheckoutGTM: function (value, cart) {
+
+        let items = cart.map(item => ({
+            item_name: item.name,
+            item_id: item.id,
+            price: item.price,
+            item_brand: "", 
+            item_category: item.category.name || "", 
+            item_variant: "",
+            item_list_name: "",
+            item_list_id: "",
+            index: "",
+            quantity: item.qty
+        }));
+
+        window.dataLayer.push({
+        event: 'begin_checkout',
+        ecommerce: {
+            currency: "USD",
+            value: value,
+            items: items
+        }
+        });
+
         },
 
         purchaseConfirmedGTM: function (value, shipping, name, phone, address, cart) {
