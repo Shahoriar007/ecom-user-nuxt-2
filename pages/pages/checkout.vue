@@ -860,7 +860,7 @@ export default {
                 value: 1020,
                 tax: 0,
                 shipping: 120,
-                currency: "BDT",
+                currency: "USD",
                 coupon: "null",
                 customer: {
                 name: "Tofayel",
