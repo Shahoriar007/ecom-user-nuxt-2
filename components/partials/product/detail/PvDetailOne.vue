@@ -529,6 +529,8 @@ export default {
 				}
 
 				this.addToCart({ product: saledProduct });
+
+				this.addToCartGTM();
 			}
 		},
 
@@ -610,6 +612,31 @@ export default {
 			  }
 			});
 		},
+
+		addToCartGTM: function () {
+			window.dataLayer.push({
+			event: 'add_to_cart',
+			ecommerce: {
+				currency: "BDT",
+				value: this.product.sale_price,
+				items: [
+				{
+					item_name: this.product.name,
+					item_id: this.product.id,
+					price: this.product.sale_price,
+					item_brand: "",
+					item_category: this.product.category.name,
+					item_variant: "",
+					item_list_name: "",
+					item_list_id: "",
+					index: "",
+        			quantity: 1
+			   }
+			    ]
+			  }
+			});
+		},
+
 		toggleColorItem: function(color) {
 			if (!this.isDisabled(color, this.curSize)) {
 				if (this.curColor === color) {

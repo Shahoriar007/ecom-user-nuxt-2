@@ -1,5 +1,17 @@
 <template>
     <main class="main main-test">
+
+        <head>
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TZ7FH7BK');</script>
+        <!-- End Google Tag Manager -->
+        </head>
+
+
         <div class="container checkout-container">
             <ul
                 class="checkout-progress-bar d-flex justify-content-center flex-wrap"
@@ -765,6 +777,13 @@
             </div>
 
             </template>
+
+        <body>
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ7FH7BK"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        </body>
             
     </main>
 </template>
@@ -829,6 +848,39 @@ export default {
                 return name;
             }
         },
+
+        purchaseConfirmedGTM: function (value, shipping, customerName, customerPhone, customerAddress, cart) {
+			window.dataLayer.push({
+			event: 'purchase',
+			ecommerce: {
+				transaction_id: "",
+				affiliation: "",
+                value: value,
+                tax: 0,
+                shipping: shipping,
+                currency: "BDT",
+                coupon: "null",
+                customer: {
+                    name: customerName,
+                    phone: customerPhone,
+                    address: customerAddress
+                    },
+				items: [
+				{
+					item_name: cart.name,
+					item_id: cart.id,
+					price: cart.price,
+					item_brand: "",
+					item_category: cart.category.name,
+					
+        			quantity: cart.qyt
+			   }
+			    ]
+			  }
+			});
+
+		},
+
         async submitOrder() {
             try {
 
@@ -873,7 +925,16 @@ export default {
                 const response = await Api.post(`${baseUrl}/api/order`, order);
 
                 if (response.status === 200) {
-                    this.$router.push('/pages/account');
+
+                    const value = this.totalPrice + this.deliveryCharge;
+                    const shipping = this.deliveryCharge;
+
+                    console.log(this.cartList);
+
+
+                    this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
+
+                   // this.$router.push('/pages/account');
                 } else {
                     alert('Order failed! Please try again.');
                 }

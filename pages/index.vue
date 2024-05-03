@@ -1,8 +1,5 @@
 <template>
 
-
-    
-
     <main class="main home skeleton-body">
 
         <head>
