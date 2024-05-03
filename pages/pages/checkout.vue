@@ -884,6 +884,12 @@ export default {
         async submitOrder() {
             try {
 
+                const value = this.totalPrice + this.deliveryCharge;
+                const shipping = this.deliveryCharge;
+                
+                this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
+
+
                 if(this.deliveryCharge == this.insideDhaka){
                     this.orderFrom = "Inside Dhaka";
                 }else{
@@ -925,12 +931,6 @@ export default {
                 const response = await Api.post(`${baseUrl}/api/order`, order);
 
                 if (response.status === 200) {
-
-                    const value = this.totalPrice + this.deliveryCharge;
-                    const shipping = this.deliveryCharge;
-
-
-                    this.purchaseConfirmedGTM(value, shipping, this.fullName, this.phone, this.detailAddress, this.cartList);
 
                    this.$router.push('/pages/account');
                 } else {
