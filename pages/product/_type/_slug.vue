@@ -1,5 +1,16 @@
 <template>
 	<main class="main skeleton-body">
+
+		<head>
+            <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-TZ7FH7BK');</script>
+        <!-- End Google Tag Manager -->
+        </head>
+
 		<nav
 			aria-label="breadcrumb"
 			class="breadcrumb-nav mb-3"
@@ -40,14 +51,11 @@
 					</div>
 
 					<div class="col-lg-7 col-md-6 product-single-details">
-						<!-- <pv-detail-one
-							:product="product"
-							:prev-product="prevProduct"
-							:next-product="nextProduct"
-						></pv-detail-one> -->
+						
 						<pv-detail-one
 							:product="product"
 						></pv-detail-one>
+
 					</div>
 				</div>
 			</div>
@@ -73,6 +81,13 @@
 
 			
 		</div>
+
+		<body>
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ7FH7BK"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        </body>
 	</main>
 </template>
 
