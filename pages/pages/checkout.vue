@@ -169,7 +169,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>
-                                                    Full name
+                                                    Full name (পুরো নাম)
                                                     <abbr
                                                         class="required"
                                                         title="required"
@@ -266,7 +266,7 @@
 
                                     <div class="form-group">
                                         <label>
-                                            Phone
+                                            Phone (মোবাইল নম্বর)
                                             <abbr
                                                 class="required"
                                                 title="required"
@@ -283,7 +283,7 @@
 
                                     <div class="form-group mb-1 pb-2">
                                         <label>
-                                            Detail address
+                                            Detail address (পূর্ণ ঠিকানা)
                                             <abbr
                                                 class="required"
                                                 title="required"
@@ -295,7 +295,7 @@
                                             @input="validateDetailAddress"
                                             type="text"
                                             class="form-control"
-                                            placeholder="House number and street name"
+                                            placeholder=""
                                             required
                                         />
                                         <div
@@ -604,7 +604,7 @@
                                     <tr class="order-shipping">
                                         <td class="text-left" colspan="2">
                                             <h4 class="m-b-sm">
-                                                Delivery Charge
+                                                Delivery Charge (ডেলিভারি চার্জ)
                                             </h4>
 
                                             <div
@@ -623,7 +623,7 @@
                                                     />
                                                     <label
                                                         class="custom-control-label"
-                                                        >Inside Dhaka - (BDT) {{ insideDhaka }}</label
+                                                        >Inside Dhaka (ঢাকার ভেতরে)- (BDT) {{ insideDhaka }}</label
                                                     >
                                                 </div>
                                             </div>
@@ -644,7 +644,7 @@
                                                     />
                                                     <label
                                                         class="custom-control-label"
-                                                        >Outside Dhaka - (BDT) {{ outsideDhaka }}</label
+                                                        >Outside Dhaka (ঢাকার বাইরে)- (BDT) {{ outsideDhaka }}</label
                                                     >
                                                 </div>
                                             </div>
@@ -653,11 +653,11 @@
 
                                     <tr class="order-total">
                                         <td>
-                                            <h4>Total</h4>
+                                            <h4 style="color: #3050ff">Total</h4>
                                         </td>
                                         <td>
                                             <b class="total-price">
-                                                <span
+                                                <span style="color: #3050ff"
                                                     >(BDT)
                                                     {{
                                                         (Number(totalPrice) +
@@ -681,7 +681,7 @@
                             </div> -->
 
                             <button
-                                class="btn btn-dark btn-place-order"
+                                class="btn btn-color btn-place-order"
                                 @click="submitOrder"
                                 >
                                 অর্ডার কনফার্ম করুন
@@ -1010,5 +1010,12 @@ export default {
     border-color: #222529 !important;
     background-color: #222529 !important;
     width: 100%;
+}
+
+.btn-color {
+    border-color: #3050ff  ;
+    background-color: #3050ff ;
+    color: #fff;
+    box-shadow: none;
 }
 </style>

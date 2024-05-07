@@ -65,7 +65,7 @@
 									</h5>
 								</td>
 
-								<td>${{ product.price | priceFormat }}</td>
+								<td>BDT {{ product.price | priceFormat }}</td>
 
 								<td>
 									<pv-quantity-input
@@ -76,7 +76,7 @@
 								</td>
 
 								<td class="text-right">
-									<span class="subtotal-price">${{ product.price * product.qty | priceFormat }}</span>
+									<span class="subtotal-price">BDT {{ product.price * product.qty | priceFormat }}</span>
 								</td>
 							</tr>
 						</tbody>
@@ -133,7 +133,7 @@
 						<tbody>
 							<tr>
 								<td>Subtotal</td>
-								<td>${{ totalPrice | priceFormat }}</td>
+								<td>(BDT) {{ totalPrice | priceFormat }}</td>
 							</tr>
 
 							<!-- <tr>
@@ -219,8 +219,8 @@
 
 						<tfoot>
 							<tr>
-								<td>Total</td>
-								<td>${{ totalPrice | priceFormat }}</td>
+								<td style="color: #3050ff;">Total</td>
+								<td style="color: #3050ff;" >BDT {{ totalPrice | priceFormat }}</td>
 							</tr>
 						</tfoot>
 					</table>

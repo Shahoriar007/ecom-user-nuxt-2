@@ -181,9 +181,9 @@
 					class="product-desc-content"
 					v-else
 				>
-					<p v-html="product.short_description">
+					<div v-html="product.short_description">
 						
-					</p>
+					</div>
 					<!-- <ul>
 						<li>
 							Any Product types that You want - Simple,
@@ -653,7 +653,20 @@ export default {
 		}
 	},
 	mounted: function() {
-		console.log(this.product);
 	}
 };
 </script>
+
+<style scoped>
+.product-desc-content p {
+    margin-bottom: 0px !important; 
+    letter-spacing: 0.005em;
+}
+.product-single-tabs .tab-pane {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #7b858a;
+    line-height: 0 !important;
+}
+
+</style>
