@@ -1007,8 +1007,8 @@ export default {
 
 <style scoped>
 .btn-primary {
-    border-color: #222529 !important;
-    background-color: #222529 !important;
+    border-color: #3050ff !important;
+    background-color: #3050ff !important;
     width: 100%;
 }
 

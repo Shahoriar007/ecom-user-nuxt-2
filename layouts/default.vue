@@ -12,7 +12,7 @@
 			</div>
 		</div>
 
-		<pv-cart-popup class="minipopup-area"></pv-cart-popup>
+		<!-- <pv-cart-popup class="minipopup-area"></pv-cart-popup> -->
 
 		<a
 			id="scroll-top"
