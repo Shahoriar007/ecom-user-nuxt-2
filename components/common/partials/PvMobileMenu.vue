@@ -227,14 +227,14 @@
                     <a
                             href="javascript:;"
                             class="d-flex align-items-center ml-2 text-white"
-                        ><i class="icon-phone-1"></i> 019-94635351</a>
+                        ><i class="icon-phone-1"></i> +8801716479663</a>
                 </div>
                 
 <br><br>
 
                 <div class="social-icons">
                     <a
-                        href="https://www.facebook.com/p/Flare-Brand-100064835408819/"
+                        href="https://www.facebook.com/asc.ac.10?mibextid=JRoKGi"
                         class="social-icon social-facebook icon-facebook"
                     ></a>
 

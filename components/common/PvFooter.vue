@@ -86,17 +86,17 @@
 							<div class="widget-content">
 								<div class="social-icons">
 									<a
-										href="https://www.facebook.com/people/Flare-Brand/100064835408819/?mibextid=ZbWKwL"
+										href="https://www.facebook.com/asc.ac.10?mibextid=JRoKGi"
 										class="social-icon social-facebook icon-facebook"
 										
 										title="Facebook"
 									></a>
 									<a
-										href="javascript:;"
-										class="social-icon social-twitter icon-twitter"
+										href="https://www.amirunsritycricketacademy.com/"
+										class="social-icon social-gplus"
 										
-										title="Twitter"
-									></a>
+										title="Website"
+									><i class="fa fa-globe"></i></a>
 									<a
 										href="javascript:;"
 										class="social-icon social-instagram icon-instagram"

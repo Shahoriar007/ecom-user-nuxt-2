@@ -53,7 +53,7 @@
                             <i class="sicon-location-pin"></i>
                             <div class="feature-box-content">
                                 <h3>Address</h3>
-                                <h5>Newmarket City Complex Biswas Builders, Dhaka Bangladesh</h5>
+                                <h5>Amirun Srity Cricket Academy Sports Ground (Inside Lalmatia Housing Society School & College), Block B, Lalmatia, Dhaka</h5>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,8 @@
                             <i class="fa fa-mobile-alt"></i>
                             <div class="feature-box-content">
                                 <h3>Phone Number</h3>
-                                <h5>+8801994635351</h5>
+                                <h5>+8801716479663
+</h5>
                             </div>
                         </div>
                     </div>
@@ -71,16 +72,18 @@
                             <i class="far fa-envelope"></i>
                             <div class="feature-box-content">
                                 <h3>E-mail Address</h3>
-                                <h5>mail.flareonlineshop@gmail.com</h5>
+                                <h5>info@amirunsritycricketacademy.com</h5>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6 col-lg-3">
                         <div class="feature-box text-center">
-                            <i class="far fa-calendar-alt"></i>
+                            <i class="fa fa-globe"></i>
                             <div class="feature-box-content">
-                                <h3>Working Days/Hours</h3>
-                                <h5>24/7</h5>
+                                <h3>Website</h3>
+                                <a href="https://www.amirunsritycricketacademy.com">
+        <h5>https://www.amirunsritycricketacademy.com</h5>
+    </a>
                             </div>
                         </div>
                     </div>

@@ -55,7 +55,7 @@
 					title="Quick View"
 					@click="addCart"
 				>
-				কার্টে যোগ করুন
+				Add To Cart
 				</nuxt-link>
 
 				<nuxt-link
@@ -64,7 +64,7 @@
 					title="Another Button"
 					@click="buyNow"
 				>
-				অর্ডার করুন
+				Order Now
 				</nuxt-link>
 			</div>
 

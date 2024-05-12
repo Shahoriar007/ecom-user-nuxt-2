@@ -66,7 +66,7 @@
 						class="logo"
 					>
 						<img
-							src="~/static/images/logo-black.png"
+							src="~/static/images/cricket-logo-black.png"
 							class="w-100"
 							width="101"
 							height="40"

@@ -19,7 +19,7 @@
         </div>
         <div class="sticky-info">
             <a  
-				href="https://wa.me/+8801994635351" 
+				href="https://wa.me/+8801716479663"
                 target="_blank"
             >
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-whatsapp mb-1 mt-1" viewBox="0 0 16 16">
@@ -29,7 +29,7 @@ Whatsapp</a>
         </div>
         <div class="sticky-info">
             <a  
-            href="https://m.me/100064835408819"  
+            href="https://m.me/+8801716479663"  
                 target="_blank"
             >
             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-chat mb-1 mt-1" viewBox="0 0 16 16">

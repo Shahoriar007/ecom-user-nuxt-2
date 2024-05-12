@@ -28,7 +28,7 @@
 
 		<template>
 			<div class="whatsapp-logo">
-				<a href="https://wa.me/+8801994635351" target="_blank">
+				<a href="https://wa.me/+8801716479663" target="_blank">
 					<img src="~/static/images/whatsapp2.png" alt="whatsapp-logo" />
 				</a>
 			</div>

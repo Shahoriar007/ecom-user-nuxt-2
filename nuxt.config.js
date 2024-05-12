@@ -1,7 +1,7 @@
 export default {
     head: {
-        titleTemplate: 'Flare Brand',
-        title: 'Flare Brand',
+        titleTemplate: 'Amirun Srity Cricket Academy',
+        title: 'Amirun Srity Cricket Academy',
         meta: [
             { charset: 'utf-8' },
             {
@@ -54,11 +54,11 @@ export default {
                 rel: 'icon',
                 type: 'image/png',
                 sizes: '16x16',
-                href: './images/icons/favicon.jpeg',
+                href: './images/icons/favicon.ico',
             },
             {
                 rel: 'shortcut icon',
-                href: './images/icons/favicon.jpeg',
+                href: './images/icons/favicon.ico',
             },
             {
                 rel: 'apple-touch-icon',

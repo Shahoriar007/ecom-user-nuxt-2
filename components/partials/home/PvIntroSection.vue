@@ -7,7 +7,7 @@
 		<div class="home-slide home-slide1 banner swiper-slide">
 			<img
 				class="slide-bg"
-				v-lazy="'./images/home/slider/slide-1.jpg'"
+				v-lazy="'./images/home/slider/slide-3.png'"
 				alt="slider image"
 				width="1420"
 				height="350"
@@ -64,7 +64,63 @@
 		<div class="home-slide home-slide2 banner swiper-slide">
 			<img
 				class="slide-bg"
-				v-lazy="'./images/home/slider/slide-2.jpg'"
+				v-lazy="'./images/home/slider/slide-2.png'"
+				alt="slider image"
+				width="1420"
+				height="350"
+				image-ratio="24.64"
+			/>
+			<!-- <div class="container d-flex align-items-sm-center justify-content-center justify-content-sm-between flex-column-reverse flex-sm-row">
+				<div
+					class="banner-content content-left mt-2 mt-sm-0 appear-animate"
+					data-animation-duration="1200"
+					data-animation-name="fadeInUpShorter"
+					data-animation-delay="1000"
+				>
+					<h4 class="text-transform-none">Best Gadtets Deals</h4>
+					<h5 class="coupon-sale-text">
+						<span>from</span>
+						<b class="text-white align-middle"><sup>$</sup><em class="align-text-top">1</em><sup>99</sup></b>
+					</h5>
+					<nuxt-link
+						to="/shop"
+						class="btn btn-dark btn-lg"
+					>Shop Now</nuxt-link>
+				</div>
+
+				<div class="banner-content content-right text-sm-right">
+					<h2
+						class="text-shadow text-white font1 mb-0 appear-animate"
+						data-animation-duration="1200"
+						data-animation-name="fadeInUpShorter"
+						data-animation-delay="100"
+					>NEW</h2>
+					<h1
+						class="text-dark appear-animate"
+						data-animation-duration="1200"
+						data-animation-name="fadeInUpShorter"
+						data-animation-delay="400"
+					>SELECTED</h1>
+					<h3
+						class="text-dark mb-0 appear-animate"
+						data-animation-duration="1200"
+						data-animation-name="fadeInUpShorter"
+						data-animation-delay="600"
+					>DEALS</h3>
+					<h2
+						class="text-shadow text-white font1 mr-0 mb-0 appear-animate"
+						data-animation-duration="1200"
+						data-animation-name="fadeInUpShorter"
+						data-animation-delay="800"
+					>RELEASES</h2>
+				</div>
+			</div> -->
+		</div>
+
+		<div class="home-slide home-slide2 banner swiper-slide">
+			<img
+				class="slide-bg"
+				v-lazy="'./images/home/slider/slide-1.png'"
 				alt="slider image"
 				width="1420"
 				height="350"
