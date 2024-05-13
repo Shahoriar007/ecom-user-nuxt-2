@@ -34,6 +34,14 @@
 			</div>
 		</template>
 
+		<template>
+			<div class="messenger-logo">
+				<a href="https://m.me/100064835408819" target="_blank">
+					<img src="~/static/images/messenger.png" alt="messenger-logo" />
+				</a>
+			</div>
+		</template>
+
 
 		<!-- <template>
 			<pv-sticky-footer v-if="isHideStickyFooter" :isHideStickyFooter="isHideStickyFooter"></pv-sticky-footer>
@@ -110,10 +118,10 @@ export default {
     		if (url.includes('/product/default/')) {
 
 				this.isHideStickyFooter = false;
-				console.log('true', this.isHideStickyFooter)
+				// console.log('true', this.isHideStickyFooter)
 			}else{
 				this.isHideStickyFooter = true;
-				console.log('false', this.isHideStickyFooter)
+				// console.log('false', this.isHideStickyFooter)
 			}
 
     },
@@ -147,6 +155,7 @@ export default {
 </script>
 
 <style scoped>
+
 .whatsapp-logo {
     position: fixed;
     left: -15px;
@@ -154,4 +163,11 @@ export default {
     z-index: 1000;
 	width: 100px;
 }
+.messenger-logo {
+    position: fixed;
+    right: 10px; 
+    bottom: 80px; 
+    z-index: 9999; 
+	width: 60px;
+  }
 </style>

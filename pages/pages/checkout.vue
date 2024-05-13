@@ -966,7 +966,9 @@ export default {
                     this.purchaseConfirmedGTM(value, shipping, name, phone, address, cart);
 
                    this.$router.push('/pages/account');
-                } else {
+                } 
+                
+                else {
                     alert('Order failed! Please try again.');
                 }
 
