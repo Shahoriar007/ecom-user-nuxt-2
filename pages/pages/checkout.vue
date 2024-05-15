@@ -680,7 +680,13 @@
                                 </div>
                             </div> -->
 
-                            <button
+                            <button v-if="submitButtonLoading"
+                                class="btn btn-color btn-place-order"
+                                >
+                                Loading...
+                            </button>
+
+                            <button v-else
                                 class="btn btn-color btn-place-order"
                                 @click="submitOrder"
                                 >
@@ -759,8 +765,12 @@
             <div class="sticky-navbar fixed" v-if="cartList.length > 0">
 				<div class="container">
 					<div class="row">
+
+                        <button v-if="submitButtonLoading" class="btn btn-primary">
+								Loading...
+											</button>
 						
-							<button class="btn btn-primary" href="javascript:;"  @click="submitOrder">
+							<button v-else class="btn btn-primary" href="javascript:;"  @click="submitOrder">
 								অর্ডার কনফার্ম করুন
 											</button>
 						
@@ -807,6 +817,8 @@ export default {
             codeOpened: false,
             accountOpened: false,
             addressOpened: false,
+
+            submitButtonLoading: false,
 
             //order
             fullName: '',
@@ -913,6 +925,8 @@ export default {
         async submitOrder() {
             try {
 
+                this.submitButtonLoading = true;
+
                 if(this.deliveryCharge == this.insideDhaka){
                     this.orderFrom = "Inside Dhaka";
                 }else{
@@ -920,17 +934,21 @@ export default {
                 }
 
                 if (this.fullName.length < 1) {
+                    
                     alert("Full name is required!");
+                    this.submitButtonLoading = false;
                     return;
                 }
 
                 if (this.phone.length < 1) {
                     alert("Phone number is required!");
+                    this.submitButtonLoading = false;
                     return;
                 }
 
                 if (this.detailAddress.length < 6) {
                     alert("Address must be at least 6 characters long!");
+                    this.submitButtonLoading = false;
                     return;
                 }
 
@@ -964,6 +982,8 @@ export default {
                     
 
                     this.purchaseConfirmedGTM(value, shipping, name, phone, address, cart);
+
+                    this.submitButtonLoading = false;
 
                    this.$router.push('/pages/account');
                 } 
