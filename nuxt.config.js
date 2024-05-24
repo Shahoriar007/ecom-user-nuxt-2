@@ -101,7 +101,7 @@ export default {
     modules: ['@nuxtjs/axios'],
 
     router: {
-        base: '/ecom-user-app',
+        base: '/',
         linkActiveClass: '',
         linkExactActiveClass: 'active',
     },
@@ -122,7 +122,7 @@ export default {
     pageTransition: 'page',
 
     server: {
-        port: 4000,
+        port: 3000,
         host: 'localhost',
     },
 
@@ -132,6 +132,6 @@ export default {
     // },
 
     env: {
-        baseDomain: 'http://ecom-project-api.test',
+        baseDomain: 'https://api.flarebranded.com/',
     },
 };
