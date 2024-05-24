@@ -44,12 +44,12 @@ export default {
                 rel: 'dns-prefetch',
                 href: '//fonts.googleapis.com',
             },
-            {
-                rel: 'icon',
-                type: 'image/png',
-                sizes: '32x32',
-                href: './images/icons/favicon-32x32.png',
-            },
+            // {
+            //     rel: 'icon',
+            //     type: 'image/png',
+            //     sizes: '32x32',
+            //     href: './images/icons/favicon-32x32.png',
+            // },
             {
                 rel: 'icon',
                 type: 'image/png',
