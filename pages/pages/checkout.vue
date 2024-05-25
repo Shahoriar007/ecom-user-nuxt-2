@@ -939,6 +939,7 @@ export default {
                     this.submitButtonLoading = false;
                     return;
                 }
+                
 
                 if (this.phone.length < 1) {
                     alert("Phone number is required!");
