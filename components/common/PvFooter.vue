@@ -36,11 +36,13 @@
 				<div class="row">
 					<div class="col-md-6 col-lg-3">
 						<div class="widget">
-							<h3 class="widget-title">Customer Service</h3>
+							<h3 class="widget-title">Important Pages</h3>
 							<div class="widget-content">
 								<ul>
-									<li><a href="javascript:;">Help & FAQs</a></li>
-									<li><a href="javascript:;">Order Tracking</a></li>
+									<li>
+										<nuxt-link to="/shop">Shop</nuxt-link>
+									</li>
+
 									<!-- <li><a href="javascript:;">Shipping & Delivery</a></li>
 									<li><a href="javascript:;">Orders History</a></li>
 									<li><a href="javascript:;">Advanced Search</a></li>
@@ -203,7 +205,7 @@
 				</div>
 			</div> -->
 			<div class="footer-bottom d-sm-flex align-items-center justify-content-center">
-				<span class="footer-copyright">Flare-Brand. © 2024. All Rights
+				<span class="footer-copyright">Amirun-Srity Cricket Academy. © 2024. All Rights
 					Reserved</span>
 			</div>
 		</div>

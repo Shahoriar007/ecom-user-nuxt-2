@@ -230,7 +230,7 @@
 							to="/pages/checkout"
 							class="btn btn-block btn-dark"
 						>
-						এগিয়ে যান
+						Checkout
 							<i class="fa fa-arrow-right"></i>
 						</nuxt-link>
 					</div>

@@ -27,7 +27,7 @@
 				>-{{ discount }}%</div>
 			</div>
 
-			<!-- <div class="btn-icon-group">
+			<div class="btn-icon-group">
 				<nuxt-link
 					:to="'/product/default/' + product.slug"
 					class="btn-icon btn-add-cart"
@@ -45,17 +45,17 @@
 				>
 					<i class="icon-shopping-cart"></i>
 				</a>
-			</div> -->
+			</div>
 
 			
-			<div class="button-container">
+			<!-- <div class="button-container">
 				<nuxt-link
 					:to="`/product/default/${product.slug}`"
 					class="button-new"
 					title="Quick View"
 					@click="addCart"
 				>
-				কার্টে যোগ করুন
+				Add to Cart
 				</nuxt-link>
 
 				<nuxt-link
@@ -64,9 +64,9 @@
 					title="Another Button"
 					@click="buyNow"
 				>
-				অর্ডার করুন
+				Order Now
 				</nuxt-link>
-			</div>
+			</div> -->
 
 		
 

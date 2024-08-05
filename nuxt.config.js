@@ -1,7 +1,7 @@
 export default {
     head: {
-        titleTemplate: 'Flare Brand',
-        title: 'Flare Brand',
+        titleTemplate: 'Amirun-Srity Cricket Academy',
+        title: 'Amirun-Srity Cricket Academy',
         meta: [
             { charset: 'utf-8' },
             {
@@ -11,7 +11,7 @@ export default {
             {
                 hid: 'description',
                 name: 'description',
-                content: 'Flare Brand - Online Shopping',
+                content: 'Amirun-Srity Cricket Academy - Online Shopping',
             },
             {
                 name: 'author',
@@ -19,15 +19,15 @@ export default {
             },
             {
                 name: 'keywords',
-                content: 'Flare Brand - Online Shopping',
+                content: 'Amirun-Srity Cricket Academy - Online Shopping',
             },
             {
                 name: 'app-mobile-web-app-title',
-                content: 'Flare Brand',
+                content: 'Amirun-Srity Cricket Academy',
             },
             {
                 name: 'application-name',
-                content: 'Flare Brand',
+                content: 'Amirun-Srity Cricket Academy',
             },
             {
                 name: 'msapplication-TileColor',
@@ -54,11 +54,11 @@ export default {
                 rel: 'icon',
                 type: 'image/png',
                 sizes: '16x16',
-                href: './images/icons/favicon.jpeg',
+                href: './images/icons/favicon.png',
             },
             {
                 rel: 'shortcut icon',
-                href: './images/icons/favicon.jpeg',
+                href: './images/icons/favicon.png',
             },
             {
                 rel: 'apple-touch-icon',

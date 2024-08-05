@@ -690,7 +690,7 @@
                                 class="btn btn-color btn-place-order"
                                 @click="submitOrder"
                                 >
-                                অর্ডার কনফার্ম করুন
+                                Confirm Order
                             </button>
                             <!-- form="checkout-form" -->
                         </div>
@@ -771,7 +771,7 @@
 											</button>
 						
 							<button v-else class="btn btn-primary" href="javascript:;"  @click="submitOrder">
-								অর্ডার কনফার্ম করুন
+								Confirm Order
 											</button>
 						
 							
@@ -789,8 +789,6 @@
 
             <body>
             <!-- Google Tag Manager (noscript) -->
-            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ7FH7BK"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- End Google Tag Manager (noscript) -->
         </body>
 
@@ -851,7 +849,7 @@ export default {
             
         });
 
-        this.beginCheckoutGTM(this.totalPrice, this.cartList);
+        // this.beginCheckoutGTM(this.totalPrice, this.cartList);
     },
     methods: {
         truncateName(name) {
@@ -864,20 +862,20 @@ export default {
             }
         },
 
-        beginCheckoutGTM: function (value, cart) {
+        // beginCheckoutGTM: function (value, cart) {
 
-        let items = cart.map(item => ({
-            item_name: item.name,
-            item_id: item.id,
-            price: item.price,
-            item_brand: "", 
-            item_category: item.category.name || "", 
-            item_variant: "",
-            item_list_name: "",
-            item_list_id: "",
-            index: "",
-            quantity: item.qty
-        }));
+        // let items = cart.map(item => ({
+        //     item_name: item.name,
+        //     item_id: item.id,
+        //     price: item.price,
+        //     item_brand: "", 
+        //     item_category: item.category.name || "", 
+        //     item_variant: "",
+        //     item_list_name: "",
+        //     item_list_id: "",
+        //     index: "",
+        //     quantity: item.qty
+        // }));
 
         window.dataLayer.push({
         event: 'begin_checkout',
