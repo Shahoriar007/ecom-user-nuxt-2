@@ -132,6 +132,6 @@ export default {
     // },
 
     env: {
-        baseDomain: 'https://api.flarebranded.com/',
+        baseDomain: 'https://api.amirunsritycricketacademy.com/',
     },
 };

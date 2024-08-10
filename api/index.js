@@ -2,8 +2,8 @@ import axios from 'axios';
 import nuxtConfig from '~/nuxt.config.js';
 // console.log('🚀 ~ nuxtConfig:', nuxtConfig);
 
-// const baseDonmain = 'http://project-ecom-laravel-api.test';
-const baseDonmain = 'http://127.0.0.1:8000';
+const baseDonmain = 'https://api.amirunsritycricketacademy.com';
+// const baseDonmain = 'http://127.0.0.1:8000';
 // 'https://d-themes.com/vue/porto/server'
 export const customHeader = {
     'Content-Type': 'application/json',

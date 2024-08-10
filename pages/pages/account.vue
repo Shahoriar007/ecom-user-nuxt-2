@@ -24,13 +24,11 @@
 				</nav> -->
 
                 <h1 class="hind-siliguri">
-                    আপনার অর্ডারটি কনফার্ম করা হয়েছে | কিছুক্ষণ এর মধ্যে আপনাকে
-                    কল করা হবে। আপনার প্রয়োজনে কল করুন - 09639279019 এই নম্বরে।
-
+                    Your order has been completed successfully!!
                 </h1>
 				<br><br>
 				<h1 class="hind-siliguri">
-					Flare Brand এ কেনাকাটা করার জন্য আপনাকে অসংখ্য ধন্যবাদ।
+					Thanks for your order.
 				</h1>
             </div>
         </div>
